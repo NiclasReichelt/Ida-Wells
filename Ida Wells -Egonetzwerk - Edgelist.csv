@@ -44,10 +44,9 @@ Ida,WSA,4,3,1914,1,Chicago
 Ida,ASC,4,5,1913,1,Chicago
 Ida,Thompson,"2,4",4,1915,1,Chicago
 Ida,FSaH,4,5,n/a,1,Memphis
-,,,,,,
 Wells,Wells-Warrington,5,5,n/a,1,Holly Springs
 Wells,Gray,"1,4",3,n/a,1,Holly Springs
-Fleming ,Nightingale,4,3,n/a,1,Memphis
+Fleming,Nightingale,4,3,n/a,1,Memphis
 FSaH,Nightingale,4,5,n/a,1,Memphis
 FSaH,Fleming ,4,5,n/a,1,Memphis
 Frederick Douglass,Helen Douglass,5,5,n/a,1,Memphis
@@ -55,14 +54,8 @@ Mayo,Impey,"3,4",3,n/a,2,Aberdeen
 Mayo,Anti-Caste,4,5,n/a,2,Aberdeen
 Impey,Anti-Caste,4,5,n/a,2,Aberdeen
 Ruffin,WEC,"2,5",2,n/a,1,Boston
-,,,,,,
-,,,,,,
-,,,,,,
-Thompson,Olson,3,4,1915,1,Chicago
 Olson,Thompson,3,4,1915,1,Chicago
-WSA,ASC,3,3,1914,1,Chicago
 ASC,WSA,3,4,1914,1,Chicago
-,,,,,,
 Ocean,Nixon,4,4,1894,2,London
 Ocean,Kohlsaat,4,4,1894,2,London
 Ocean,Ida,2,4,1894,2,London
@@ -76,7 +69,6 @@ ALC,Willard,2,2,1894,2,London
 ALC,Somerset,2,2,1894,2,London
 NACWC,Terell,"2,4",5,1895,1,Chicago
 NAAC,Walters,"2,4",5,1898,1,New York City
-,,,,,,
 Fallows,Ida,4,2,1915,1,Chicago
 Smith,Ida,2,1,1917,1,Chicago
 Trotter,Ida,"1,4",3,1915,1,Chicago
@@ -84,15 +76,17 @@ Trotter,Washington,3,3,1895,1,n/a
 DuBois,Washington,3,3,1895,1,n/a
 Trotter,DuBois,"1,4",4,1905,1,n/a
 Walker,Ida,"1,4",4,1917,1,New York City
-Walker,NAACP,2,5,1917,1,n/a
 Walker,Washington,1,3,n/a,1,n/a
 Walker,DuBois,"1,4",3,n/a,1,n/a
 Ida,Bundy,2,1,1917,1,Chicago
 Lowden,Ida,3,1,1917,1,Chicago
-Lowden,Negro Fellowship League,3,1,1917,1,Chicago
+Lowden,NFL,3,1,1917,1,Chicago
 NERL,Ida,2,4,n/a,1,n/a
 NERL,Trotter,2,4,n/a,1,n/a
 NERL,Walker,2,3,n/a,1,n/a
 NERL,NM,3,1,n/a,1,n/a
 NM,Trotter,2,5,1905,1,n/a
 NM,DuBois,2,5,1905,1,n/a
+NAACP,Walker,2,5,1917,1,n/a
+NAACP,DuBois,2,3,n/a,1,n/a
+NAACP,NM,2,5,1909,1,n/a
