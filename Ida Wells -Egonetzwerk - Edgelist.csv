@@ -1,19 +1,19 @@
 from,to,relation,weight,year,country,city
-Ida,Wells-Warrington,5,5,n/a,1,Holly Springs
-Ida,Wells,5,5,n/a,1,Holly Springs
+Ida,Wells1,5,5,n/a,1,Holly Springs
+Ida,Wells2,5,5,n/a,1,Holly Springs
 Ida,Gray,2,2,n/a,1,Holly Springs
 Ida,Fleming,4,4,1889,1,Memphis
 Ida,Nightingale,4,3,1889,1,Memphis
 Ida,Fortune,"2,4",3,1892,1,Jersey City
 Ida,Moss,1,4,n/a,1,Memphis
-Ida,Frederick Douglass,1,5,n/a,1,Memphis
-Ida,Helen Douglass,1,4,n/a,1,Memphis
+Ida,Douglass1,1,5,n/a,1,Memphis
+Ida,Douglass2,1,4,n/a,1,Memphis
 Ida,Ruffin,2,2,1892,1,New York City
 Ida,Impey,"1,2",4,n/a,1,Philadelphia
 Ida,Mayo,"2,3",2,n/a,2,Aberdeen
 Ida,Somerset,3,2,1894,2,London
 Ida,Moody,3,2,1894,2,n/a
-Ida,Anti-Caste,2,2,n/a,2,Aberdeen
+Ida,AntiCaste,2,2,n/a,2,Aberdeen
 Ida,Nixon,4,2,1894,1,Chicago
 Ida,Aked,"1,2",4,1894,2,Liverpool
 Ida,Russell,2,3,1894,2,Liverpool
@@ -49,10 +49,10 @@ Wells,Gray,"1,4",3,n/a,1,Holly Springs
 Fleming,Nightingale,4,3,n/a,1,Memphis
 FSaH,Nightingale,4,5,n/a,1,Memphis
 FSaH,Fleming ,4,5,n/a,1,Memphis
-Frederick Douglass,Helen Douglass,5,5,n/a,1,Memphis
+Douglass1,Douglass2,5,5,n/a,1,Memphis
 Mayo,Impey,"3,4",3,n/a,2,Aberdeen
-Mayo,Anti-Caste,4,5,n/a,2,Aberdeen
-Impey,Anti-Caste,4,5,n/a,2,Aberdeen
+Mayo,AntiCaste,4,5,n/a,2,Aberdeen
+Impey,AntiCaste,4,5,n/a,2,Aberdeen
 Ruffin,WEC,"2,5",2,n/a,1,Boston
 Olson,Thompson,3,4,1915,1,Chicago
 ASC,WSA,3,4,1914,1,Chicago
