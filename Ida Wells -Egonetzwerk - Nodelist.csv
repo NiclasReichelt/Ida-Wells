@@ -6,7 +6,7 @@ Dr Gray,Gray,1,6,1,2,2,Howard Association
 J L Fleming,Fleming,1,"1,4",1,1,2,Free Speech and Headlight
 F Nightingale,Nightingale,1,"1,2",1,n/a,2,Free Speech and Headlight
 T Thomas Fortune,Fortune,1,1,1,n/a,2,New York Age
-Free Speech and Headlight ,FSaH,1,1,n/a,n/a,3,n/a
+Free Speech and Headlight,FSaH,1,1,n/a,n/a,3,n/a
 Thomas Moss,Moss,1,6,1,1,1,n/a
 Frederick Douglass,Douglass1,1,5,1,1,3,n/a
 Helen Pitts Douglass,Douglass2,1,6,2,2,1,n/a
@@ -26,10 +26,10 @@ Alfred Webb,Webb,1,5,1,2,2,British parliament
 Womans Era Club,WEC,2,5,n/a,n/a,2,n/a
 William Woodall,Woodall,1,5,1,2,2,House of Parliaments
 Mr Kohlsaat,Kohlsaat,1,1,1,2,2,Chicago InterOcean
-Mr. Clayden,Clayden,1,1,1,2,3,London Daily News
+Mr Clayden,Clayden,1,1,1,2,3,London Daily News
 Susan B Anthony,Anthony,1,"1,5",2,1,3,"National American Woman Suffrage Association,The Revolution"
 AntiLynching Committee,ALC,2,n/a,n/a,n/a,2,n/a
-F.L. Barnett,Barnett,1,3,1,1,1,n/a
+F L Barnett,Barnett,1,3,1,1,1,n/a
 National Association of Colored Womens Club,NACWC,2,n/a,n/a,n/a,2,n/a
 Mary Church Terrell,Terell,1,5,2,1,3,"NACWC,NAACP"
 National Afro American Council,NAAC,2,n/a,n/a,n/a,2,National Afro American Council
@@ -37,18 +37,18 @@ Bishop Alexander Walters,Walters,1,"2,5",1,1,2,president of NAAC
 Chicago Womens Club,CWC,2,n/a,n/a,n/a,3,n/a
 Chicago Tribune,CT,2,n/a,n/a,n/a,2,n/a
 Victor F Lawson,Lawson,1,1,1,2,3,Chicago Daily News 
-Negro Fellowship League ,NFL,2,n/a,n/a,n/a,1,n/a
+Negro Fellowship League,NFL,2,n/a,n/a,n/a,1,n/a
 Edward D Green,Green,1,5,1,1,2,n/a
 National Association for the Advancement of Colored People,NAACP,2,n/a,n/a,n/a,2,n/a
 Harry Olson,Olson,1,3,1,2,3,Municipal Court of Chicago 
 James Keeley,Keeley,1,1,1,2,2,Record Herald
-Womens Suffrage Association ,WSA,2,n/a,n/a,n/a,2,n/a
-Alpha Suffrage Club ,ASC,2,n/a,n/a,n/a,1,n/a
+Womens Suffrage Association,WSA,2,n/a,n/a,n/a,2,n/a
+Alpha Suffrage Club,ASC,2,n/a,n/a,n/a,1,n/a
 William Hale Thompson,Thompson,1,5,1,2,3,Republican Party
 Booker T Washington,Washington,1,"5,6",1,1,2,"Tusgekee Institue,Atlanta compromise,Business Mans League"
-W.E.B. DuBois,DuBois,1,5,1,1,2,"NAACP,NM"
+W E B DuBois,DuBois,1,5,1,1,2,"NAACP,NM"
 Samuel Fallows,Fallows,1,"2,5",1,2,3,"Reformed Episcopal Church,Republican Party"
-Fannie R. Smith,Smith,1,6,2,n/a,1,Wendell Phillips High School
+Fannie R Smith,Smith,1,6,2,n/a,1,Wendell Phillips High School
 William Monroe Trotter of Boston,Trotter,1,5,1,1,2,"NERL,NM"
 Madam C J Walker,Walker,1,4,2,1,1,NAACP
 Leroy C Bundy,Bundy,1,6,1,1,1,East Saint Louis Riot
