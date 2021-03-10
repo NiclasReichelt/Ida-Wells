@@ -1,5 +1,5 @@
 id,name,type,profession,sex,skincolor,power,affiliation
-Ida,Ida B Wells-Barnett,1,"1,5",2,1,3,"Alpha Suffrage Club,Negro Fellowship League,Womens Suffrage Association,NAACP,Womans Era Club"
+Ida,Ida B Wells-Barnett,1,"1,5",3,1,3,"Alpha Suffrage Club,Negro Fellowship League,Womens Suffrage Association,NAACP,Womans Era Club"
 Wells1,Elisabeth Wells Warrington,1,6,2,1,1,n/a
 Wells2,Jim Wells,1,6,1,1,1,n/a
 Gray,Dr Gray,1,6,1,2,2,Howard Association
@@ -19,7 +19,7 @@ AntiCaste,AntiCaste,2,n/a,n/a,n/a,2,n/a
 Nixon,William Penn Nixon,1,1,1,2,2,Chicago InterOcean
 Aked,C F Aked,1,2,1,2,2,n/a
 Russell,Edward Russell,1,1,1,2,2,Liverpool Post
-Willard,Frances E Willard,1,5,2,2,2,National Womens Christian Temperance Union
+Willard,Frances E Willard,1,5,2,2,2,Womans Christian Temperance Union
 Jeune,Susan Elizabeth Mary Jeune,1,5,2,2,2,British aristocracy
 Clifford,John Clifford,1,"2,5",1,2,3,London Baptist Association
 Webb,Alfred Webb,1,5,1,2,2,British parliament
@@ -55,3 +55,4 @@ Lowden,Frank Orren Lowden,1,5,1,2,3,East Saint Louis Riot
 NERL,National Equal Rights League,2,n/a,n/a,n/a,2,n/a
 NM,Niagara Movement,2,n/a,n/a,n/a,2,n/a
 Ocean,Chicago InterOcean,2,1,n/a,n/a,2,n/a
+WCTU,Womans Christian Temperance Union,2,n/a,n/a,n/a,2,n/a
