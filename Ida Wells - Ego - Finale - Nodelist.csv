@@ -1,58 +1,59 @@
-id,name,type,profession,sex,skincolor,power,affiliation
-Ida,Ida B Wells-Barnett,1,"1,5",3,1,3,"Alpha Suffrage Club,Negro Fellowship League,Womens Suffrage Association,NAACP,Womans Era Club"
-Wells1,Elisabeth Wells Warrington,1,6,2,1,1,n/a
-Wells2,Jim Wells,1,6,1,1,1,n/a
-Gray,Dr Gray,1,6,1,2,2,Howard Association
-Fleming,J L Fleming,1,"1,4",1,1,2,Free Speech and Headlight
-Nightingale,F Nightingale,1,"1,2",1,1,2,Free Speech and Headlight
-Fortune,T Thomas Fortune,1,1,1,1,2,New York Age
-FSaH,Free Speech and Headlight,2,1,n/a,n/a,3,n/a
-Moss,Thomas Moss,1,6,1,1,1,n/a
-Douglass1,Frederick Douglass,1,5,1,1,3,n/a
-Douglass2,Helen Pitts Douglass,1,6,2,2,1,n/a
-Ruffin,Josephine St Pierre Ruffin,1,5,2,1,2,Womans Era Club
-Impey,Catherine Impey,1,"1,5",2,2,2,AntiCaste
-Mayo,Isabelle Fyvie Mayo,1,"1,5",2,2,2,AntiCaste
-Somerset,Henry Somerset,1,"1,5",2,2,2,British Womens Temperance Union
-Moody,Dwight L Moody,1,2,1,2,1,n/a
-AntiCaste,AntiCaste,2,n/a,n/a,n/a,2,n/a
-Nixon,William Penn Nixon,1,1,1,2,2,Chicago InterOcean
-Aked,C F Aked,1,2,1,2,2,n/a
-Russell,Edward Russell,1,1,1,2,2,Liverpool Post
-Willard,Frances E Willard,1,5,2,2,2,Womans Christian Temperance Union
-Jeune,Susan Elizabeth Mary Jeune,1,5,2,2,2,British aristocracy
-Clifford,John Clifford,1,"2,5",1,2,3,London Baptist Association
-Webb,Alfred Webb,1,5,1,2,2,British parliament
-WEC,Womans Era Club,2,5,n/a,n/a,2,n/a
-Woodall,William Woodall,1,5,1,2,2,House of Parliaments
-Kohlsaat,Mr Kohlsaat,1,1,1,2,2,Chicago InterOcean
-Clayden,Mr Clayden,1,1,1,2,3,London Daily News
-Anthony,Susan B Anthony,1,"1,5",2,2,3,"National American Woman Suffrage Association,The Revolution"
-ALC,AntiLynching Committee,2,n/a,n/a,n/a,2,n/a
-Barnett,F L Barnett,1,3,1,1,1,n/a
-NACWC,National Association of Colored Womens Club,2,n/a,n/a,n/a,2,n/a
-Terell,Mary Church Terrell,1,5,2,1,3,"NACWC,NAACP"
-NAAC,National Afro American Council,2,n/a,n/a,n/a,2,National Afro American Council
-Walters,Bishop Alexander Walters,1,"2,5",1,1,2,president of NAAC
-CWC,Chicago Womens Club,2,n/a,n/a,n/a,3,n/a
-CT,Chicago Tribune,2,n/a,n/a,n/a,2,n/a
-Lawson,Victor F Lawson,1,1,1,2,3,Chicago Daily News 
-NFL,Negro Fellowship League,2,n/a,n/a,n/a,1,n/a
-Green,Edward D Green,1,5,1,1,2,n/a
-NAACP,National Association for the Advancement of Colored People,2,n/a,n/a,n/a,2,n/a
-Olson,Harry Olson,1,3,1,2,3,Municipal Court of Chicago 
-Keeley,James Keeley,1,1,1,2,2,Record Herald
-WSA,Womens Suffrage Association,2,n/a,n/a,n/a,2,n/a
-ASC,Alpha Suffrage Club,2,n/a,n/a,n/a,1,n/a
-Thompson,William Hale Thompson,1,5,1,2,3,Republican Party
-Washington,Booker T Washington,1,"5,6",1,1,2,"Tusgekee Institue,Atlanta compromise,Business Mans League"
-DuBois,W E B DuBois,1,5,1,1,2,"NAACP,NM"
-Fallows,Samuel Fallows,1,"2,5",1,2,3,"Reformed Episcopal Church,Republican Party"
-Trotter,William Monroe Trotter of Boston,1,5,1,1,2,"NERL,NM"
-Walker,Madam C J Walker,1,4,2,1,1,NAACP
-Bundy,Leroy C Bundy,1,6,1,1,1,East Saint Louis Riot
-Lowden,Frank Orren Lowden,1,5,1,2,3,East Saint Louis Riot
-NERL,National Equal Rights League,2,n/a,n/a,n/a,2,n/a
-NM,Niagara Movement,2,n/a,n/a,n/a,2,n/a
-Ocean,Chicago InterOcean,2,1,n/a,n/a,2,n/a
-WCTU,Womans Christian Temperance Union,2,n/a,n/a,n/a,2,n/a
+id,name,type,profession,sex,skincolor,motivation,power,affiliation
+Ida,Ida B Wells-Barnett,1,"1,5",3,1,3,3,"Alpha Suffrage Club,Negro Fellowship League,Womens Suffrage Association,NAACP,Womans Era Club"
+Wells1,Elisabeth Wells Warrington,1,6,2,1,n/a,1,n/a
+Wells2,Jim Wells,1,6,1,1,n/a,1,n/a
+Gray,Dr Gray,1,6,1,2,n/a,2,Howard Association
+Fleming,J L Fleming,1,"1,4",1,1,n/a,2,Free Speech and Headlight
+Nightingale,F Nightingale,1,"1,2",1,1,n/a,2,Free Speech and Headlight
+Fortune,T Thomas Fortune,1,1,1,1,1,2,New York Age
+FSaH,Free Speech and Headlight,2,1,n/a,n/a,1,3,n/a
+Moss,Thomas Moss,1,6,1,1,n/a,1,n/a
+Douglass1,Frederick Douglass,1,5,1,1,3,3,n/a
+Douglass2,Helen Pitts Douglass,1,6,2,2,n/a,1,n/a
+Ruffin,Josephine St Pierre Ruffin,1,5,2,1,3,2,Womans Era Club
+Impey,Catherine Impey,1,"1,5",2,2,3,2,AntiCaste
+Mayo,Isabelle Fyvie Mayo,1,"1,5",2,2,3,2,AntiCaste
+Somerset,Lady Henry Somerset,1,"1,5",2,2,2,2,British Womens Temperance Union
+WCTU,Womans Christian Temperance Union,2,n/a,n/a,n/a,2,2,n/a
+Moody,Dwight L Moody,1,2,1,2,4,1,n/a
+AntiCaste,AntiCaste,2,n/a,n/a,n/a,1,2,n/a
+Nixon,William Penn Nixon,1,1,1,2,1,2,Chicago InterOcean
+Aked,C F Aked,1,2,1,2,1,2,n/a
+Russell,Edward Russell,1,1,1,2,1,2,Liverpool Post
+Willard,Frances E Willard,1,5,2,2,"2,4",2,Womans Christian Temperance Union
+Jeune,Susan Elizabeth Mary Jeune,1,5,2,2,1,2,British aristocracy
+Clifford,John Clifford,1,"2,5",1,2,1,3,London Baptist Association
+Webb,Alfred Webb,1,5,1,2,1,2,British parliament
+WEC,Womans Era Club,2,5,n/a,n/a,3,2,n/a
+Woodall,William Woodall,1,5,1,2,1,2,House of Parliaments
+Kohlsaat,Mr Kohlsaat,1,1,1,2,1,2,Chicago InterOcean
+Clayden,Mr Clayden,1,1,1,2,3,3,London Daily News
+Anthony,Susan B Anthony,1,"1,5",2,2,2,3,"National American Woman Suffrage Association,The Revolution"
+ALC,AntiLynching Committee,2,n/a,n/a,n/a,1,2,n/a
+Barnett,F L Barnett,1,3,1,1,1,1,n/a
+NACWC,National Association of Colored Womens Club,2,n/a,n/a,n/a,3,2,n/a
+Terell,Mary Church Terrell,1,5,2,1,3,3,"NACWC,NAACP"
+NAAC,National Afro American Council,2,n/a,n/a,n/a,1,2,National Afro American Council
+Walters,Bishop Alexander Walters,1,"2,5",1,1,1,2,president of NAAC
+CWC,Chicago Womens Club,2,n/a,n/a,n/a,4,3,n/a
+CT,Chicago Tribune,2,n/a,n/a,n/a,4,2,n/a
+Lawson,Victor F Lawson,1,1,1,2,3,3,Chicago Daily News 
+NFL,Negro Fellowship League,2,n/a,n/a,n/a,1,1,n/a
+Green,Edward D Green,1,5,1,1,1,2,n/a
+NAACP,National Association for the Advancement of Colored People,2,n/a,n/a,n/a,3,2,n/a
+Olson,Harry Olson,1,3,1,2,3,3,Municipal Court of Chicago 
+Keeley,James Keeley,1,1,1,2,1,2,Record Herald
+WSA,Womens Suffrage Association,2,n/a,n/a,n/a,2,2,n/a
+ASC,Alpha Suffrage Club,2,n/a,n/a,n/a,3,1,n/a
+Thompson,William Hale Thompson,1,5,1,2,1,3,Republican Party
+Washington,Booker T Washington,1,"5,6",1,1,1,2,"Tusgekee Institue,Atlanta compromise,Business Mans League"
+DuBois,W E B DuBois,1,5,1,1,1,2,"NAACP,NM"
+Fallows,Samuel Fallows,1,"2,5",1,2,1,3,"Reformed Episcopal Church,Republican Party"
+Trotter,William Monroe Trotter of Boston,1,5,1,1,1,2,"NERL,NM"
+Walker,Madam C J Walker,1,4,2,1,3,1,NAACP
+Bundy,Leroy C Bundy,1,6,1,1,1,1,East Saint Louis Riot
+Lowden,Frank Orren Lowden,1,5,1,2,n/a,3,East Saint Louis Riot
+NERL,National Equal Rights League,2,n/a,n/a,n/a,1,2,n/a
+Ocean,Chicago InterOcean,2,1,n/a,n/a,n/a,2,n/a
+Brooks,Virginia Brooks ,1,5,2,2,3,2,Alpha Suffrage Club
+Squire,Belle Squire ,1,5,2,2,3,2,Alpha Suffrage Club
