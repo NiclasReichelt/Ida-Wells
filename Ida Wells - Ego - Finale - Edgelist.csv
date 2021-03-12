@@ -1,95 +1,123 @@
-from,to,relation,weight,year,country,city
-Ida,Wells1,5,1,n/a,1,Holly Springs
-Ida,Wells2,5,1,n/a,1,Holly Springs
-Ida,Gray,2,4,n/a,1,Holly Springs
-Ida,Fleming,4,2,1889,1,Memphis
-Ida,Nightingale,4,3,1889,1,Memphis
-Ida,Fortune,"2,4",3,1892,1,Jersey City
-Ida,Moss,1,2,n/a,1,Memphis
-Ida,Douglass1,1,1,n/a,1,Memphis
-Ida,Douglass2,1,2,n/a,1,Memphis
-Ida,Ruffin,2,4,1892,1,New York City
-Ida,Impey,"1,2",2,n/a,1,Philadelphia
-Ida,Mayo,"2,3",4,n/a,2,Aberdeen
-Ida,Somerset,3,4,1894,2,London
-Ida,Moody,3,4,1894,2,n/a
-Ida,AntiCaste,2,4,n/a,2,Aberdeen
-Ida,Nixon,4,4,1894,1,Chicago
-Ida,Aked,"1,2",2,1894,2,Liverpool
-Ida,Russell,2,3,1894,2,Liverpool
-Ida,Willard,3,4,1894,2,London
-Ida,Jeune,"1,2",2,1894,2,London
-Ida,Clifford,2,3,1894,2,London
-Ida,Webb,"2,3",3,1894,2,London
-Ida,WEC,3,3,1894,1,Boston
-Ida,Woodall,2,4,1894,2,London
-Ida,Kohlsaat,"2,4",4,1894,2,London
-Ida,Clayden,"1,2",3,1894,2,London
-Ida,Anthony,"1,2",1,"1894,1898",1,New York City
-Ida,ALC,2,3,1894,2,London
-Ida,Barnett,5,1,1895,1,Chicago
-Ida,NACWC,"2,4",1,1895,1,Chicago
-Ida,Terell,"2,3",2,1895,1,Chicago
-Ida,NAAC,2,3,1898,1,New York City
-Ida,Walters,2,4,1898,1,New York City
-Ida,CWC,3,3,1900,1,Chicago
-Ida,CT,3,4,1900,1,Chicago
-Ida,Lawson,2,2,1908,1,Chicago
-Ida,NFL,4,1,1908,1,Chicago
-Ida,Green,2,2,n/a,1,Springfield
-Ida,NAACP,4,1,1909,1,New York City
-Ida,Olson,"2,3",2,n/a,1,Chicago
-Ida,Keeley,2,4,1915,1,Chicago
-Ida,WSA,4,3,1914,1,Chicago
-Ida,ASC,4,1,1913,1,Chicago
-Ida,Thompson,"2,4",2,1915,1,Chicago
-Ida,FSaH,4,1,n/a,1,Memphis
-Wells2,Wells1,5,1,n/a,1,Holly Springs
-Wells2,Gray,"1,4",3,n/a,1,Holly Springs
-Fleming,Nightingale,4,3,n/a,1,Memphis
-FSaH,Nightingale,4,1,n/a,1,Memphis
-FSaH,Fleming,4,1,n/a,1,Memphis
-Douglass1,Douglass2,5,1,n/a,1,Memphis
-Mayo,Impey,"3,4",3,n/a,2,Aberdeen
-Mayo,AntiCaste,4,1,n/a,2,Aberdeen
-Impey,AntiCaste,4,1,n/a,2,Aberdeen
-Ruffin,WEC,"2,5",4,n/a,1,Boston
-Olson,Thompson,3,2,1915,1,Chicago
-ASC,WSA,3,2,1914,1,Chicago
-Ocean,Nixon,4,2,1894,2,London
-Ocean,Kohlsaat,4,2,1894,2,London
-Ocean,Ida,2,2,1894,2,London
-Woodall,Kohlsaat,4,4,1894,2,London
-Somerset,Willard,"1,2",2,1894,2,London
-Somerset,Moody,2,4,1894,2,London
-Willard,Moody,2,4,1894,2,London
-ALC,Clayden,2,2,1894,2,London
-ALC,Woodall,2,1,1894,2,London
-ALC,Willard,2,4,1894,2,London
-ALC,Somerset,2,4,1894,2,London
-NACWC,Terell,"2,4",1,1895,1,Chicago
-NAAC,Walters,"2,4",5,1898,1,New York City
-Fallows,Ida,4,2,1915,1,Chicago
-Trotter,Ida,"1,4",3,1915,1,Chicago
-Trotter,Washington,3,3,1895,1,n/a
-DuBois,Washington,3,3,1895,1,n/a
-Trotter,DuBois,"1,4",2,1905,1,n/a
-DuBois,Ida,"1,4",2,1905,1,n/a
-Walker,Ida,"1,4",2,1917,1,New York City
-Walker,Washington,1,3,n/a,1,n/a
-Walker,DuBois,"1,4",3,n/a,1,n/a
-Ida,Bundy,2,5,1917,1,Chicago
-Lowden,Ida,3,5,1917,1,Chicago
-Lowden,NFL,3,5,1917,1,Chicago
-NERL,Ida,2,2,n/a,1,n/a
-NERL,Trotter,2,2,n/a,1,n/a
-NERL,Walker,2,3,n/a,1,n/a
-NAACP,Walker,2,3,1917,1,n/a
-NAACP,DuBois,2,3,n/a,1,n/a
-Willard,WCTU,"2,4",1,n/a,1,Hillsboro
-Ida,WCTU,3,4,1894,2,London
-Somerset,WCTU,"2,4",3,1894,1,n/a
-Ida,Squire,4,3,1914,1,Chicago
-Ida,Brooks,4,3,1914,1,Chicago
-Squire,Brooks,4,3,1914,1,Chicago
-Fortune,Washington,"1,2",1,n/a,1,New York City
+from,to,relation,weight,timeperiod,year,country,city
+Ida,Wells1,5,1,1,n/a,1,Holly Springs
+Ida,Wells2,5,1,1,n/a,1,Holly Springs
+Ida,Gray,2,4,1,n/a,1,Holly Springs
+Ida,Fleming,4,2,1,1889,1,Memphis
+Ida,Nightingale,4,3,1,1889,1,Memphis
+Ida,Fortune,2,3,1,1892,1,Jersey City
+Ida,Fortune,4,3,1,1892,1,Jersey City
+Ida,Moss,1,2,1,n/a,1,Memphis
+Ida,Douglass1,1,1,2,n/a,1,Jersey City
+Ida,Douglass2,1,2,2,n/a,1,Washington
+Ida,Ruffin,2,4,2,1892,1,New York City
+Ida,Impey,1,2,3,n/a,1,Philadelphia
+Ida,Impey,2,2,3,n/a,1,Philadelphia
+Ida,Mayo,2,4,3,n/a,2,Aberdeen
+Ida,Mayo,3,4,3,n/a,2,Aberdeen
+Ida,Somerset,3,4,3,1894,2,London
+Ida,Moody,3,4,,1894,2,n/a
+Ida,AntiCaste,2,4,3,n/a,2,Aberdeen
+Ida,Nixon,4,4,4,1894,1,Chicago
+Ida,Aked,1,2,4,1894,2,Liverpool
+Ida,Aked,2,2,4,1894,2,Liverpool
+Ida,Russell,2,3,4,1894,2,Liverpool
+Ida,Willard,3,4,4,1894,2,London
+Ida,Jeune,1,2,4,1894,2,London
+Ida,Jeune,2,2,4,1894,2,London
+Ida,Clifford,2,3,4,1894,2,London
+Ida,Webb,2,3,4,1894,2,London
+Ida,Webb,3,3,4,1894,2,London
+Ida,WEC,3,3,2,1894,1,Boston
+Ida,Woodall,2,4,,1894,2,London
+Ida,Kohlsaat,2,4,,1894,2,London
+Ida,Kohlsaat,4,4,,1894,2,London
+Ida,Clayden,1,3,,1894,2,London
+Ida,Clayden,2,3,,1894,2,London
+Ida,Anthony,1,1,,1894,1,New York City
+Ida,Anthony,2,1,,1898,1,New York City
+Ida,Anthony,2,1,,1894,1,New York City
+Ida,Anthony,1,1,,1898,1,New York City
+Ida,ALC,2,3,,1894,2,London
+Ida,Barnett,5,1,,1895,1,Chicago
+Ida,NACWC,2,1,,1895,1,Chicago
+Ida,NACWC,4,1,,1895,1,Chicago
+Ida,Terell,2,2,,1895,1,Chicago
+Ida,Terell,3,2,,1895,1,Chicago
+Ida,NAAC,2,3,,1898,1,New York City
+Ida,Walters,2,4,,1898,1,New York City
+Ida,CWC,3,3,,1900,1,Chicago
+Ida,CT,3,4,,1900,1,Chicago
+Ida,Lawson,2,2,,1908,1,Chicago
+Ida,NFL,4,1,,1908,1,Chicago
+Ida,NAACP,4,1,,1909,1,New York City
+Ida,Olson,2,2,,1912,1,Chicago
+Ida,Olson,3,3,,1915,1,Chicago
+Ida,Keeley,2,4,,1915,1,Chicago
+Ida,WSA,4,3,,1914,1,Chicago
+Ida,ASC,4,1,,1913,1,Chicago
+Ida,Thompson,2,2,,1915,1,Chicago
+Ida,Thompson,4,2,,1915,1,Chicago
+Ida,FSaH,4,1,1,n/a,1,Memphis
+Wells2,Wells1,5,1,1,n/a,1,Holly Springs
+Wells2,Gray,1,3,1,n/a,1,Holly Springs
+Wells2,Gray,4,3,1,n/a,1,Holly Springs
+Fleming,Nightingale,4,3,1,n/a,1,Memphis
+FSaH,Nightingale,4,1,1,n/a,1,Memphis
+FSaH,Fleming,4,1,1,n/a,1,Memphis
+Douglass1,Douglass2,5,1,2,n/a,1,Memphis
+Mayo,Impey,3,3,3,n/a,2,Aberdeen
+Mayo,Impsey,4,3,3,n/a,2,Aberdeen
+Mayo,AntiCaste,4,1,3,n/a,2,Aberdeen
+Impey,AntiCaste,4,1,3,n/a,2,Aberdeen
+Ruffin,WEC,2,4,2,n/a,1,Boston
+Ruffin,WEC,4,4,2,n/a,1,Boston
+Olson,Thompson,3,2,,1915,1,Chicago
+ASC,WSA,3,2,,1914,1,Chicago
+Ocean,Nixon,4,2,,1894,2,London
+Ocean,Kohlsaat,4,2,,1894,2,London
+Ocean,Ida,2,2,,1894,2,London
+Woodall,Kohlsaat,4,4,,1894,2,London
+Somerset,Willard,1,2,,1894,2,London
+Somerset,Willard,2,2,,1894,2,London
+Somerset,Moody,2,4,,1894,2,London
+Willard,Moody,2,4,,1894,2,London
+ALC,Clayden,2,2,,1894,2,London
+ALC,Woodall,2,1,,1894,2,London
+ALC,Willard,2,4,,1894,2,London
+ALC,Somerset,2,4,,1894,2,London
+NACWC,Terell,2,1,,1895,1,Chicago
+NACWC,Terell,4,1,,1895,1,Chicago
+NAAC,Walters,2,1,,1898,1,New York City
+NAAC,Walters,4,1,,1898,1,New York City
+Fallows,Ida,4,2,,1915,1,Chicago
+Trotter,Ida,1,3,,1915,1,Chicago
+Trotter,Ida,4,3,,1915,1,Chicago
+Trotter,Washington,3,3,,1895,1,n/a
+DuBois,Washington,3,3,,1895,1,n/a
+Trotter,DuBois,1,2,,1905,1,n/a
+Trotter,DuBois,4,2,,1905,1,n/a
+DuBois,Ida,1,2,,1905,1,n/a
+DuBois,Ida,4,2,,1905,1,n/a
+Walker,Ida,1,2,,1917,1,New York City
+Walker,Ida,4,2,,1917,1,New York City
+Walker,Washington,1,3,,n/a,1,n/a
+Walker,DuBois,1,3,,n/a,1,n/a
+Walker,DuBois,4,3,,n/a,1,n/a
+Ida,Bundy,2,5,,1917,1,Chicago
+Lowden,Ida,3,5,,1917,1,Chicago
+Lowden,NFL,3,5,,1917,1,Chicago
+NERL,Ida,2,2,,n/a,1,n/a
+NERL,Trotter,2,2,,n/a,1,n/a
+NERL,Walker,2,3,,n/a,1,n/a
+NAACP,Walker,2,3,,1917,1,n/a
+NAACP,DuBois,2,3,,n/a,1,n/a
+Willard,WCTU,2,1,3,n/a,1,Hillsboro
+Willard,WCTU,4,1,3,n/a,1,Hillsboro
+Ida,WCTU,3,4,3,1894,2,London
+Somerset,WCTU,2,3,3,1894,1,n/a
+Somerset,WCTU,4,3,3,1894,1,n/a
+Ida,Squire,4,3,,1914,1,Chicago
+Ida,Brooks,4,3,,1914,1,Chicago
+Squire,Brooks,4,3,,1914,1,Chicago
+Fortune,Washington,1,1,,n/a,1,New York City
+Fortune,Washington,2,1,,n/a,1,New York City
