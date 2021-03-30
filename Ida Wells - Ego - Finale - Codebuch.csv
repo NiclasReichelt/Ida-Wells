@@ -6,14 +6,14 @@ from,"definiert den Sender in gerichteten Netzwerken. Entspricht ID in der Nodel
 to,"definiert den Empfänger in ungerichteten Netzwerken. Entspricht ID in der Nodelist. Keine Sonderzeichen, etc."
 -----------,
 weight,Beziehungsstärke Stark (1) - Schwach (5)
-relation,"Art der Beziehung Freunde (1), Unterstützer (2), Konflikt (3), Geschäftliches Verhältnis (4) Familie (5)"
+relation,"Art der Beziehung Freunde (1), Unterstützer (2), Konflikt (3), Geschäftliches Verhältnis (4), Familie (5)"
 timeperiod,"Eingeteilte Zeitabschnitte: Kindheit, Jugend, erste journalistische Erfahrung + Politisierung (1), Politisierung und Redeauftritte in ganz Amerika (2), erste Reise nach Großbrittannien & Expo (3), zweite Reise nach GB (4) Clublife in Chicago und Kongreßreisen"
 year,1892 - 1914
 country,"USA (1), GB (2)"
 city,"Unterschiedliche Städte: V. a. Chicago, London, New York City"
 ,
 nodelist,Grundregel: die IDs der Nodelist müssen mit den IDs der Edgelist komplett übereinstimmen. Ausprägungen der Attribute in der Regel numerisch definieren.
-id,"eindeutige Identifikation jedes einzelnen Knotens (vertex), der erfasst wird."
+id,2
 name,Name oder Bezeichnung des Knotens.
 ----------,
 type,natürliche Person (1) Organisation (2)
