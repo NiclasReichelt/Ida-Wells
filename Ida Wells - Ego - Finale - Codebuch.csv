@@ -17,8 +17,8 @@ id,2
 name,Name oder Bezeichnung des Knotens.
 ----------,
 type,natürliche Person (1) Organisation (2)
-sex,dichotome Ausprägung: male (1) female (2)
-skincolor,dichotome Ausprägung: black (1) white (2)
+sex,dichotome Ausprägung: male (1) female (2) Ida (3)
+skincolor,dichotome Ausprägung: black (1) white (2) Ida (3)
 profession,"Journalismus (1), Kirche (2), Juristisch (3), Wirtschaftlich (4), Politik/Aktivismus (5), Andere (6)"
 profession2,"Journalismus (1), Kirche (2), Juristisch (3), Wirtschaftlich (4), Politik/Aktivismus (5), Andere (6)"
 power,"Machtstatus/ Einfluss: Kaum einflussreich (1), einflussreich (2), sehr einflussreich (3)"
