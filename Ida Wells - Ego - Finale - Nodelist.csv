@@ -1,15 +1,15 @@
 id,name,type,Journalismus,Kirche,Jura,Wirtschaft,Aktivismus,Politik,Andere,sex,skincolor,motivation,power,affiliation
 Ida,Ida B Wells-Barnett,1,1,2,2,2,1,2,2,3,3,3,3,"Alpha Suffrage Club,Negro Fellowship League,Womens Suffrage Association,NAACP,Womans Era Club"
-Wells1,Elisabeth Wells Warrington,1,0,0,0,0,0,0,1,2,1,n/a,1,
-Wells2,Jim Wells,1,0,0,0,0,0,0,1,1,1,n/a,1,
-Gray,Dr. Gray,1,0,0,0,0,0,0,1,1,2,n/a,2,Howard Association
-Fleming,J. L. Fleming,1,1,0,0,1,0,0,0,1,1,n/a,2,Free Speech and Headlight
-Nightingale,F. Nightingale,1,1,1,0,0,0,0,0,1,1,n/a,2,Free Speech and Headlight
+Wells1,Elisabeth Wells Warrington,1,0,0,0,0,0,0,1,2,1,0,1,
+Wells2,Jim Wells,1,0,0,0,0,0,0,1,1,1,0,1,
+Gray,Dr. Gray,1,0,0,0,0,0,0,1,1,2,0,2,Howard Association
+Fleming,J. L. Fleming,1,1,0,0,1,0,0,0,1,1,0,2,Free Speech and Headlight
+Nightingale,F. Nightingale,1,1,1,0,0,0,0,0,1,1,0,2,Free Speech and Headlight
 Fortune,T. Thomas Fortune,1,1,0,0,0,1,0,0,1,1,1,2,New York Age
 FSaH,Free Speech and Headlight,2,1,0,0,0,1,0,0,n/a,n/a,1,3,
-Moss,Thomas Moss,1,0,0,0,0,0,0,1,1,1,n/a,1,
+Moss,Thomas Moss,1,0,0,0,0,0,0,1,1,1,0,1,
 Douglass1,Frederick Douglass,1,0,0,0,0,1,1,0,1,1,3,3,
-Douglass2,Helen Pitts Douglass,1,0,0,0,0,1,0,1,2,2,n/a,1,
+Douglass2,Helen Pitts Douglass,1,0,0,0,0,1,0,1,2,2,0,1,
 Ruffin,Josephine St Pierre Ruffin,1,0,0,0,0,1,0,0,2,1,3,2,Womans Era Club
 Impey,Catherine Impey,1,1,0,0,0,1,0,0,2,2,3,2,AntiCaste
 Mayo,Isabella Fyvie Mayo,1,1,0,0,0,1,1,0,2,2,3,2,AntiCaste
@@ -51,9 +51,9 @@ Fallows,Samuel Fallows,1,0,1,0,0,0,0,0,1,2,1,3,"Reformed Episcopal Church,Republ
 Trotter,William Monroe Trotter of Boston,1,1,0,0,1,1,0,0,1,1,1,2,"NERL,NM"
 Walker,Madam C J Walker,1,0,0,0,1,0,0,0,2,1,3,1,NAACP
 Bundy,Leroy C Bundy,1,0,0,0,0,0,0,1,1,1,1,1,East Saint Louis Riot
-Lowden,Frank Orren Lowden,1,0,0,0,0,0,1,0,1,2,n/a,3,East Saint Louis Riot
+Lowden,Frank Orren Lowden,1,0,0,0,0,0,1,0,1,2,0,3,East Saint Louis Riot
 NERL,National Equal Rights League,2,0,0,0,0,1,0,0,n/a,n/a,1,2,
-Ocean,Chicago InterOcean,2,1,0,0,0,0,0,0,n/a,n/a,n/a,2,
+Ocean,Chicago InterOcean,2,1,0,0,0,0,0,0,n/a,n/a,0,2,
 Brooks,Virginia Brooks,1,0,0,0,0,1,0,0,2,2,3,2,Alpha Suffrage Club
 Squire,Belle Squire,1,0,0,0,0,1,0,0,2,2,3,2,Alpha Suffrage Club
 BWTA,British Womens Temperance Association,2,0,0,0,0,1,0,0,n/a,n/a,2,2,
