@@ -299,21 +299,257 @@ Das Netzwerk besteht aus drei Beziehungsarten: Ratsuche (zukünftig Teilnetzwerk
 - work (gesamt)
 - love (gesamt)
 
+
+### ALLE TEILNETZWERKE
+
 ```{r Teilnetzwerke erstellen und vereinfachen, message=FALSE, warning=FALSE, paged.print=FALSE}
 library(igraph)
-el <- read.csv("https://raw.githubusercontent.com/hdm-crpr/226305/master/data/crpr2/edges.csv", header=T, as.is=T, sep = ",")
-nodes <- read.csv("https://raw.githubusercontent.com/hdm-crpr/226305/master/data/crpr2/nodes.csv", header=T, as.is=T, sep = ",")
-edgematrix <-as.matrix(el)
-s <- graph_from_data_frame(d=edgematrix, vertices=nodes, directed=T)
-list.edge.attributes(s)
+## Teilnetzwerke
 
-work <- subgraph.edges(s, E(s)[relation==1]) 
-help <- subgraph.edges(s, E(s)[relation==2])
-love <- subgraph.edges(s, E(s)[relation==3])
+```{r Teilnetzwerke, fig.height=6, fig.width=10}
 
-work # das Netzwerk hat nur noch 76 Kanten (also 2*38 Antworten)
-# help # das sind eigenständige igraph-objekte
-# love
+#Teilnetzwerke Allgemein
+
+list.edge.attributes(Ida)
+edge.attributes(Ida)$country
+
+Ida_person <- delete.vertices(Ida, V(Ida) [type==2])
+
+Ida_orga <- delete.vertices(Ida, V(Ida) [type==1])
+
+#Teilnetzwerk USA
+
+
+Ida_USA <- subgraph.edges(Ida, E(Ida)[country==1])
+
+Ida_USA2 <- delete.vertices(Ida_USA, degree(Ida_USA)==0)
+
+
+plot(Ida_USA2, layout=layout_with_fr,
+     main="USA",
+     edge.arrow.size=.7,
+     edge.width=E(Ida)$weight,
+     edge.color="black")
+
+#Teilnetzwerk GB
+
+Ida_GB <- subgraph.edges(Ida, E(Ida)[country==2])
+
+Ida_GB2 <- delete.vertices(Ida_GB, degree(Ida_GB)==0)
+
+plot(Ida_GB2, layout=layout_with_fr,
+     main="Großbritannien",
+     edge.arrow.size=.7,
+     edge.width=E(Ida)$weight,
+     edge.color="black")
+
+#Nebeneinander
+
+par(mfrow=c(1,2), mar=c(0,0,1,2))
+plot(Ida_GB, edge.arrow.size=.3, main="GB")
+plot(Ida_USA, edge.arrow.size=.3,  main="USA")
+
+```
+```{r}
+#Unterteilung
+
+#Unterteilung weiblich & männlich
+
+Ida_male <- delete.vertices(Ida, V(Ida) [sex==2])
+Ida_female <- delete.vertices(Ida, V(Ida) [sex==1])
+
+#Unterteilung schwarz & weiss
+
+Ida_black <- delete.vertices(Ida, V(Ida) [skincolor==2])
+Ida_white <- delete.vertices(Ida, V(Ida) [skincolor==1])
+
+```
+```{r fig.height=14, 5, fig.width=24}
+
+#Teilnetzwerke Unterstützer
+
+Ida_sup <- subgraph.edges(Ida, E(Ida)[relation==2])
+
+Ida_male_sup <- subgraph.edges(Ida_male, E(Ida_male)[relation==2])
+
+Ida_female_sup <- subgraph.edges(Ida_female, E(Ida_female)[relation==2])
+
+Ida_black_sup <- subgraph.edges(Ida_black, E(Ida_black)[relation==2])
+
+Ida_white_sup <- subgraph.edges(Ida_white, E(Ida_white)[relation==2])
+
+#plotting
+
+plot(Ida_male_sup, layout=layout_with_kk,
+     main="männliche Unterstützer",
+     edge.arrow.size=.7,
+     edge.width=E(Ida)$weight,
+     edge.color="black")
+
+plot(Ida_female_sup, layout=layout_with_kk,
+     main="weibliche Unterstützer",
+     edge.arrow.size=.7,
+     edge.width=E(Ida)$weight,
+     edge.color="black")
+
+plot(Ida_black_sup, layout=layout_with_kk,
+     main="schwarze Unterstützer",
+     edge.arrow.size=.7,
+     edge.width=E(Ida)$weight,
+     edge.color="black")
+
+plot(Ida_white_sup, layout=layout_with_kk,
+     main="weisse Unterstützer",
+     edge.arrow.size=.7,
+     edge.width=E(Ida)$weight,
+     edge.color="black")
+
+#Nebeneinander
+
+par(mfrow=c(1,3), mar=c(0,0,1,2))
+plot(Ida_white_sup, edge.arrow.size=.3, main="schwarze Unterstützer")
+plot(Ida_black_sup, edge.arrow.size=.3,  main="weiße Unterstützer")
+```
+
+```{r}
+#Teilnetzwerke Geschäftliche Beziehung
+
+Ida_bus <- subgraph.edges(Ida, E(Ida)[relation==4])
+
+Ida_male_bus <- subgraph.edges(Ida_male, E(Ida_male)[relation==4])
+Ida_female_bus <- subgraph.edges(Ida_female, E(Ida_female)[relation==4])
+
+Ida_black_bus <- subgraph.edges(Ida_white, E(Ida_white)[relation==4])
+Ida_white_bus <- subgraph.edges(Ida_black, E(Ida_black)[relation==4])
+
+
+
+#plotting
+
+Ida_male_bus
+Ida_female_bus
+Ida_black_bus
+Ida_white_bus
+
+plot(Ida_male_bus, layout=layout_with_kk,
+     main="männliche Geschäftsbzeihungen",
+     edge.arrow.size=.7,
+     edge.width=E(Ida)$weight,
+     edge.color="black")
+
+plot(Ida_female_bus, layout=layout_with_kk,
+     main="weibliche Geschäftsbeziehungen",
+     edge.arrow.size=.7,
+     edge.width=E(Ida)$weight,
+     edge.color="black")
+
+plot(Ida_black_bus, layout=layout_with_kk,
+     main="Geschäftsbeziehungen mit Schwarzen",
+     edge.arrow.size=.7,
+     edge.width=E(Ida)$weight,
+     edge.color="black")
+
+plot(Ida_white_bus, layout=layout_with_kk,
+     main="Geschäftsbeziehungen mit Weissen",
+     edge.arrow.size=.7,
+     edge.width=E(Ida)$weight,
+     edge.color="black")
+
+
+```
+
+```{r}
+
+#Teilnetzwerk nach Aufgabenbereich
+
+Ida_jour <- delete.vertices(Ida, V(Ida) [Journalismus==0])
+
+Ida_act <- delete.vertices(Ida, V(Ida) [Aktivismus==0])
+
+Ida_pol <- delete.vertices(Ida, V(Ida) [Politik==0])
+
+Ida_jour_act <- delete.vertices(Ida_jour, V(Ida_jour)[Aktivismus==0])
+
+#plotting
+
+plot(Ida_jour, layout=layout_with_kk,
+     main="Beziehungen zu Journalisten",
+     edge.arrow.size=.7,
+     edge.width=E(Ida)$weight,
+     edge.color="black")
+
+plot(Ida_act, layout=layout_with_kk,
+     main="Beziehungen zu Aktivisten",
+     edge.arrow.size=.7,
+     edge.width=E(Ida)$weight,
+     edge.color="black")
+
+plot(Ida_pol, layout=layout_with_kk,
+     main="Beziehungen zu Politikern",
+     edge.arrow.size=.7,
+     edge.width=E(Ida)$weight,
+     edge.color="black")
+
+plot(Ida_jour_act, layout=layout_with_kk,
+     main="Beziehungen zu aktivistischen Journalisten",
+     edge.arrow.size=.7,
+     edge.width=E(Ida)$weight,
+     edge.color="black")
+
+#Nebeneinander
+
+par(mfrow=c(1,3), mar=c(0,0,1,2))
+plot(Ida_jour, edge.arrow.size=.3, main="Journalisten")
+plot(Ida_act, edge.arrow.size=.3,  main="Aktivisten")
+plot(Ida_pol, edge.arrow.size=.3,  main="Politiker")
+
+```
+```{r}
+
+#Teilnetzwerk nach Motivation
+
+Ida_mot <- delete.vertices(Ida, V(Ida) [type==2])
+
+Ida_mot_both <- delete.vertices(Ida_mot, V(Ida_mot) [motivation==0])
+Ida_mot_both1 <- delete.vertices(Ida_mot_both, V(Ida_mot_both) [motivation==4])
+Ida_mot_both2 <- delete.vertices(Ida_mot_both1, V(Ida_mot_both1) [motivation==1])
+Ida_mot_both3 <- delete.vertices(Ida_mot_both2, V(Ida_mot_both2) [motivation==2])
+
+
+Ida_mot_black <- delete.vertices(Ida_mot_both1, V(Ida_mot_both1) [motivation==2])
+
+
+Ida_mot_woman <- delete.vertices(Ida_mot_both1, V(Ida_mot_both1) [motivation==1])
+
+#plotting
+
+plot(Ida_mot_black, layout=layout_with_kk,
+     main="Einsatz für Rechte von Schwarzen",
+     edge.arrow.size=.7,
+     edge.width=E(Ida)$weight,
+     edge.color="black")
+
+plot(Ida_mot_woman, layout=layout_with_kk,
+     main="Einsatz für Rechte von Frauen",
+     edge.arrow.size=.7,
+     edge.width=E(Ida)$weight,
+     edge.color="black")
+
+plot(Ida_mot_both3, layout=layout_with_kk,
+     main="Einsatz für Rechte von Schwarzen und Frauen",
+     edge.arrow.size=.7,
+     edge.width=E(Ida)$weight,
+     edge.color="black")
+
+#Nebeneinander
+
+par(mfrow=c(1,3), mar=c(0,0,1,2))
+plot(Ida_mot_black, edge.arrow.size=.3, main="Schwarzenrechtler")
+plot(Ida_mot_woman, edge.arrow.size=.3,  main="Frauenrechtler")
+plot(Ida_mot_both2, edge.arrow.size=.3,  main="Beides")
+
+```
+### TEILNETZWERKE ENDE
 
 
 ```
