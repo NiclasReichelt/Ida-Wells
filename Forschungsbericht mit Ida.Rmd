@@ -36,9 +36,11 @@ _Anmerkung 3_: Achten Sie auf die Editier-Möglichkeiten der Code-Chunks: nicht 
 *** Die Anleitung und die Anmerkungen natürlich löschen vor Abgabe ***
 
 __Abstract und Keywords__
-Wir analysieren die Beziehungsnetzwerke innerhalb eines gerichteten, one-mode Netzwerks von 38 Studierenden des Studiengangs CR/PR an der Hochschule der Medien, Stuttgart. Die Beziehungsdimensionen umfassen - angelehnt an die Studie von Krackhardt 1987 ein Zusammenarbeits- und Ratsuche Netzwerk. Ergänzend wurden (fiktive) Liebesbeziehungen unter den Studierenden untersucht. Die Analyse zeigt, dass das Gesamtnetzwerk in kleinere, spezifische Cliquen zerfällt, die stark anlassbezogen sind. Besonders bei der Ratsuche zeigt sich eine starke Orientierung an einigen Personen, die wahrscheinlich die Funktion des oder der Semestersprecher übernehmen und damit eine Meinungsführer-Rolle inne haben.
+Gegenstand dieser Forschungsarbeit ist Ida B. Wells, ihr Unterstützernetzwerk, ihr Einsatz für Frauenrechte und gegen Rassismus. Dafür wurden 58 Knoten mit 123 Kanten erfasst und in einem Ego-Netzwerk dargestellt, darunter Personen sowie Organisationen. 
+Im Netzwerk werden unterschiedliche Arten von Beziehungen zwischen den Knoten beschrieben. Neben Unterstützern stehen auch Freundschaften, Konflikte und Geschäftliche Verhältnisse im Fokus der Analyse. Außerdem wurde Wells Biographie nach Zeitperioden und Orten unterteilt. Die verschiedenen Lebensabschnitte, wie die Reisen nach Großbritannien, waren die Basis für die Unterteilung in Zeitperioden. Im Verlauf der Analyse liegt der Fokus auf der Wirkung, die Reise nach England auf Wells und ihr Netzwerk hatte. Dabei stellte sich heraus, dass sie sich danach vermehrt für Frauenrechte und “Club Activism” einsetzte. Entgegen unserer Annahme, dass ihre Unterstützer:innen vor allem dunkelhäutige Frauen waren, ergab sich, dass es sich auch um weiße Männer handelte.
 
-Keywords: Netzwerkanalyse, Studierende, Präferenznetzwerke, Cliquen, Meinungsführer
+Keywords: **Suffragetten, Wells, Netzwerkanalyse, Frauenrechte, Rassismus**
+
 
 
 # Einleitung
