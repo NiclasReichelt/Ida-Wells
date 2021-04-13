@@ -1,6 +1,6 @@
 ---
 title: "226305 Forschungsbericht (Beispiel)"
-author: "Niclas Reichelt, Sarah Huß, Penelope Hoeth, Karla Denzer, Daniel Guib"
+author: "Karla Denzer, Daniel Guib, Penelope Hoeth, Sarah Huß, Lisa Pham, Niclas Reichelt"
 date: "Sommersemester 2020"
 output:
   word_document:
