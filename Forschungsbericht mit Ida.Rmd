@@ -127,19 +127,6 @@ edgematrix <-as.matrix(el)
 
 # Zusammenführen von Edge- und Nodelist als igraph-Objekt s
 Ida <- graph_from_data_frame(d=edgematrix, vertices=nodes, directed=T)
-Ida
-
-V(Ida) [V(Ida)$type == 1] $shape <- "circle"
-V(Ida) [V(Ida)$type == 2] $shape <- "square"
-V(Ida) [V(Ida)$type == 1] $color <- "red"
-V(Ida) [V(Ida)$type == 2] $color <- "green"
-V(Ida) [V(Ida)$skincolor == 1] $color <- "blue"
-V(Ida) [V(Ida)$skincolor == 2] $color <- "orange"
-V(Ida) [V(Ida)$power == 1] $size <- 5
-V(Ida) [V(Ida)$power == 2] $size <- 10
-V(Ida) [V(Ida)$power == 3] $size <- 15
-
-edge.attributes(Ida)$weight
 ```
 
 ```{r Beschreibung des Netzwerks, message=FALSE, warning=FALSE, paged.print=TRUE}
@@ -167,8 +154,24 @@ Das Hauptnetzwerk besteht aus zwei Komponenten mit 32 und 6 Knoten, die nicht mi
 
 ```{r Einfache Visualisierung des erstellten Objekt, fig.height=10, fig.width=14, message=TRUE, warning=TRUE, paged.print=TRUE}
 
-# Pro-Tipp: die Ausgabe jedes "chunks" lässt sich über das Rädchen direkt unter der Chunk-Beschreibung einstellen. Hier habe ich die Bildfläche auf 10 auf 16 Inches eingestellt, d.h. das Netzwerk wird automatisch auf eine Fläche von 10 auf 16 Inches geplottet. Für den Anfang empfehle ich immer bei Netzwerken bis 50 Knoten mit dem Kamada-Kawai Algorithmus zu arbeiten, weil hier die Knoten immer an die gleiche Position gesetzt werden und wir dadurch Abweichungen besser erkennen können.
+V(Ida) [V(Ida)$type == 1] $shape <- "circle"
+V(Ida) [V(Ida)$type == 2] $shape <- "square"
+V(Ida) [V(Ida)$type == 2] $color <- "orange"
 
+V(Ida) [V(Ida)$sex == 2] $shape <- "rectangle"
+V(Ida) [V(Ida)$sex == 3] $shape <- "rectangle"
+
+
+V(Ida) [V(Ida)$type == 1] $frame.color = NA
+V(Ida) [V(Ida)$type == 1] $frame.color = NA 
+
+V(Ida) [V(Ida)$skincolor == 1] $color <- "lightblue"
+V(Ida) [V(Ida)$skincolor == 2] $color <- "lightgreen"
+V(Ida) [V(Ida)$skincolor == 3] $color <- "red"
+
+V(Ida) [V(Ida)$power == 1] $size <- 5
+V(Ida) [V(Ida)$power == 2] $size <- 10
+V(Ida) [V(Ida)$power == 3] $size <- 15
 
 plot(Ida,
      asp=0, 
