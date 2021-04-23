@@ -142,7 +142,16 @@ is.simple(Ida)
 
 #Analyse der Komponenten
 is_connected(Ida)
+
+## Die Ausgabe der logischen Operators "TRUE" bedeutet, dass es sich nur um eine Komponente handelt.
+
 components(Ida)
+
+##Die Knoten werden der Gruppen der Komponenten zugewiesen. Der Befehl zeigt uns die Größe und die Verteilung der Komponenten an.
+
+count_components(Ida)
+
+##Das Gesamtnetzwerk besteht aus einer einzigen Komponente. Das heißt alle Knoten haben eine Verbindung miteinander. 
 
 #Community Analyse
 #Anzahl der Cluster
@@ -150,12 +159,76 @@ clusters(Ida)
 #Clusterung 
 cluster_Ida <- cluster_walktrap(Ida)
 cluster_Ida
-#Modularitätswert
+
+## Wir wenden die Clusterung mit dem Walktrap-Algorithmus auf unser Netzwerk an.
+
+
+#berechnet den Modularitätswert
 modularity(cluster_Ida) 
-#Mitgliedschaft 
+#weist die Mitgliedschaft in die Communities zu.
 membership(cluster_Ida) 
 #visualisiert die Communities
-plot(cluster_Ida, Ida, edge.arrow.size=0.1, vertex.color="lightblue", main="Cluster Gesamtnertzwerk") 
+plot(cluster_Ida, Ida, edge.arrow.size=0.1, main="Walktrap Cluster") 
+
+## In der Darstellung werden uns 10 verschiedene Cluster angezeigt, mal kleinere, mal größere. Ein großes Cluster bildet sich durch den Algorithmus um die Journalist:innen rund um Ida. Innerhalb dieses Clusters gibt es mehrere Verbindungen zu anderen kleineren Clustern. Das könnte darauf hinweisen, dass das Netwerk um die Journalist:innen eine Relevanz in Idas Unterstützungsnetzwerk hat. 
+
+# Anzahl der Clusters
+clusters(Ida)
+
+# Komponenten auftrennen
+Ida_comp <- decompose.graph(Ida)
+Ida_comp
+
+# Komponenten neu benennen
+Ida_comp1 <- Ida_comp[[1]]
+
+
+# Berechnung der Cluster innerhalb der Komponente
+# erstellt die Berechnung für die Modularität und deren Teilgruppen
+Ida_cl <- cluster_walktrap(Ida_comp1)
+modularity(Ida_cl)
+membership(Ida_cl)
+
+# Clusterberechnung
+plot(Ida_comp1,
+     edge.arrow.size=.3,
+     vertex.color="lightblue",
+     vertex.frame.color=NA,
+     main="Komponente 1 ")
+
+# Berechnung der Cluster innerhalb der Komponente
+
+# Wir verwenden die oben erstellte Aufteilung der Cluster
+membership(Ida_cl)
+
+# mit dem Befehl sizes wird die Größe der jeweiligen Communities angezeigt
+sizes(Ida_cl)
+
+# communities() liefert eine Zuordnung der jeweiligen Knoten auf die Communities
+communities(Ida_cl)
+ 
+
+# erstellt die Berechnung für die Modularität und deren Teilgruppen
+Ida_eb <- cluster_edge_betweenness(Ida_comp1)
+Ida_eb
+
+plot(Ida_eb, Ida_comp1,
+     edge.arrow.size=.2,
+     main="Edge-Betweenness Cluster")
+
+##Um einen Vergleich von den Clustermethoden zu haben, generieren wir mithilfe von dem Algorithmus der Cluster-Edge-Betweeness eine weitere Darstellung des Netzwerks mit Clustern. Hier bilden sich in der Darstellung viel mehr Cluster als beim Walktrap-Algorithmus. Das liegt daran, dass die Cluster sich an den "Sollbruchstellen" des Netzwerks trennen. Da die meisten Verbindungen mit Ida bestehen und weniger untereinander, entstehen dadurch Cluster um einzelne Knoten. 
+
+# Berechnung Walktrap-Methode
+Ida_wt <- cluster_walktrap(Ida_comp1)
+
+# Visualisierung im Vergleich (Walktrap und Edge-Betweeness)
+
+par(mfrow=c(1,2), mar=c(0,0,2,1)) 
+plot(Ida_eb, Ida_comp1, edge.arrow.size=.2, main="Walktrap-Cluster")
+plot(Ida_wt, Ida_comp1, edge.arrow.size=.2, main="Edge-Between-Cluster")
+par(mfrow=c(1,1), mar=c(0,0,2,1)) 
+
+## Im Vergleich eignet sich der Walktrap-Algorithmus für unser Netzwerk deutlich besser als die Edge-Betweenness-Clusterung. 
 
 ## Dichte des Netzwerks
 edge_density(Ida, loops=FALSE)
@@ -221,7 +294,7 @@ Die Anzahl der Knoten ist gleich geblieben (38), aber die Anzahl der Kanten hat 
 
 __Nur starke Beziehungen im Gesamtnetzwerk__
 
-Für dieses Netzwerk sollen nun nur noch starke Beziehungen mit einem Gewicht von >= 6 angezeigt werden. Damit wird das Netzwerk in ein neues Teilnetzwerk zerlegt, das nur noch aus starken Beziehungen besteht:
+Für dieses Netzwerk sollen nun nur noch starke Beziehungen mit einem Gewicht von >= 2 angezeigt werden. Damit wird das Netzwerk in ein neues Teilnetzwerk zerlegt, das nur noch aus starken Beziehungen besteht:
 
 ```{r Starke Beziehungen im Gesamtnetzwerk, fig.height=9, fig.width=16, message=FALSE, warning=FALSE, paged.print=TRUE}
 
@@ -262,6 +335,8 @@ modularity(cluster_Ida_strong)
 membership(cluster_Ida_strong) 
 #visualisiert die Communities
 plot(cluster_Ida_strong, Ida_strong, edge.arrow.size=0.1, vertex.color="lightblue", main="Cluster Ida starke Beziehungen") 
+
+## In der Darstellung des Teilnetzwerks mit starken Beziehungen bilden sich 9 verschiedene Cluster. Hier müssen wir nochmal drüberschauen!!!!!!!!!!!!!!!!!
 
 
 
@@ -357,6 +432,8 @@ Ida_orga <- delete.vertices(Ida, V(Ida) [type==1])
 
 is_connected(Ida_person)
 is_connected(Ida_orga)
+count_components(Ida_person)
+count_components(Ida_orga)
 
 #Mit dem Befehl components teilen wir die Komponenten in Gruppen ein. Das Teilnetzwerk Ida_person besteht nur aus einer Komponente und muss deshalb nicht weiter analysiert werden.
 #zeigt uns die Verteilung und die Größe der Komponenten an
@@ -375,7 +452,9 @@ modularity(cluster_Ida_orga)
 #weist die Mitgliedschaft in die Communities zu
 membership(cluster_Ida_orga) 
 #visualisiert die Communities
-plot(cluster_Ida_orga, Ida_orga, edge.arrow.size=0.1, vertex.color="lightblue", main="Cluster Ida Orga") 
+plot(cluster_Ida_orga, Ida_orga, edge.arrow.size=0.1, main="Cluster Ida Organisationen") 
+
+## Jede Organisation bildet ein Cluster, weil diese untereinander nicht verbunden sind und sich anscheinend auch sonst nicht ähnlich sind. Selbst die Womens Suffrage Association und der Alpha Suffrage Club bilden jeweils ihr eigenes Netzwerk, obwohl die beiden Organisationen eine Verbindung haben. 
 
 #Anzahl der Cluster
 clusters(Ida_person)
@@ -387,8 +466,9 @@ modularity(cluster_Ida_person)
 #weist die Mitgliedschaft in die Communities zu
 membership(cluster_Ida_person) 
 #visualisiert die Communities
-plot(cluster_Ida_person, Ida_person, edge.arrow.size=0.1, vertex.color="lightblue", main="Cluster Ida Person") 
+plot(cluster_Ida_person, Ida_person, edge.arrow.size=0.1, main="Cluster Ida Personen") 
 
+## Hier bilden sich im Teilnetzwerk der Personen 8 Cluster. Viele der Personen, die im Gesamtnetzwerk bereits in einem Cluster waren, sind es dieses Mal auch. Das deutet darauf hin, dass diese Personen eine bestimmte Ähnlichkeit haben.
 
 #Teilnetzwerk USA
 
@@ -406,6 +486,7 @@ plot(Ida_USA2, layout=layout_with_fr,
 #Analyse der Komponenten 
 
 is_connected(Ida_USA2)
+count_components(Ida_USA2)
 
 co_Ida_USA2 <- components(Ida_USA2)
 groups(co_Ida_USA2)
@@ -421,8 +502,9 @@ modularity(cluster_Ida_USA2)
 #Mitgliedschaft 
 membership(cluster_Ida_USA2) 
 #visualisiert die Communities
-plot(cluster_Ida_USA2, Ida_USA2, edge.arrow.size=0.1, vertex.color="lightblue", main="Cluster Ida USA2") 
+plot(cluster_Ida_USA2, Ida_USA2, edge.arrow.size=0.1, main="Cluster Ida USA") 
 
+## Das Teilnetzwerk der Beziehungen von Ida in den USA weist 10 verschiedene Cluster auf. Lady Henry Somerset, Frances E. Willard und die Womans Christian Temperance Union sind aus Amerika und deshalb auch in diesem Teilnetzwerk. Ida B. Wells hat sie aber erst in Großbritannien kennengelernt. Nochmal zusammen drüber schauen!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
 
 #Teilnetzwerk GB
 
@@ -439,6 +521,7 @@ plot(Ida_GB2, layout=layout_with_fr,
 #Analyse der Komponenten 
 
 is_connected(Ida_GB2)
+count_components(Ida_GB2)
 
 co_Ida_GB2 <- components(Ida_GB2)
 groups(co_Ida_GB2)
@@ -454,8 +537,9 @@ modularity(cluster_Ida_GB2)
 #Mitgliedschaft 
 membership(cluster_Ida_GB2) 
 #visualisiert die Communities
-plot(cluster_Ida_GB2, Ida_GB2, edge.arrow.size=0.1, vertex.color="lightblue", main="Cluster Ida GB2") 
+plot(cluster_Ida_GB2, Ida_GB2, edge.arrow.size=0.1, main="Cluster Ida GB") 
 
+## Dieses Teilnetzwerk von den Beziehungen von Ida in Großbritannien zeigt uns lediglich 4 Cluster. Auch hier müssen wir zusammen drüber schauen!!!!!!!!!!!!!!!
 
 #Nebeneinander
 
@@ -476,10 +560,12 @@ Ida_female <- delete.vertices(Ida, V(Ida) [sex==1])
 #Analyse der Komponenten 
 
 is_connected(Ida_male)
+count_components(Ida_male)
 co_Ida_male <- components(Ida_male)
 groups(co_Ida_male)
 
 is_connected(Ida_female)
+count_components(Ida_female)
 co_Ida_female <- components(Ida_female)
 groups(co_Ida_female)
 
@@ -494,7 +580,9 @@ modularity(cluster_Ida_male)
 #Mitgliedschaft 
 membership(cluster_Ida_male) 
 #visualisiert die Communities
-plot(cluster_Ida_male, Ida_male, edge.arrow.size=0.1, vertex.color="lightblue", main="Cluster Ida male") 
+plot(cluster_Ida_male, Ida_male, edge.arrow.size=0.1, main="Cluster Ida Männer") 
+
+## Das Teilnetzwerk der Beziehungen von Ida zu Männern hat 8 verschiedene Cluster. Generell fällt die große Anzahl der Männerbeziehungen von Ida in diesem Teilnetzwerk auf. Allerdings sind auch viele Organisationen dabei, weil diese beim Geschlecht keine Angabe haben. Hier müssen wir auch nochmal zusammen drüber schauen!!!!!!!!!!!!!!!!!!!!!!!!!!!! Vllt auch die Organisationen rausnehmen für einen besseren Überblick.
 
 #Community Analyse
 #Anzahl der Cluster
@@ -507,8 +595,9 @@ modularity(cluster_Ida_female)
 #Mitgliedschaft 
 membership(cluster_Ida_female) 
 #visualisiert die Communities
-plot(cluster_Ida_female, Ida_female, edge.arrow.size=0.1, vertex.color="lightblue", main="Cluster Ida female") 
+plot(cluster_Ida_female, Ida_female, edge.arrow.size=0.1, main="Cluster Ida Frauen") 
 
+## Das Teilnetzwerk der Beziehungen von Ida mit Frauen weist 7 Cluster auf. Das grüne Cluster mit den gelben Knoten sind alles Verbindungen aus Großbritannien. Weitere britische Verbindungen tauchen aber auch im roten Cluster auf in orange. Nochmal drüber schauen zusammen!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
 
 #Unterteilung schwarz & weiss
 
@@ -518,10 +607,12 @@ Ida_white <- delete.vertices(Ida, V(Ida) [skincolor==1])
 #Analyse der Komponenten 
 
 is_connected(Ida_black)
+count_components(Ida_black)
 co_Ida_black <- components(Ida_black)
 groups(co_Ida_black)
 
 is_connected(Ida_white)
+count_components(Ida_white)
 co_Ida_white <- components(Ida_white)
 groups(co_Ida_white)
 
@@ -536,7 +627,9 @@ modularity(cluster_Ida_black)
 #Mitgliedschaft 
 membership(cluster_Ida_black) 
 #visualisiert die Communities
-plot(cluster_Ida_black, Ida_black, edge.arrow.size=0.1, vertex.color="lightblue", main="Cluster Ida black") 
+plot(cluster_Ida_black, Ida_black, edge.arrow.size=0.1, main="Cluster Ida Schwarze") 
+
+## Das Teilnetzwerk der Beziehungen von Ida mit Schwarzen hat 10 Cluster. Mary Church Terrell und Frederick Douglass tauchen wiederholt zusammen in einem Cluster auf. Auch nochmal zusammen anschauen! Oragnisationen raus!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
 
 #Community Analyse
 #Anzahl der Cluster
@@ -549,7 +642,7 @@ modularity(cluster_Ida_white)
 #Mitgliedschaft 
 membership(cluster_Ida_white) 
 #visualisiert die Communities
-plot(cluster_Ida_white, Ida_white, edge.arrow.size=0.1, vertex.color="lightblue", main="Cluster Ida white") 
+plot(cluster_Ida_white, Ida_white, edge.arrow.size=0.1, main="Cluster Ida Weiße") 
 
 
 
@@ -598,18 +691,22 @@ plot(Ida_white_sup, layout=layout_with_kk,
 #Analyse der Komponenten 
 
 is_connected(Ida_male_sup)
+count_components(Ida_male_sup)
 co_Ida_male_sup <- components(Ida_male_sup)
 groups(co_Ida_male_sup)
 
 is_connected(Ida_female_sup)
+count_components(Ida_female_sup)
 co_Ida_female_sup <- components(Ida_female_sup)
 groups(co_Ida_female_sup)
 
 is_connected(Ida_black_sup)
+count_components(Ida_black_sup)
 co_Ida_black_sup <- components(Ida_black_sup)
 groups(co_Ida_black_sup)
 
 is_connected(Ida_white_sup)
+count_components(Ida_white_sup)
 co_Ida_white_sup <- components(Ida_white_sup)
 groups(co_Ida_white_sup)
 
@@ -624,7 +721,9 @@ modularity(cluster_Ida_male_sup)
 #Mitgliedschaft 
 membership(cluster_Ida_male_sup) 
 #visualisiert die Communities
-plot(cluster_Ida_male_sup, Ida_male_sup, edge.arrow.size=0.1, vertex.color="lightblue", main="Cluster Ida male sup") 
+plot(cluster_Ida_male_sup, Ida_male_sup, edge.arrow.size=0.1, main="Cluster Ida Unterstützer") 
+
+## Das Teilnetzwerk der Unterstützer von Ida B. Wells haben lediglich 3 verschiedene Cluster. Aber warum????!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
 
 #Community Analyse
 #Anzahl der Cluster
@@ -637,7 +736,9 @@ modularity(cluster_Ida_female_sup)
 #Mitgliedschaft 
 membership(cluster_Ida_female_sup) 
 #visualisiert die Communities
-plot(cluster_Ida_female_sup, Ida_female_sup, edge.arrow.size=0.1, vertex.color="lightblue", main="Cluster Ida female sup") 
+plot(cluster_Ida_female_sup, Ida_female_sup, edge.arrow.size=0.1, main="Cluster Ida Unterstützerinnen") 
+
+## Das Teinetzwerk der Unterstützerinnen weist hingegen 5 Cluster auf. Die männlichen Unterstützer von Ida sind zwar mehr, aber die Unterstützerinnen haben mehr kleinere Cluster. Das liegt wahrscheinlich daran, dass die Unterstützerinnen sich eher in Organisationen engagieren.
 
 #Community Analyse
 #Anzahl der Cluster
@@ -650,7 +751,9 @@ modularity(cluster_Ida_black_sup)
 #Mitgliedschaft 
 membership(cluster_Ida_black_sup) 
 #visualisiert die Communities
-plot(cluster_Ida_black_sup, Ida_black_sup, edge.arrow.size=0.1, vertex.color="lightblue", main="Cluster Ida black sup") 
+plot(cluster_Ida_black_sup, Ida_black_sup, edge.arrow.size=0.1, main="Cluster Ida schwarze Unterstützer:innen") 
+
+## Das Teilnetzwerk der schwarzen Unterstützer:innen von Ida weist nur 4 Cluster auf. Nochmal drüber schauen zusammen!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!! 
 
 #Community Analyse
 #Anzahl der Cluster
@@ -663,15 +766,15 @@ modularity(cluster_Ida_white_sup)
 #Mitgliedschaft 
 membership(cluster_Ida_white_sup) 
 #visualisiert die Communities
-plot(cluster_Ida_white_sup, Ida_white_sup, edge.arrow.size=0.1, vertex.color="lightblue", main="Cluster Ida white sup") 
+plot(cluster_Ida_white_sup, Ida_white_sup, edge.arrow.size=0.1, main="Cluster Ida weiße Unterstützer:innen") 
 
-
+## Das Teilnetzwerk der weißen Unterstützer:innen von Ida zeigt uns auch nur vier verschiedene Cluster. Das grüne Cluster mit grünen Knoten sind wieder die Verbindungen aus Großbritannien. Nochmal zusammen anschauen!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
 
 #Nebeneinander
 
 par(mfrow=c(1,3), mar=c(0,0,1,2))
-plot(Ida_white_sup, edge.arrow.size=.3, main="schwarze Unterstützer")
-plot(Ida_black_sup, edge.arrow.size=.3,  main="weiße Unterstützer")
+plot(Ida_white_sup, edge.arrow.size=.3, main="schwarze Unterstützer:innen")
+plot(Ida_black_sup, edge.arrow.size=.3,  main="weiße Unterstützer:innen")
 ```
 
 ```{r}
@@ -713,7 +816,7 @@ plot(Ida_black_bus, layout=layout_with_kk,
      edge.color="black")
 
 plot(Ida_white_bus, layout=layout_with_kk,
-     main="Geschäftsbeziehungen mit Weissen",
+     main="Geschäftsbeziehungen mit Weißen",
      edge.arrow.size=.7,
      edge.width=E(Ida)$weight,
      edge.color="black")
@@ -721,18 +824,22 @@ plot(Ida_white_bus, layout=layout_with_kk,
 #Analyse der Komponenten 
 
 is_connected(Ida_male_bus)
+count_components(Ida_male_bus)
 co_Ida_male_bus <- components(Ida_male_bus)
 groups(co_Ida_male_bus)
 
 is_connected(Ida_female_bus)
+count_components(Ida_female_bus)
 co_Ida_female_bus <- components(Ida_female_bus)
 groups(co_Ida_female_bus)
 
 is_connected(Ida_black_bus)
+count_components(Ida_black_bus)
 co_Ida_black_bus <- components(Ida_black_bus)
 groups(co_Ida_black_bus)
 
 is_connected(Ida_white_bus)
+count_components(Ida_white_bus)
 co_Ida_white_bus <- components(Ida_white_bus)
 groups(co_Ida_white_bus)
 
@@ -747,7 +854,9 @@ modularity(cluster_Ida_male_bus)
 #Mitgliedschaft 
 membership(cluster_Ida_male_bus) 
 #visualisiert die Communities
-plot(cluster_Ida_male_bus, Ida_male_bus, edge.arrow.size=0.1, vertex.color="lightblue", main="Cluster Ida male bus") 
+plot(cluster_Ida_male_bus, Ida_male_bus, edge.arrow.size=0.1, main="Cluster Ida Geschäftspartner") 
+
+## Das Teilnetzwerk der Geschäftspartner von Ida hat 6 verschiedene Cluster. Jim Wells und Dr. Gray sind auch in diesem Netzwerk, weil sie untereinander eine geschäftliche Beziehung haben, aber keine zu Ida. Nochmal zusammen anschauen!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
 
 #Community Analyse
 #Anzahl der Cluster
@@ -760,7 +869,9 @@ modularity(cluster_Ida_female_bus)
 #Mitgliedschaft 
 membership(cluster_Ida_female_bus) 
 #visualisiert die Communities
-plot(cluster_Ida_female_bus, Ida_female_bus, edge.arrow.size=0.1, vertex.color="lightblue", main="Cluster Ida female bus") 
+plot(cluster_Ida_female_bus, Ida_female_bus, edge.arrow.size=0.1, main="Cluster Ida Geschäftsparterinnen") 
+
+## Das Teilnetzwerk von den Geschäftspartnerinnen von Ida zeigt 4 verschiedene Cluster auf. Nochmal alle zusammen drüber schauen!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
 
 #Community Analyse
 #Anzahl der Cluster
@@ -773,7 +884,9 @@ modularity(cluster_Ida_black_bus)
 #Mitgliedschaft 
 membership(cluster_Ida_black_bus) 
 #visualisiert die Communities
-plot(cluster_Ida_black_bus, Ida_black_bus, edge.arrow.size=0.1, vertex.color="lightblue", main="Cluster Ida black bus") 
+plot(cluster_Ida_black_bus, Ida_black_bus, edge.arrow.size=0.1, main="Cluster Ida schwarze Geschäftspartner:innen") 
+
+## Das Teilnetzwerk der schwarzen Geschäftsparter:innen von Ida stellt 4 verschiedene Cluster dar. Auch hier gibt es wieder 2 Cluster die keine geschäftliche Beziehung zu Ida besitzen, aber wiederum untereinander. Nochmal zusammen drüber schauen!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
 
 #Community Analyse
 #Anzahl der Cluster
@@ -786,10 +899,9 @@ modularity(cluster_Ida_white_bus)
 #Mitgliedschaft 
 membership(cluster_Ida_white_bus) 
 #visualisiert die Communities
-plot(cluster_Ida_white_bus, Ida_white_bus, edge.arrow.size=0.1, vertex.color="lightblue", main="Cluster Ida white bus") 
+plot(cluster_Ida_white_bus, Ida_white_bus, edge.arrow.size=0.1, main="Cluster Ida weiße Geschäftspartner:innen") 
 
-
-
+## Beim Teilnetzwerk der weißen Geschäftsparter:innen von Ida hingegen sind es 6 Cluster. Auch hier gibt es Knoten die keine geschäftliche Beziehung zu Ida haben, aber geschäftliche Beziehungen zu Knoten aus anderen Clustern. Nochmal zusammen drüber schauen!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
 
 ```
 
@@ -834,18 +946,22 @@ plot(Ida_jour_act, layout=layout_with_kk,
 #Analyse der Komponenten 
 
 is_connected(Ida_jour)
+count_components(Ida_jour)
 co_Ida_jour <- components(Ida_jour)
 groups(co_Ida_jour)
 
 is_connected(Ida_act)
+count_components(Ida_act)
 co_Ida_act <- components(Ida_act)
 groups(co_Ida_act)
 
 is_connected(Ida_pol)
+count_components(Ida_pol)
 co_Ida_pol <- components(Ida_pol)
 groups(co_Ida_pol)
 
 is_connected(Ida_jour_act)
+count_components(Ida_jour_act)
 co_Ida_jour_act <- components(Ida_jour_act)
 groups(co_Ida_jour_act)
 
@@ -861,7 +977,9 @@ modularity(cluster_Ida_jour)
 #Mitgliedschaft 
 membership(cluster_Ida_jour) 
 #visualisiert die Communities
-plot(cluster_Ida_jour, Ida_jour, edge.arrow.size=0.1, vertex.color="lightblue", main="Cluster Ida Journalisten") 
+plot(cluster_Ida_jour, Ida_jour, edge.arrow.size=0.1, main="Cluster Ida Journalist:innen") 
+
+## Das Teilnetzwerk der Beziehungen zu Journalist:innen hat 5 verschiedene Cluster. Nochmal zusammen drüber schauen!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
 
 #Community Analyse
 #Anzahl der Cluster
@@ -874,7 +992,9 @@ modularity(cluster_Ida_act)
 #Mitgliedschaft 
 membership(cluster_Ida_act) 
 #visualisiert die Communities
-plot(cluster_Ida_act, Ida_act, edge.arrow.size=0.1, vertex.color="lightblue", main="Cluster Ida Aktivisten") 
+plot(cluster_Ida_act, Ida_act, edge.arrow.size=0.1, main="Cluster Ida Aktivist:innen") 
+
+## Das Teilnetzwerk der Beziehungen zu Aktivist:innen zeigt uns 7 verschiedene Cluster. Nochmal zusammen drüber schauen!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
 
 #Community Analyse
 #Anzahl der Cluster
@@ -887,7 +1007,9 @@ modularity(cluster_Ida_pol)
 #Mitgliedschaft 
 membership(cluster_Ida_pol) 
 #visualisiert die Communities
-plot(cluster_Ida_pol, Ida_pol, edge.arrow.size=0.1, vertex.color="lightblue", main="Cluster Ida Politiker") 
+plot(cluster_Ida_pol, Ida_pol, edge.arrow.size=0.1, main="Cluster Ida Politiker:innen") 
+
+## Das Teilnetzwerk der Beziehungen zu Politiker:innen stellt lediglich 3 verschiedene Cluster dar, wobei ein Cluster nur die National American Woman Suffrage Association umschließt. Nochmal zusammen drüber schauen!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
 
 #Community Analyse
 #Anzahl der Cluster
@@ -900,15 +1022,16 @@ modularity(cluster_Ida_jour_act)
 #Mitgliedschaft 
 membership(cluster_Ida_jour_act) 
 #visualisiert die Communities
-plot(cluster_Ida_jour_act, Ida_jour_act, edge.arrow.size=0.1, vertex.color="lightblue", main="Cluster Ida Journalisten & Aktivisten") 
+plot(cluster_Ida_jour_act, Ida_jour_act, edge.arrow.size=0.1, main="Cluster Ida Journalist:innen & Aktivist:innen") 
 
+## Das Teilnetzwerk der Beziehungen zu Journalist:innen und Aktivist:innen zusammen clustert nur zweimal. Nochmal zusammen drüber schauen!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
 
 #Nebeneinander
 
 par(mfrow=c(1,3), mar=c(0,0,1,2))
-plot(Ida_jour, edge.arrow.size=.3, main="Journalisten")
-plot(Ida_act, edge.arrow.size=.3,  main="Aktivisten")
-plot(Ida_pol, edge.arrow.size=.3,  main="Politiker")
+plot(Ida_jour, edge.arrow.size=.3, main="Journalist:innen")
+plot(Ida_act, edge.arrow.size=.3,  main="Aktivist:innen")
+plot(Ida_pol, edge.arrow.size=.3,  main="Politiker:innen")
 
 ```
 ```{r}
@@ -951,14 +1074,17 @@ plot(Ida_mot_both3, layout=layout_with_kk,
 #Analyse der Komponenten 
 
 is_connected(Ida_mot_black)
+count_components(Ida_mot_black)
 co_Ida_mot_black <- components(Ida_mot_black)
 groups(co_Ida_mot_black)
 
 is_connected(Ida_mot_woman)
+count_components(Ida_mot_woman)
 co_Ida_mot_woman <- components(Ida_mot_woman)
 groups(co_Ida_mot_woman)
 
 is_connected(Ida_mot_both3)
+count_components(Ida_mot_both3)
 co_Ida_mot_both3 <- components(Ida_mot_both3)
 groups(co_Ida_mot_both3)
 
@@ -974,7 +1100,9 @@ modularity(cluster_Ida_mot_black)
 #Mitgliedschaft 
 membership(cluster_Ida_mot_black) 
 #visualisiert die Communities
-plot(cluster_Ida_mot_black, Ida_mot_black, edge.arrow.size=0.1, vertex.color="lightblue", main="Cluster Motivation Schwarzenrechte") 
+plot(cluster_Ida_mot_black, Ida_mot_black, edge.arrow.size=0.1, main="Cluster Motivation Schwarzenrechte") 
+
+## Das Teilnetzwerk der Beziehungen zu Knoten mit dem Einsatz für die Rechte der Schwarzen weist 5 verschiedene Cluster auf. Nochmal zusammen drüber schauen!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
 
 #Community Analyse
 #Anzahl der Cluster
@@ -987,7 +1115,9 @@ modularity(cluster_Ida_mot_woman)
 #Mitgliedschaft 
 membership(cluster_Ida_mot_woman) 
 #visualisiert die Communities
-plot(cluster_Ida_mot_woman, Ida_mot_woman, edge.arrow.size=0.1, vertex.color="lightblue", main="Cluster Motivation Frauenrechte") 
+plot(cluster_Ida_mot_woman, Ida_mot_woman, edge.arrow.size=0.1, main="Cluster Motivation Frauenrechte") 
+
+## Das Teilnetzwerk der Beziehungen zu Knoten mit dem Einsatz für Frauenrechte stellt 4 verschiedene Cluster dar. Nochmal zusammen drüber schauen!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
 
 #Community Analyse
 #Anzahl der Cluster
@@ -1000,14 +1130,15 @@ modularity(cluster_Ida_mot_both3)
 #Mitgliedschaft 
 membership(cluster_Ida_mot_both3) 
 #visualisiert die Communities
-plot(cluster_Ida_mot_both3, Ida_mot_both3, edge.arrow.size=0.1, vertex.color="lightblue", main="Cluster Motivation Schwarzen- und Frauenrechte") 
+plot(cluster_Ida_mot_both3, Ida_mot_both3, edge.arrow.size=0.1, main="Cluster Motivation Schwarzen- und Frauenrechte") 
 
+## Das Teilnetzwerk der Beziehungen zu Knoten, die sich für Schwarzen- und Frauenrechte gleichermaßen einsetzen, zeigt 3 verschiedene Cluster auf. Nochmal zusammen drüber schauen!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
 
 #Nebeneinander
 
 par(mfrow=c(1,3), mar=c(0,0,1,2))
-plot(Ida_mot_black, edge.arrow.size=.3, main="Schwarzenrechtler")
-plot(Ida_mot_woman, edge.arrow.size=.3,  main="Frauenrechtler")
+plot(Ida_mot_black, edge.arrow.size=.3, main="Schwarzenrechtler:innen")
+plot(Ida_mot_woman, edge.arrow.size=.3,  main="Frauenrechtler:innen")
 plot(Ida_mot_both2, edge.arrow.size=.3,  main="Beides")
 
 ```
