@@ -1002,7 +1002,6 @@ plot(Ida_mot_both3, layout=layout_with_kk,
      edge.color="black")
 
 
-
 #Analyse der Komponenten 
 
 is_connected(Ida_mot_black)
@@ -1053,9 +1052,10 @@ plot(Ida_mot_woman, edge.arrow.size=.3,  main="Frauenrechtler")
 plot(Ida_mot_both2, edge.arrow.size=.3,  main="Beides")
 
 ```
-ANALYSE
-ANALYSE
-ANALYSE
+## Schwarzenrechtler: Anhand des Teilnetzwerks kann man erkennen, dass erheblich mehr Männer involviert waren als Frauen. Außerdem ist die vergleichsweise hohe Anzahl an weißen, einflussreicheren Personen zu beachten, die sich für Schwarzenrechte eingesetzt haben wie z.B. William Penn Nixon. Zu diesen unterhält Ida duchschnittlich schwache Beziehungen, während sie zu Schwarzen oft eine stärkere Verbindung hat. Das lässt sich mit der damaligen Hierarchie erklären. Aufgrund der ungleichen Machtverhältnisse war Ida insbesondere auf die Unterstützung von weißen Personen angewiesen, um ihre politischen Interessen durchzusetzen.
+## Frauenrechtler: Hier sind mehr Frauen als Männer erkennbar, die sich für Frauenrechte eingesetzt haben. Besonders auffällig ist die hohe Anzahl an weißen Personen. Hingegen hat sich bei vier Schwarzen lediglich ein Mann für Frauenrechte eingesetzt, nämlich Frederick Douglass. Deutlich wird hier die Stärke der Beziehungen: Fast zu allen Knoten hat Ida eine starke Beziehung.
+## Beides: Wie schon in den beiden vorherigen Teilnetzwerken zu sehen war, haben sich vergleichsweise weniger Leute für Frauenrechte eingesetzt als für Schwarzenrechte. Auch die Anzahl an Personen, deren Engagement beiden Fraktionen galt, ist eher klein und ist sehr ähnlich zu dem Netzwerk der Frauenrechtler. Ein interessanter Aspekt: Frauen, die sich für Frauenrechte ausgesprochen haben, haben sich auch für Schwarzenrechte engagiert. Im Gegensatz dazu haben sich Schwarzenrechtler oft auch nur für diese eingesetzt. Das sieht man auch in den Clustern.
+
 ```{r Degree - Teilnetzwerke nach Motivation , fig.height=9, fig.width=16 paged.print=FALSE}
 
 # Degree nach Motivation
@@ -1075,9 +1075,6 @@ degree(Ida_mot_both, mode="all")
 which.max(degree(Ida_mot_both, mode="all"))
 ## Wie erwartet haben Booker T Washington, W. E. B. DuBois, Susan B. Anthony und Mary Church Terrell den höchsten Degreewert nach Ida. 
 ```
-ANALYSE
-ANALYSE
-ANALYSE
 
 
 *Teilnetzwerk Vor und nach GB im Vergleich*
