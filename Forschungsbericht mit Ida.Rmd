@@ -1063,17 +1063,17 @@ plot(Ida_mot_both2, edge.arrow.size=.3,  main="Beides")
 # Motivation: Rechte für Schwarze 
 degree(Ida_mot_black, mode="all")
 which.max(degree(Ida_mot_black, mode="all"))
-## Nach Ida (47 Verbindungen) haben Booker T Washington und W. E. B. DuBois mit 8 Verbindungen den höchsten Degreewert. Danach folgt Susan B Anthony mit 7 Verbindungen.
+## Nach Ida (47 Verbindungen) haben Booker T Washington und W. E. B. DuBois mit 8 Verbindungen den höchsten Degreewert. Washington und DuBois waren bekannte Schwarzenrechtler und Gründer des Niagara Movements, das später sogar Teil des NAACP wurde. Danach folgt Susan B Anthony mit 7 Verbindungen. Durch die Gründung des Alpha Suffrage Club, zusammen mit Ida, hat sie sich gegen die Standards der US-amerikanischen Suffragetten gestellt und auch schwarze Frauen unterstützt.
 
 # Motivation: Frauenrechte
 degree(Ida_mot_woman, mode="all")
 which.max(degree(Ida_mot_woman, mode="all"))
-## Booker T Washington und W. E. B. DuBois haben mit 8 Verbindungen den zweithöchsten Degreewert nach Ida (nach 47 Verbindungen). Darauf folgen Susan B. Anthony (7 Verbindungen) und Mary Church Terrell (6 Verbindungen). Verhätnismäßig wenige Personen haben wenige Verbindungen zu anderen Knoten. 
+## Booker T Washington und W. E. B. DuBois haben mit 8 Verbindungen den zweithöchsten Degreewert nach Ida (nach 47 Verbindungen). Darauf folgen Susan B. Anthony (7 Verbindungen) und Mary Church Terrell (6 Verbindungen). Verhätnismäßig wenige Personen haben Verbindungen zu anderen Knoten. Überraschend ist, dass hier zwei schwarze Männer nach Ida den höchsten Degree-Wert innehaben. Diese Personen engagieren sich zugleich stark für Schwarzenrechte ein. Schaut man sich allerdings das Teilnetzwerk an, haben sich insgesamt mehr Frauen als Männer für Frauenrechte eingesetzt.
 
 # Motivation: Frauenrechte & Schwarzenrechte
 degree(Ida_mot_both, mode="all")
 which.max(degree(Ida_mot_both, mode="all"))
-## Wie erwartet haben Booker T Washington, W. E. B. DuBois, Susan B. Anthony und Mary Church Terrell den höchsten Degreewert nach Ida. 
+## Wie erwartet haben Booker T Washington, W. E. B. DuBois, Susan B. Anthony und Mary Church Terrell den höchsten Degreewert nach Ida. Das hat sich auch in den einzelnen Teilnetzwerken erkenntlich gezeigt.
 ```
 
 
