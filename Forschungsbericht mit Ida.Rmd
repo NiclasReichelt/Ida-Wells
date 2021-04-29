@@ -1243,11 +1243,11 @@ which.max(betweenness(Ida))
 
 ## Ida: 0.2087180986 ; Frederick Douglass 0.0039450614 ; Jim Wells 0.0031170855 ; Catherine Impey 0.0046756283 ; Lady Henry Somerset 0.0026300409 ; Frances E Willard 0.0032144944 ;  William Woodall 0.0002922268 ; Susan B. Anthony 0.0055523086 ; Mary Church Terrell 0.0034580168 ; Bishop Alexander Walters 0.0169978570 ; National Association for the Advancement of Colored People 0.0230692160 ; Booker T Washington 0.0355834794 ; W. E. B. DuBois 0.1004334697 ; William Monroe Trotter of Boston 0.0002922268 ; Madam C J Walker 0.0057714787
 
-## Wie erwartet hat Ida den höchsten Betweenness-Wert (0.209). Durch sie erreichen andere Knoten in ihrem Umfeld mehr Verbindungen. Damit weist Ida eine hohe Zentralität auf, wodurch der Knoten eine gute Kontrolle über die Kommunikation unter den Alteri hat.Der Wert stimmt nicht mit unseren Degree-Werten überein, dennoch hat Ida auch den höchsten Degree-Wert.
+## Wie erwartet hat Ida den höchsten Betweenness-Wert 0.209 = 20,9%. Durch sie erreichen andere Knoten in ihrem Umfeld mehr Verbindungen. Damit weist Ida eine hohe Zentralität auf, wodurch der Knoten eine gute Kontrolle über die Kommunikation unter den Alteri hat. Der Wert stimmt nicht mit unseren Degree-Werten überein, dennoch hat Ida auch den höchsten Degree-Wert.
 
 
-########## weist dem Broker im  Gesamtnetzwerk eine Farbe zu
-V(Ida)[V(Ida)$name == 18]$vertex.color <- "red"
+# weist dem Broker im  Gesamtnetzwerk eine Farbe zu
+V(Ida)[V(Ida)$name == Ida]$vertex.color <- "red"
 
 plot(Ida, layout=layout_with_kk,
      edge.arrow.size=.4,
