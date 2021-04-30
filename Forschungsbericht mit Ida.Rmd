@@ -1479,7 +1479,7 @@ Die Edge-Attribute sind unterschiedlich verteilt. Durch die Erhebung haben die S
 
 
 ## Datenmaterial und Skript
-[Datensatz](https://github.com/hdm-crpr/226305/blob/master/data/crpr2/readme.md)
+[Datensatz](https://github.com/NiclasReichelt/Ida-Wells)
 
 ## Team, Arbeitsaufwand und Lessons Learned
 
