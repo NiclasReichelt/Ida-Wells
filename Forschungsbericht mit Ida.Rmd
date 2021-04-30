@@ -688,43 +688,51 @@ plot(Ida_male_sup, edge.arrow.size=.3,  main="männliche Unterstützer")
 plot(Ida_female_sup, edge.arrow.size=.3,  main="weibliche Unterstützer")
 ```
 
+#Interpretation
+Entgegen unserer Erwartungen hatte Ida mehr weiße Unterstützer:innen als Schwarze. Wahrscheinlich liegt das daran, dass Weiße damals mehr finanzielle Mittel hatten, um sie unterstützen zu können. Während die weißen Personen in ihrem Umfeld als Einzelperson einflussreicher waren, ist das Gegenteil bei den Organisationen der Fall. Das führen wir darauf zurück, dass marginalisierte Gruppen sich öfter organisieren (müssen), um Einfluss zu haben. Gerade schwarze Unterstützerinnen haben sich in einflussreichen Organisationen vereint und waren untereinander eng verbunden. Ihr Teilnetzwerk weist lediglich 4 Cluster auf.
+
+Im  Unterstützernetzwerk sind schwarze und weiße Männer gleichermaßen vertreten. Bishop Alexander Walters und T. Thomas Fortune stechen hier als verbindende Elemente besonders hervor, was auch in der Clusteranalyse zu erkennen ist. 
+
+Im  Unterstützerinnennetzwerk sind weiße Frauen mehr vertreten als Schwarze. Das liegt wahrscheinlich daran, dass Frauen damals sowieso schon wenig finanzielle Mittel etc. hatten - schwarze Frauen noch weniger. Auch hier erkennt man mehr Organisationen, aus dem oben genannten Grund. Die vielen, kleinen Cluster lassen sich auch darauf zurückführen, dass sich die Unterstützerinnen verstärkt in Organisationen engagiert haben. Die Frauen sind alle ähnlich einflussreich, unabhängig von der Hautfarbe. Das steht im Kontrast zu den Männern. Das lässt sich damit begründen, dass Frauen damals sehr einflussreich sein mussten, um überhaupt wahrgenommen zu werden. 
+
+
 ```{r Degree - Teilnetzwerke der Unterstützer , fig.height=9, fig.width=16 paged.print=FALSE}
+
 # Degree Unterstützer:innen
 
 degree(Ida_sup, mode="all")
 which.max(degree(Ida_sup, mode="all"))
+
 # Mary Church Terrell hat mit 7 Verbindungen den nächsthöchsten Degreewert nach Ida (28 Verbindungen). Bishop Alexander Walters, Susan B Anthony, Frances E Willard und Lady Henry Somerset folgen danach mit 5 Verbindungen.
+
 
 # Weibliche Unterstützerinnen
 
 degree(Ida_female_sup, mode="all")
 which.max(degree(Ida_female_sup, mode="all"))
+
 ## Ida hat mit 13 Verbindungen den höchsten Degreewert. Susan B Anthony und Frances E Willard haben mit 4 Verbindungen den zweithöchsten Degreewert. Die meisten anderen Unterstützerinnen haben entweder 2 Verbindungen oder sogar nur eine Verbindung.
 
 # Schwarze Unterstützer
 degree(Ida_black_sup, mode="all")
 which.max(degree(Ida_black_sup, mode="all"))
+
 ## Mit 11 Verbindungen hat Ida den höchsten Degreewert, mit 6 Verbindungen hat Mary Church Terrell den zweithöchsten Degreewert und Bishop Alexander Walters und T. Thomas Fortune mit 4 Verbindungen den dritthöchsten Wert. Im schwarzen Unterstützernetzwerk haben einige Personen einen hohen Degreewert, vor allem im Vergleich zum weißen Unterstützernetzwerk.
 
 #Männliche Unterstützer
 degree(Ida_male_sup, mode="all")
 which.max(degree(Ida_male_sup, mode="all"))
+
 ## Bishop Alexander Walters und T. Thomas Fortune haben mit 4 Verbindungen (nach Ida) den höchsten Degreewert. Insgesamt haben acht Knoten lediglich eine Verbindung.
 
 # Weiße Unterstützer*innen
 degree(Ida_white_sup, mode="all")
 which.max(degree(Ida_white_sup, mode="all"))
+
 ## Nach Ida haben Lady Henry Somerset und Frances E Willard den nächsthöchsten Degreewert mit 5 Verbindungen. Auffallend ist, dass viele Personen zu wenig anderen Knoten eine Verbindung haben. Wir haben allgemein beobachtet, dass schwarze Personen in Idas Netzwerk einen höheren Degreewert haben und besser vernetzt sind.
 
 
 ```
-
-#Interpretation
-
-Entgegen unserer Erwartungen hatte Ida mehr weiße Unterstützer:innen, als Schwarze. Wahrscheinlich liegt das daran, dass Weiße damals mehr finanzielle Mittel hatten, um sie zu unterstützen zu können. Währrend die weißen Personen in ihrem Umfeld als Einzelperson einflussreicher waren, ist das Gegenteil bei den Organisationen der Fall. Das führen wir darauf zurück, dass marginalisierte Gruppen sich öfter organisieren (müssen), um Einfluss zu haben. Gerade schwarze Unterstützerinnen haben sich in einflussreichen Organisationen vereint und waren untereinander eng verbunden. Ihr Teilnetzwerk weist lediglich 4 Cluster auf.
-Im  Unterstützernetzwerk sind schwarze und weiße Personen gleichermaßen vertreten. Bishop Alexander Walters und T. Thomas Fortune stechen hier als verbindende Elemente besonders hervor, was auch in der Clusteranalyse zu erkennen ist. 
-Im  Unterstützerinnennetzwerk sind weiße Personen mehr vertreten, als Schwarze. Das liegt wahrscheinlich daran, dass Frauen dmals sowieso schon wenig finanzielle Mittel etc. hatten - schwarze Frauen noch weniger. Auch hier erkennt man mehr Organisationen, wahrscheinlich aus dem oben genannten Grund. Die vielen, kleinen Cluster lassen sich wahrscheinlich auch darauf zurückführen, dass sich die Unterstützerinnen verstärkt in Organisationen engagiert haben. Die Frauen sind alle ähnlich einflussreich, unabhängig von der Hautfarbe. Das steht im Kontrast mit den Männern. Das lässt sich vielleicht darin begründen, dass Frauen damals sehr einflussreich sein mussten, um überhaupt wahrgenommen werden zu können. 
-
 
 #*Teilnetzwerk Geschäftsbeziehung im Vergleich*
 
