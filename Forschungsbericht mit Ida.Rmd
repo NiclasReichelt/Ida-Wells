@@ -1229,7 +1229,7 @@ plot(cluster_Ida_afterGB_orga2, Ida_afterGB_orga2, edge.arrow.size=0.1, main="Cl
 ```
 ## Organisationen: Man erkennt eindeutig, dass die Verbindungen von Ida B. Wells zu Organisationen nach den Großbritannien-Reisen deutlich zugenommen haben: von davor 2 zu danach 9 Organisationen. Der Großteil von den 9 Organisationen sind zudem welche, die sich für Schwarzen- oder Frauenrechte einsetzen. Daraus lässt sich vermuten, dass die Großbritannien-Reisen ihr wie vermutet das "Club-Life" näher gebracht haben. 
 ## Personen: Außerdem sieht man, dass die Verbindungen zu weißen Männern oder Frauen sich nach den Reisen mehr als verdreifacht haben, vor allem zu einflussreichen Weißen. Naheliegend wäre die Annahme, dass ihr auf der Großbritannien-Reise klar geworden ist, dass sie auch auf reinflußreiche Weiße setzen muss um was zu erreichen oder, dass sie in Großbritannien bereits Aufmerksamkeit bei den Weißen erregen konnte oder Kontakt zu Ihnen herstellen konnte.
-## Cluster: Durch die Clusterung bilden sich nach den Reisen zwei größere Cluster, das limettengrüne und das orangene. Das Orangene besticht vor allem durch seine Verbindungen unter sich.
+## Cluster: Durch die Clusterung bilden sich nach den Reisen zwei größere Cluster, das limettengrüne und das orangene. Das Orangene besticht vor allem durch seine Verbindungen unter sich. In dem orangenen Cluster sind die männlichen, schwarzen Bürgerrechtler:innen rund um Booker T. Washington, die unter sich sehr vernetzt waren. Im Gegensatz dazu, handelt es sich im limettengrünen vor allem um Einzelpersonen, die sich für die Rechte der Schwarzen eingesetzt haben.
 
 ```{r Degree - Teilnetzwerke vor und nach GB , fig.height=9, fig.width=16 paged.print=FALSE}
 
