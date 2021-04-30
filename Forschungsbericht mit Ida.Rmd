@@ -55,19 +55,14 @@ Ida B. Wells war ihrer Zeit weit voraus und riskierte mehrmals ihr Leben für ih
 
 ## Arbeitshypothesen
 Wir gehen von folgenden Arbeitshypothesen aus:
-Zu Beginn der Recherche rechneten wir damit, dass Idas Unterstützernetzwerk vor allem aus dunkelhäutigen Frauen bestand. Wir dachten, dass sie, als Betroffene, ein höheres Interesse daran haben würden, als weiße Männer beispielsweise. 
-Außerdem gingen wir davon aus, dass sich die Personen in ihrem Umfeld vermehrt für Frauenrechte einsetzten, anstatt für die Rechte von Schwarzen. Das liegt auch daran, dass wir im Kontext der Suffragettenbewegung (Alpha Suffrage Club) das erste Mal von ihr gehört haben. 
-Unsere Vermutung war, dass die Journalist*innen in ihrem Umfeld politisch aktiv waren. Gerade, da die meisten für Zeitungen schrieben, die eine gewisse politische Ausrichtungen hatten. 
-Der Reise nach Großbritannien rechneten wir einen großen Einfluss zu und gingen davon aus, dass sie sich danach verstärkt für Frauenrechte eingesetzt hat, da die Suffragettenbewegung hier ihre Wurzeln hat.
- 
-Unterstützer sind vor allem dunkelhäutige Frauen
-Mehr Leute haben sich für Frauenrechte eingesetzt, als für die Rechte von Schwarzen (in Idas Umfeld)
-fast alle Journalisten sind in Politik/Aktivismus aktiv (in Idas Umfeld)
-nach Idas Reise nach England hat sie sich noch mehr für Frauenrechte eingesetzt
--> Muster in Beziehungen zu erkennen?
+(1) Zu Beginn der Recherche rechneten wir damit, dass Idas Unterstützernetzwerk vor allem aus dunkelhäutigen Frauen bestand. Wir dachten, dass sie, als Betroffene, ein höheres Interesse daran haben würden, als weiße Männer beispielsweise. 
+(2) Außerdem gingen wir davon aus, dass sich die Personen in ihrem Umfeld vermehrt für Frauenrechte einsetzten, anstatt für die Rechte von Schwarzen. Das liegt auch daran, dass wir im Kontext der Suffragettenbewegung (Alpha Suffrage Club) das erste Mal von ihr gehört haben. 
+(3) Unsere Vermutung war, dass die Journalist*innen in ihrem Umfeld politisch aktiv waren. Gerade, da die meisten für Zeitungen schrieben, die eine gewisse politische Ausrichtungen hatten. 
+(4) Der Reise nach Großbritannien rechneten wir einen großen Einfluss zu und gingen davon aus, dass sie sich danach verstärkt für Frauenrechte eingesetzt hat, da die Suffragettenbewegung hier ihre Wurzeln hat.
 
 
 Die Analyse einen überwiegend explorativen Charakter, um Muster in den Beziehungen untersuchen.
+
 
 # Datenerhebung: Zugang, Bereinigung und Codebuch
 
@@ -917,19 +912,19 @@ plot(Ida_jour_act, layout=layout_with_kk,
      edge.width=E(Ida)$weight,
      edge.color="black")
      
-##Analyse der Visulisierung:
+##Analyse der Visualisierung:
 
 #Journalist:innen
-Im dem Netzwerk der Journalist:innen sind mehr als doppelt so viel Männer als Frauen. Das kann daran liegen, dass Männer in dieser Zeit mehr Möglichkeit hatten ihre Meinung zu vertreten. Alle Journalist:innen (bis auf Barnett) haben eine einflussreiche Position. Das könnte daran liegen, dass Journalist:innen mit ihrer Reichweite viele Menschen erreichen konnten und somit auch einen großen Einfluss auf die Abläufe und Meinungen in der Bevölkerung hatten. Da damals noch viele Menschen dachten, dass der Mann der Frau überlegen sei, sind die Männer hier mehr vertreten. Schaffte eine Frau es jedoch sich Verhör zu schaffen, vertrat sie gleich auch eine einflussreiche Position. Hätte sie diese nämlich nicht, würde sie dort auch nicht stehen. Außerdem ist es auffällig, dass vor allem weiße Personen hohen Einfluss hatten. Das könnte daran liegen, dass dunkelhäutige Menschen zu dieser Zeit noch kein Gehör verschaffen konnten und sich härter für Aufmerksamkeit und Einfluss einsetzen mussten. 
+Im Netzwerk der Journalist:innen sind mehr als doppelt so viele Männer als Frauen. Das kann daran liegen, dass Männer in dieser Zeit mehr Möglichkeit hatten, ihre Meinung zu vertreten. Alle Journalist:innen (bis auf Barnett) haben eine einflussreiche Position. Das könnte daran liegen, dass Journalist:innen damals durch ihre Reichweite viele Menschen erreichen konnten und somit auch einen großen Einfluss auf die Abläufe und Meinungen in der Bevölkerung hatten. Da damals noch viele Menschen dachten, dass der Mann der Frau überlegen sei, sind die Männer hier mehr vertreten. Schaffte eine Frau es jedoch, sich Verhör zu schaffen, vertrat sie gleich auch eine einflussreiche Position. Außerdem ist es auffällig, dass vor allem weiße Personen hohen Einfluss hatten. Das liegt daran, dass sich dunkelhäutige Menschen zu dieser Zeit noch kein Gehör verschaffen konnten und sich härter für Aufmerksamkeit und Einfluss einsetzen mussten als Weiße. 
 
 #Aktivist:innen
-Im Netzwerk der Aktivist:innen sind ungefähr gleich viele Männer und Frauen vertreten. Die Frauen waren vorwiegend weiß. Bei den Männern waren 6 von 9 dunkelhäutig. Das zeigt, dass sich vor allem die Menschen, die sich beanchtteiligt fühlten (Frauen und Schwarze) aktivistisch engagierten. Auffällig ist auch, dass die schwarzen Aktivist:innen untereinander viel besser vernetzt sind als die weißen. Für Weiße war es einfacher sich als Einzelperson zu engagieren, da man angesehener war. Die Schwarzen haben sich um etwas erreichen zu können eher in Gruppen zusammengeschlossen.
+Im Netzwerk der Aktivist:innen sind ungefähr gleich viele Männer und Frauen vertreten. Die Frauen waren vorwiegend weiß. Bei den Männern waren 6 von 9 dunkelhäutig. Das zeigt, dass sich vor allem die Menschen, die sich beanchtteiligt fühlten (Frauen und Schwarze) aktivistisch engagierten. Auffällig ist auch, dass die schwarzen Aktivist:innen untereinander viel besser vernetzt waren als die Weißen. Für Weiße war es einfacher, sich als Einzelperson zu engagieren, da man angesehener war. Die Schwarzen haben sich eher in Gruppen zusammengeschlossen, um etwas erreichen zu können.
 
 #Politiker:innen
-Im Netzwerk der Politiker:innen sind vor allem weiße Personen vertreten. Außerdem sind deutlich merh Männer als Frauen vertreten. Das ist wahrscheinlich aus den oben ausgeführten Gründen des Ansehens und des Einflusses so.
+Im Netzwerk der Politiker:innen sind vor allem weiße Personen und Männer vertreten. Das ist wahrscheinlich aus den oben ausgeführten Gründen erklären (Ansehen und EInfluss).
 
 #aktivistische Journalist:innen
-Ungefähr die Hälfte der Journalist:innen sind auch aktivistisch aktiv. Darunter sind vor allem weiße Frauen. Außer F. L. Barnett hat jeder der aktivistischen Journalist:innen einen großen Einfluss. Das kommt wahrscheinlich daher, dass sie sowohl in ihren Redaktionen, als auch in den aktivistischen Kreisen ihre Netzweke haben. Außer von zwei Ausnahmen ist der einzige Knotenpunkt im Teilnetzwerk Ida. Ansonsten sind die aktivistishen Journalist:innen nicht besonders miteinander vernetzt.
+Ungefähr die Hälfte der Journalist:innen sind auch aktivistisch engagiert. Darunter sind vor allem weiße Frauen. Außer F. L. Barnett hat jeder der aktivistischen Journalist:innen einen großen Einfluss. Das kommt wahrscheinlich daher, dass sie sowohl in ihren Redaktionen als auch in den aktivistischen Kreisen ihre Netzwerke haben. Abgesehen von zwei Ausnahmen (Mayo und Impey) ist der einzige Knotenpunkt im Teilnetzwerk Ida. Ansonsten sind die aktivistischen Journalist:innen nicht besonders miteinander vernetzt.
 
 
 #Analyse der Komponenten 
@@ -996,16 +991,16 @@ plot(Ida_jour_act, edge.arrow.size=.3, main="aktivistische Journalist:innen")
 ##Analyse der Cluster
 
 #Journalist:innen
-Im Netzwerk der Journalist:innen ergeben sich 5 verschiedene Cluster. Eins davon ist ein großes, das auch Ida mit einschließt. In diesem Cluster sind sowohl Männer, als auch Frauen mit mittlerem Einfluss vertreten. Drei andere Cluster sind jeweils mit zwei Journalist:innen. Diese ergeben sich dadurch, dass diese zwei Personen auch miteinander vernetzt sind, und somit noch eine weitere Verbindung haben als nur die Verbindung zu Ida. Dabei fällt auf, dass diese weitere Verbindung immer zum Gleichen Geschlecht mit dem gleischen Einfluss ist. Fleming und Nightingale sind beide für die gleiche Organisation bzw. den gleichen Verlag (Free Speech and Headlight) tätig und haben mit Ida im gleichen Zeitraum zu tun gehabt. F.L. Barnett ist alleine im fünften Cluster. Das könnte sich dadurch erklären, dass er nur einen sehr geringen Einfluss hat und auch keine andere Verbindung als die Verbindung zu Ida. Somit passt er in kein vorhandenes Cluster rein und bilet sein eigenes.
+Im Netzwerk der Journalist:innen ergeben sich fünf verschiedene Cluster. Eins davon ist ein großes, das auch Ida mit einschließt. In diesem Cluster sind sowohl Männer als auch Frauen mit mittlerem Einfluss vertreten. Die drei anderen Cluster sind jeweils mit zwei Journalist:innen, die in direkter Verbindung zueinander stehen. Dabei fällt auf, dass diese weitere Verbindung immer zum gleichen Geschlecht mit dem gleichen Einfluss besteht. Fleming und Nightingale sind beide für die gleiche Organisation bzw. den gleichen Verlag (Free Speech and Headlight) tätig und haben mit Ida im gleichen Zeitraum zu tun gehabt. F.L. Barnett ist alleine im fünften Cluster. Das könnte sich dadurch erklären, dass er nur einen sehr geringen Einfluss hat und auch keine andere Verbindung hat als die zu Ida. Somit passt er in kein vorhandenes Cluster hinein und bildet sein eigenes.
 
 #Aktivist:innen
-Im Netzwerk der Aktivist:innen bilden sich vier verschiedene Cluster. Im Größten sind sowohl Männer als auch Frauen mit dem ungefähr gleichen Einfluss drin. Diese sind nur minimal untereinander vernetzt. In einem weitern Cluster sind ausschließlich Männer drin, die (bis auf Barnett) alle den gleichen Einfluss haben. Außerdem sind sie untereinander eng miteinander vernetzt, weshalb es logisch ist, warum sie zusammen ein eigenens Cluster bilden. In einem weitern Cluster sind drei einflussreiche Menschen, von denen jedoch auch einer mit einer weniger einflussreichen Frau in Verbindung steht. Durch diese direkte Verbindung wird Helen Douglass auch in dieses Cluster mit aufgenommen. Im letzten Cluster sind zwei Frauen (Belle Squire und Virginia Brooks), die eine direkte Verbindung miteinander haben. Beide haben den gleichen Einflussund sind in der gleichen Organisation (Alpha Suffrage Club). 
+Im Netzwerk der Aktivist:innen bilden sich vier verschiedene Cluster. Im Größten sind sowohl Männer als auch Frauen mit dem ungefähr gleichen Einfluss drin. Diese sind nur minimal untereinander vernetzt. In einem weiteren Cluster sind ausschließlich Männer drin, die (bis auf Barnett) alle den gleichen Einfluss haben. Außerdem sind sie untereinander eng miteinander verbunden, weshalb es logisch ist, warum sie zusammen ein eigenens Cluster bilden. In einem weiteren Cluster sind drei einflussreiche Aktivist:innen, Jedoch steht auch einer von denen in Verbindung mit einer weniger einflussreichen Frau. Durch diese direkte Verbindung wird Helen Douglass auch in dieses Cluster mit aufgenommen. Im letzten Cluster sind zwei Frauen (Belle Squire und Virginia Brooks), die eine direkte Verbindung miteinander haben. Beide haben den gleichen Einfluss und sind in der gleichen Organisation (Alpha Suffrage Club). 
 
 #Politiker:innen
-Im Netzwerk der Politiker:innen bilden sich zwei Cluster. Das Cluster, das sich von dem großen Cluster abspaltet wird durch die einzigen direkte Verbindungen der Personen untereinander gebildet. Das Cluster verdeutlciht nochmal die schon in der Visulisierung auffälligen Beziehungen der dunkelhäutigen untereinander.Ansonsten gibt es in diesem Netzwerk keine weiteren Verbindungen der Menschen als die zu Ida.
+Im Netzwerk der Politiker:innen bilden sich zwei Cluster. Das Cluster, das sich von dem großen Cluster abspaltet, wird durch die einzigen direkten Verbindungen der Knoten untereinander gebildet. Das Cluster verdeutlicht nochmal die schon in der Visualisierung auffälligen Beziehungen der Schwarzen untereinander. Ansonsten gibt es in diesem Netzwerk keine weiteren Verbindungen der Knoten als die zu Ida.
 
 #aktivistische Journalist:innen
-Im Netzwerk der aktivistischen Journalist:innen bilden sich zwei Cluster. Im Hauptcluster sind sowohl Männer als auch Frauen mit unterschiedlichem Einfluss enthalten. Das zweite Cluster bildet sich nur aus zwei Frauen (Anthony und Terrel), die auch zueinander eine direkte Beziehung haben und den gleichen Einfluss haben. Beide gleichen sich in ihren Tätigkeiten und ihrer Motivation, da sie sich beide für Frauen und für Schwarze einsetzen. Die beiden haben auch schon im Netzwerk der Journalist:innen ein eigenes Cluster gebildet.  Komisch ist, dass Isabella Mayo und Catherine Impey kein Cluster bildern. Die beiden haben auch eine  direkte verbindung zueinander und haben, genau wie die anderen zwei Frauen die gleiche Motivation, Hautfarbe und Einfluss. Auch beide sind der gleichen Organisation angehörig, was Susan B. Anthony und Mary Terrel nicht sind.
+Im Netzwerk der aktivistischen Journalist:innen bilden sich zwei Cluster. Im Hauptcluster sind sowohl Männer als auch Frauen mit unterschiedlichem Einfluss enthalten. Das zweite Cluster bildet sich nur aus zwei Frauen (Anthony und Terrel), die auch zueinander eine direkte Beziehung haben und den gleichen Einfluss haben. Beide gleichen sich in ihren Tätigkeiten und ihrer Motivation, da sie sich beide für Frauen und für Schwarze einsetzen. Die beiden haben auch schon im Netzwerk der Journalist:innen ein eigenes Cluster gebildet. Überraschend ist, dass Isabella Mayo und Catherine Impey kein Cluster bilden. Die beiden haben eine direkte Verbindung zueinander und haben die gleiche Motivation, Hautfarbe und Einfluss. Auch sind beide der gleichen Organisation angehörig, was Susan B. Anthony und Mary Terrel nicht sind.
 
 # Degree nach Tätigkeiten
 
@@ -1135,34 +1130,40 @@ plot(Ida_mot_woman, edge.arrow.size=.3,  main="Frauenrechtler:innen")
 plot(Ida_mot_both2, edge.arrow.size=.3,  main="Beides")
 
 ```
-## Schwarzenrechtler: Anhand des Teilnetzwerks kann man erkennen, dass erheblich mehr Männer involviert waren als Frauen. Außerdem ist die vergleichsweise hohe Anzahl an weißen, einflussreicheren Personen zu beachten, die sich für Schwarzenrechte eingesetzt haben wie z.B. William Penn Nixon. Zu diesen unterhält Ida duchschnittlich schwache Beziehungen, während sie zu Schwarzen oft eine stärkere Verbindung hat. Das lässt sich mit der damaligen Hierarchie erklären. Aufgrund der ungleichen Machtverhältnisse war Ida insbesondere auf die Unterstützung von weißen Personen angewiesen, um ihre politischen Interessen durchzusetzen.
-## Frauenrechtler: Hier sind mehr Frauen als Männer erkennbar, die sich für Frauenrechte eingesetzt haben. Besonders auffällig ist die hohe Anzahl an weißen Personen. Hingegen hat sich bei vier Schwarzen lediglich ein Mann für Frauenrechte eingesetzt, nämlich Frederick Douglass. Deutlich wird hier die Stärke der Beziehungen: Fast zu allen Knoten hat Ida eine starke Beziehung.
-## Beides: Wie schon in den beiden vorherigen Teilnetzwerken zu sehen war, haben sich vergleichsweise weniger Leute für Frauenrechte eingesetzt als für Schwarzenrechte. Auch die Anzahl an Personen, deren Engagement beiden Fraktionen galt, ist eher klein und ist sehr ähnlich zu dem Netzwerk der Frauenrechtler. Ein interessanter Aspekt: Frauen, die sich für Frauenrechte ausgesprochen haben, haben sich auch für Schwarzenrechte engagiert. Im Gegensatz dazu haben sich Schwarzenrechtler oft auch nur für diese eingesetzt. Das sieht man auch in den Clustern. Besonders deutlich wird die unterschiedliche Knotenanzahl zwischen den beiden Netzwerken. Die Gruppe der Schwarzenrechtler ist erheblich größer als die der Frauenrechtler; so besteht der Alpha Suffrage Club in den Netzwerken nur aus Ida, Belle Squire und Virginia Brooks.
+##Schwarzenrechtler:innen
+Anhand des Teilnetzwerks kann man erkennen, dass erheblich mehr Männer involviert waren als Frauen. Außerdem ist die vergleichsweise hohe Anzahl an weißen, einflussreicheren Personen zu beachten, die sich für Schwarzenrechte eingesetzt haben wie z.B. William Penn Nixon. Zu diesen hat Ida im Durchschnitt schwache Beziehungen, während die Beziehungen zu Schwarzen stärker waren. Das lässt sich mit der damaligen Hierarchie erklären. Aufgrund der ungleichen Machtverhältnisse war Ida insbesondere auf die Unterstützung von weißen Personen angewiesen (insbesondere finanziell), um ihre politischen Interessen durchzusetzen.
+
+##Frauenrechtler:innen
+Hier sind mehr Frauen als Männer erkennbar, die sich für Frauenrechte eingesetzt haben. Besonders auffällig ist die hohe Anzahl an weißen Knoten. Bei vier Schwarzen hat sich allerdings nur ein Mann für Frauenrechte eingesetzt, nämlich Frederick Douglass. Deutlich wird hier die Stärke der Beziehungen: Fast zu allen Knoten hat Ida eine starke Beziehung.
+
+##Beides
+Wie schon in den beiden vorherigen Teilnetzwerken zu sehen war, haben sich vergleichsweise weniger Leute für Frauenrechte eingesetzt als für Schwarzenrechte. Auch die Anzahl an Personen, deren Engagement beiden Fraktionen galt, ist eher klein und ist sehr ähnlich zu dem Netzwerk der Frauenrechtler:innen. Ein interessanter Aspekt: Frauen, die sich für Frauenrechte ausgesprochen haben, haben sich auch für Schwarzenrechte engagiert. Im Gegensatz dazu haben sich Schwarzenrechtler:innen oft nur für diese eingesetzt. Das sieht man auch in den Clustern. Besonders deutlich wird die unterschiedliche Knotenanzahl zwischen den beiden Netzwerken. Die Gruppe der Schwarzenrechtler:innen ist erheblich größer als die der Frauenrechtler:innen; so besteht der Alpha Suffrage Club in den Netzwerken nur aus Ida, Belle Squire und Virginia Brooks.
 
 ```{r Degree - Teilnetzwerke nach Motivation , fig.height=9, fig.width=16 paged.print=FALSE}
 
-# Degree nach Motivation
+#Degree nach Motivation
 
-# Motivation: Rechte für Schwarze 
+#Motivation: Rechte für Schwarze 
 degree(Ida_mot_black, mode="all")
 which.max(degree(Ida_mot_black, mode="all"))
-## Nach Ida (47 Verbindungen) haben Booker T Washington und W. E. B. DuBois mit 8 Verbindungen den höchsten Degreewert. Washington und DuBois waren bekannte Schwarzenrechtler und Gründer des Niagara Movements, das später sogar Teil des NAACP wurde. Danach folgt Susan B Anthony mit 7 Verbindungen. Durch die Gründung des Alpha Suffrage Club, zusammen mit Ida, hat sie sich gegen die Standards der US-amerikanischen Suffragetten gestellt und auch schwarze Frauen unterstützt.
 
-# Motivation: Frauenrechte
+##Nach Ida (47 Verbindungen) haben Booker T Washington und W. E. B. DuBois mit 8 Verbindungen den höchsten Degreewert. Washington und DuBois waren bekannte Schwarzenrechtler und Gründer des Niagara Movements, das später sogar Teil der NAACP wurde. Danach folgt Susan B Anthony mit 7 Verbindungen. Durch die Gründung des Alpha Suffrage Club, zusammen mit Ida, hat sie sich gegen die Standards der US-amerikanischen Suffragetten gestellt und auch schwarze Frauen unterstützt.
+
+#Motivation: Frauenrechte
 degree(Ida_mot_woman, mode="all")
 which.max(degree(Ida_mot_woman, mode="all"))
-## Booker T Washington und W. E. B. DuBois haben mit 8 Verbindungen den zweithöchsten Degreewert nach Ida (nach 47 Verbindungen). Darauf folgen Susan B. Anthony (7 Verbindungen) und Mary Church Terrell (6 Verbindungen). Verhätnismäßig wenige Personen haben Verbindungen zu anderen Knoten. Überraschend ist, dass hier zwei schwarze Männer nach Ida den höchsten Degree-Wert innehaben. Diese Personen engagieren sich zugleich stark für Schwarzenrechte ein. Schaut man sich allerdings das Teilnetzwerk an, haben sich insgesamt mehr Frauen als Männer für Frauenrechte eingesetzt.
 
-# Motivation: Frauenrechte & Schwarzenrechte
+##Booker T Washington und W. E. B. DuBois haben mit 8 Verbindungen den zweithöchsten Degreewert nach Ida (nach 47 Verbindungen). Darauf folgen Susan B. Anthony (7 Verbindungen) und Mary Church Terrell (6 Verbindungen). Verhätnismäßig wenige Personen haben Verbindungen zu anderen Knoten. Überraschend ist, dass hier zwei schwarze Männer nach Ida den höchsten Degree-Wert innehaben. Diese Personen engagieren sich zugleich stark für Schwarzenrechte. Schaut man sich allerdings das Teilnetzwerk an, haben sich insgesamt mehr Frauen als Männer für Frauenrechte eingesetzt.
+
+#Motivation: Frauenrechte & Schwarzenrechte
 degree(Ida_mot_both, mode="all")
 which.max(degree(Ida_mot_both, mode="all"))
+
 ## Wie erwartet haben Booker T Washington, W. E. B. DuBois, Susan B. Anthony und Mary Church Terrell den höchsten Degreewert nach Ida. Das hat sich auch in den einzelnen Teilnetzwerken erkenntlich gezeigt.
 ```
 
 
 *Teilnetzwerk Vor und nach GB im Vergleich*
-
-Als nächstes...
 
 ```{r fig.height=9, fig.width=16, Teilnetzwerk Vor und nach GB fig.height=12}
 
@@ -1271,8 +1272,10 @@ plot(cluster_Ida_afterGB_orga2, Ida_afterGB_orga2, edge.arrow.size=0.1, main="Cl
 
 
 ```
-## Organisationen: Man erkennt eindeutig, dass die Verbindungen von Ida B. Wells zu Organisationen nach den Großbritannien-Reisen deutlich zugenommen haben: von davor 2 zu danach 9 Organisationen. Der Großteil von den 9 Organisationen sind zudem welche, die sich für Schwarzen- oder Frauenrechte einsetzen. Daraus lässt sich vermuten, dass die Großbritannien-Reisen ihr wie vermutet das "Club-Life" näher gebracht haben. 
-## Personen: Außerdem sieht man, dass die Verbindungen zu weißen Männern oder Frauen sich nach den Reisen mehr als verdreifacht haben, vor allem zu einflussreichen Weißen. Naheliegend wäre die Annahme, dass ihr auf der Großbritannien-Reise klar geworden ist, dass sie auch auf reinflußreiche Weiße setzen muss um was zu erreichen oder, dass sie in Großbritannien bereits Aufmerksamkeit bei den Weißen erregen konnte oder Kontakt zu Ihnen herstellen konnte.
+##Organisationen
+Man erkennt eindeutig, dass die Verbindungen von Ida B. Wells zu Organisationen nach den Großbritannien-Reisen deutlich zugenommen haben: von davor 2 zu danach 9 Organisationen. Der Großteil von den 9 Organisationen sind zudem welche, die sich für Schwarzen- oder Frauenrechte einsetzen. Daraus lässt sich vermuten, dass die Großbritannien-Reisen ihr wie vermutet das "Club-Life" näher gebracht haben. 
+##Personen
+Außerdem sieht man, dass die Verbindungen zu weißen Männern oder Frauen sich nach den Reisen mehr als verdreifacht haben, vor allem zu einflussreichen Weißen. Naheliegend wäre die Annahme, dass ihr auf der Großbritannien-Reise klar geworden ist, dass sie auch auf einflußreiche Weiße setzen muss um was zu erreichen oder, dass sie in Großbritannien bereits Aufmerksamkeit bei den Weißen erregen konnte oder Kontakt zu Ihnen herstellen konnte.
 ## Cluster: Durch die Clusterung bilden sich nach den Reisen zwei größere Cluster, das limettengrüne und das orangene. Das Orangene besticht vor allem durch seine Verbindungen unter sich. In dem orangenen Cluster sind die männlichen, schwarzen Bürgerrechtler:innen rund um Booker T. Washington, die unter sich sehr vernetzt waren. Im Gegensatz dazu, handelt es sich im limettengrünen vor allem um Einzelpersonen, die sich für die Rechte der Schwarzen eingesetzt haben.
 
 ```{r Degree - Teilnetzwerke vor und nach GB , fig.height=9, fig.width=16 paged.print=FALSE}
@@ -1481,9 +1484,13 @@ Die Edge-Attribute sind unterschiedlich verteilt. Durch die Erhebung haben die S
 ## Team, Arbeitsaufwand und Lessons Learned
 
 ### Teammitglieder
-NN
-NN
-NN
+Karla Denzer
+Daniel Guib
+Penelope Hoeth
+Sarah Huß
+Lisa Pham
+Niclas Reichelt
+
 
 ### Arbeitsaufwand und Rollen im Team
 NN: Projektleitung und Coding, ca. 80 Stunden
