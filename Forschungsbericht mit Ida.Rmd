@@ -1218,10 +1218,10 @@ membership(cluster_Ida_afterGB)
 membership(cluster_Ida_beforeGB_orga2)
 membership(cluster_Ida_afterGB_orga2)
 #visualisiert die Communities
-plot(cluster_Ida_beforeGB3, Ida_beforeGB3, edge.arrow.size=0.1, main="Cluster Motivation Schwarzenrechte")
-plot(cluster_Ida_afterGB, Ida_afterGB, edge.arrow.size=0.1, main="Cluster Motivation Frauenrechte")
-plot(cluster_Ida_beforeGB_orga2, Ida_beforeGB_orga2, edge.arrow.size=0.1, main="Cluster Motivation Schwarzen- und Frauenrechte")
-plot(cluster_Ida_afterGB_orga2, Ida_afterGB_orga2, edge.arrow.size=0.1, main="Cluster Motivation Schwarzen- und Frauenrechte")
+plot(cluster_Ida_beforeGB3, Ida_beforeGB3, edge.arrow.size=0.1, main="Cluster Ida vor den Großbritannien-Reisen")
+plot(cluster_Ida_afterGB, Ida_afterGB, edge.arrow.size=0.1, main="Cluster Ida nach den Großbritannien-Reisen")
+plot(cluster_Ida_beforeGB_orga2, Ida_beforeGB_orga2, edge.arrow.size=0.1, main="Cluster Organisationen vor den Großbritannien-Reisen")
+plot(cluster_Ida_afterGB_orga2, Ida_afterGB_orga2, edge.arrow.size=0.1, main="Cluster Organisationen nach den Großbritannien Reisen")
 
 
 
