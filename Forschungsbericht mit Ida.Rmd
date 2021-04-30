@@ -1257,10 +1257,7 @@ which.max(degree(Ida_afterGB_orga2, mode="all"))
 
 ```
 
-ANALYSE
-ANALYSE
-ANALYSE
-
+## Vor den Großbritannien-Reisen hatte Frederick Douglass mit 6 einen hohen Degree, nicht allzu verwunderlich bedenkt man, dass er eine sehr einflußreiche Person war. Nach den Reisen bestechen vor allen Dingen Booker T. Washington und W. E. B. DuBois mit jeweils einem Degree-Wert von 10. Mary Church Terell hat mit 9 auch einen hohen Degree.
 
 
 
