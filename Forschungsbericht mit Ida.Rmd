@@ -883,31 +883,46 @@ Ida_jour_act <- delete.vertices(Ida_jour, V(Ida_jour)[Aktivismus==0])
 
 plot(Ida_jour, layout=layout_with_kk,
      asp=0,
-     main="Beziehungen zu Journalisten",
+     main="Beziehungen zu Journalist:innen",
      edge.arrow.size=.7,
      edge.width=E(Ida)$weight,
      edge.color="black")
 
 plot(Ida_act, layout=layout_with_kk,
      asp=0,
-     main="Beziehungen zu Aktivisten",
+     main="Beziehungen zu Aktivist:innen",
      edge.arrow.size=.7,
      edge.width=E(Ida)$weight,
      edge.color="black")
 
 plot(Ida_pol, layout=layout_with_kk,
      asp=0,
-     main="Beziehungen zu Politikern",
+     main="Beziehungen zu Politiker:innen",
      edge.arrow.size=.7,
      edge.width=E(Ida)$weight,
      edge.color="black")
 
 plot(Ida_jour_act, layout=layout_with_kk,
      asp=0,
-     main="Beziehungen zu aktivistischen Journalisten",
+     main="Beziehungen zu aktivistischen Journalist:innen",
      edge.arrow.size=.7,
      edge.width=E(Ida)$weight,
      edge.color="black")
+     
+##Analyse der Visulisierung:
+
+#Journalist:innen
+Im dem Netzwerk der Journalist:innen sind mehr als doppelt so viel Männer als Frauen. Das kann daran liegen, dass Männer in dieser Zeit mehr Möglichkeit hatten ihre Meinung zu vertreten. Alle Journalist:innen (bis auf Barnett) haben eine einflussreiche Position. Das könnte daran liegen, dass Journalist:innen mit ihrer Reichweite viele Menschen erreichen konnten und somit auch einen großen Einfluss auf die Abläufe und Meinungen in der Bevölkerung hatten. Da damals noch viele Menschen dachten, dass der Mann der Frau überlegen sei, sind die Männer hier mehr vertreten. Schaffte eine Frau es jedoch sich Verhör zu schaffen, vertrat sie gleich auch eine einflussreiche Position. Hätte sie diese nämlich nicht, würde sie dort auch nicht stehen. Außerdem ist es auffällig, dass vor allem weiße Personen hohen Einfluss hatten. Das könnte daran liegen, dass dunkelhäutige Menschen zu dieser Zeit noch kein Gehör verschaffen konnten und sich härter für Aufmerksamkeit und Einfluss einsetzen mussten. 
+
+#Aktivist:innen
+Im Netzwerk der Aktivist:innen sind ungefähr gleich viele Männer und Frauen vertreten. Die Frauen waren vorwiegend weiß. Bei den Männern waren 6 von 9 dunkelhäutig. Das zeigt, dass sich vor allem die Menschen, die sich beanchtteiligt fühlten (Frauen und Schwarze) aktivistisch engagierten. Auffällig ist auch, dass die schwarzen Aktivist:innen untereinander viel besser vernetzt sind als die weißen. Für Weiße war es einfacher sich als Einzelperson zu engagieren, da man angesehener war. Die Schwarzen haben sich um etwas erreichen zu können eher in Gruppen zusammengeschlossen.
+
+#Politiker:innen
+Im Netzwerk der Politiker:innen sind vor allem weiße Personen vertreten. Außerdem sind deutlich merh Männer als Frauen vertreten. Das ist wahrscheinlich aus den oben ausgeführten Gründen des Ansehens und des Einflusses so.
+
+#aktivistische Journalist:innen
+Ungefähr die Hälfte der Journalist:innen sind auch aktivistisch aktiv. Darunter sind vor allem weiße Frauen. Außer F. L. Barnett hat jeder der aktivistischen Journalist:innen einen großen Einfluss. Das kommt wahrscheinlich daher, dass sie sowohl in ihren Redaktionen, als auch in den aktivistischen Kreisen ihre Netzweke haben. Außer von zwei Ausnahmen ist der einzige Knotenpunkt im Teilnetzwerk Ida. Ansonsten sind die aktivistishen Journalist:innen nicht besonders miteinander vernetzt.
+
 
 #Analyse der Komponenten 
 
@@ -962,41 +977,62 @@ plot(cluster_Ida_jour_act, Ida_jour_act, edge.arrow.size=0.1, main="Cluster Ida 
 #Teilnetzwerke Nebeneinander
 
 par(mfrow=c(1,4), mar=c(0,0,1,2))
-plot(Ida_jour, edge.arrow.size=.3, main="Journalisten")
-plot(Ida_act, edge.arrow.size=.3,  main="Aktivisten")
-plot(Ida_pol, edge.arrow.size=.3,  main="Politiker")
-plot(Ida_jour_act, edge.arrow.size=.3, main="aktivistische Journalisten")
+plot(Ida_jour, edge.arrow.size=.3, main="Journalist:innen")
+plot(Ida_act, edge.arrow.size=.3,  main="Aktivist:innen")
+plot(Ida_pol, edge.arrow.size=.3,  main="Politiker:innen")
+plot(Ida_jour_act, edge.arrow.size=.3, main="aktivistische Journalist:innen")
 ```
 
 ```{r Degree - Teilnetzwerke nach Tätigkeit , fig.height=9, fig.width=16 paged.print=FALSE}
+
+##Analyse der Cluster
+
+#Journalist:innen
+Im Netzwerk der Journalist:innen ergeben sich 5 verschiedene Cluster. Eins davon ist ein großes, das auch Ida mit einschließt. In diesem Cluster sind sowohl Männer, als auch Frauen mit mittlerem Einfluss vertreten. Drei andere Cluster sind jeweils mit zwei Journalist:innen. Diese ergeben sich dadurch, dass diese zwei Personen auch miteinander vernetzt sind, und somit noch eine weitere Verbindung haben als nur die Verbindung zu Ida. Dabei fällt auf, dass diese weitere Verbindung immer zum Gleichen Geschlecht mit dem gleischen Einfluss ist. Fleming und Nightingale sind beide für die gleiche Organisation bzw. den gleichen Verlag (Free Speech and Headlight) tätig und haben mit Ida im gleichen Zeitraum zu tun gehabt. F.L. Barnett ist alleine im fünften Cluster. Das könnte sich dadurch erklären, dass er nur einen sehr geringen Einfluss hat und auch keine andere Verbindung als die Verbindung zu Ida. Somit passt er in kein vorhandenes Cluster rein und bilet sein eigenes.
+
+#Aktivist:innen
+Im Netzwerk der Aktivist:innen bilden sich vier verschiedene Cluster. Im Größten sind sowohl Männer als auch Frauen mit dem ungefähr gleichen Einfluss drin. Diese sind nur minimal untereinander vernetzt. In einem weitern Cluster sind ausschließlich Männer drin, die (bis auf Barnett) alle den gleichen Einfluss haben. Außerdem sind sie untereinander eng miteinander vernetzt, weshalb es logisch ist, warum sie zusammen ein eigenens Cluster bilden. In einem weitern Cluster sind drei einflussreiche Menschen, von denen jedoch auch einer mit einer weniger einflussreichen Frau in Verbindung steht. Durch diese direkte Verbindung wird Helen Douglass auch in dieses Cluster mit aufgenommen. Im letzten Cluster sind zwei Frauen (Belle Squire und Virginia Brooks), die eine direkte Verbindung miteinander haben. Beide haben den gleichen Einflussund sind in der gleichen Organisation (Alpha Suffrage Club). 
+
+#Politiker:innen
+Im Netzwerk der Politiker:innen bilden sich zwei Cluster. Das Cluster, das sich von dem großen Cluster abspaltet wird durch die einzigen direkte Verbindungen der Personen untereinander gebildet. Das Cluster verdeutlciht nochmal die schon in der Visulisierung auffälligen Beziehungen der dunkelhäutigen untereinander.Ansonsten gibt es in diesem Netzwerk keine weiteren Verbindungen der Menschen als die zu Ida.
+
+#aktivistische Journalist:innen
+Im Netzwerk der aktivistischen Journalist:innen bilden sich zwei Cluster. Im Hauptcluster sind sowohl Männer als auch Frauen mit unterschiedlichem Einfluss enthalten. Das zweite Cluster bildet sich nur aus zwei Frauen (Anthony und Terrel), die auch zueinander eine direkte Beziehung haben und den gleichen Einfluss haben. Beide gleichen sich in ihren Tätigkeiten und ihrer Motivation, da sie sich beide für Frauen und für Schwarze einsetzen. Die beiden haben auch schon im Netzwerk der Journalist:innen ein eigenes Cluster gebildet.  Komisch ist, dass Isabella Mayo und Catherine Impey kein Cluster bildern. Die beiden haben auch eine  direkte verbindung zueinander und haben, genau wie die anderen zwei Frauen die gleiche Motivation, Hautfarbe und Einfluss. Auch beide sind der gleichen Organisation angehörig, was Susan B. Anthony und Mary Terrel nicht sind.
 
 # Degree nach Tätigkeiten
 
 # Journalisten und Journalistinnen
 degree(Ida_jour, mode="all")
 which.max(degree(Ida_jour, mode="all"))
-## Mit 30 Verbindungen hat Ida den höchsten Degreewert. Susan B Anthony hat mit 6 Verbindungen den zweithöchsten Degreewert. Danach folgen einige Journalist*innen mit 5 Verbindungen. Insgesamt haben die Journalisten und Journalistinnen viele Verbindungen zu anderen Knoten. Das weist darauf hin, dass sie untereinander eng verbunden sind.
 
 # Journalisten und Journalistinnen, die sich aktivistisch betätigt haben
 degree(Ida_jour_act, mode="all")
 which.max(degree(Ida_jour_act, mode="all"))
 
-## Ida hat mit 19 Verbindungen den höchsten Degreewert, Susan B. Anthony mit 6 Verbindungen den zweithöchsten Degreewert und Catherine Impey und Isabella Fyvie Mayo mit 5 Verbindungen den dritthöchsten Degreewert. Insgesamt haben die meisten Knoten mehrere Verbindungen zu anderen Knoten. Das kann daran liegen, dass sowohl Journalist*innen, als auch Aktivist*innen besonders gut verbunden zu sein. 
-
 # Politiker
 degree(Ida_pol, mode="all")
 which.max(degree(Ida_pol, mode="all"))
-## Ida hat die stärksten Beziehungen im Gesamtnetzwerk und somit höchsten Degreewert (16). Den zweitgrößten Degreewert haben Frederick Douglass und Mary Church Terrell mit 4 direkten Verbindungen. Die National American Woman Suffrage Association hat hingegen 0 direkte Verbindungen.
 
 # Aktivisten
 degree(Ida_act, mode="all")
 which.max(degree(Ida_act, mode="all"))
-## Ida hat mit 47 Verbindungen den höchsten Wert, Booker T Washington mit 10 Verbindungen den zweithöchsten Wert und John Clifford mit einer Verbindung den niedrigsten Wert.
-```
 
-ANALYSE
-ANALYSE
-ANALYSE
+
+```
+##Degree-Werte
+
+#Journalist:innen
+Mit 30 Verbindungen hat Ida den höchsten Degreewert. Susan B Anthony hat mit 6 Verbindungen den zweithöchsten Degreewert. Danach folgen einige Journalist*innen mit 5 Verbindungen. Insgesamt haben die Journalisten und Journalistinnen viele Verbindungen zu anderen Knoten. Das weist darauf hin, dass sie untereinander eng verbunden sind.
+
+#Aktivist:innen
+Ida hat mit 47 Verbindungen den höchsten Wert, Booker T Washington mit 10 Verbindungen den zweithöchsten Wert und John Clifford mit einer Verbindung den niedrigsten Wert.
+
+#Politiker:innen
+Ida hat die stärksten Beziehungen im Gesamtnetzwerk und somit höchsten Degreewert (16). Den zweitgrößten Degreewert haben Frederick Douglass und Mary Church Terrell mit 4 direkten Verbindungen. Die National American Woman Suffrage Association hat hingegen 0 direkte Verbindungen.
+
+#aktivistische Journalist:innen
+Ida hat mit 19 Verbindungen den höchsten Degreewert, Susan B. Anthony mit 6 Verbindungen den zweithöchsten Degreewert und Catherine Impey und Isabella Fyvie Mayo mit 5 Verbindungen den dritthöchsten Degreewert. Insgesamt haben die meisten Knoten mehrere Verbindungen zu anderen Knoten. Das kann daran liegen, dass sowohl Journalist*innen, als auch Aktivist*innen besonders gut verbunden zu sein. 
+
 
 *Teilnetzwerk Motivation im Vergleich*
 
@@ -1086,8 +1122,8 @@ plot(cluster_Ida_mot_both3, Ida_mot_both3, edge.arrow.size=0.1, main="Cluster Mo
 #Teilnetzwerke Nebeneinander
 
 par(mfrow=c(1,3), mar=c(0,0,1,2))
-plot(Ida_mot_black, edge.arrow.size=.3, main="Schwarzenrechtler")
-plot(Ida_mot_woman, edge.arrow.size=.3,  main="Frauenrechtler")
+plot(Ida_mot_black, edge.arrow.size=.3, main="Schwarzenrechtler:innen")
+plot(Ida_mot_woman, edge.arrow.size=.3,  main="Frauenrechtler:innen")
 plot(Ida_mot_both2, edge.arrow.size=.3,  main="Beides")
 
 ```
