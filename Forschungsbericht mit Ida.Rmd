@@ -96,6 +96,76 @@ Fehlermeldungen, die wir im Verlauf unserer Arbeit gelöst haben:
 Das [Codebuch]
 (https://github.com/NiclasReichelt/Ida-Wells/blob/main/Ida%20Wells%20-%20Ego%20-%20Finale%20-%20Codebuch.csv) beschreibt die Variablen, Relationen und Gewichte des Netzwerks und ist ebenfalls auf Github hinterlegt.
 
+Grundsätzlich sollte in jeder Spalte idealerweise immer nur ein Wert enthalten sein. Bis auf die ID und den Namen in der Nodelist ist dieser idealerweise numerisch codiert (als Zahl).
+
+###EDGE-Attribute
+
+from: Die Werte in der Spalte "from" definieren Sender:innen in gerichteten Netzwerken, beziehungsweise generell einen Ausgangspunkt einer Beziehung. Da wir ein ungerichtetes Netzwerk erhoben haben, ist die Richtung der Beziehung nicht relevant. Der eingetragene Wert entspricht einer ID in der Nodelist und enthält keine Sonderzeichen, sondern nur ein Wort.
+
+to: Die Werte in der Spalte "to" definieren Empfänger:innen in ungerichteten Netzwerken. Der eingetragene Wert entspricht einer ID in der Nodelist und enthält keine Sonderzeichen, sondern nur ein Wort.
+
+relation: Das Edge-Attribut "relation" definiert die Art der Beziehung zwischen den Knoten, da es sich um ein multiplexes Netzwerk mit verschiedenen Beziehungsarten handelt.
+1 = Freunde
+2 = Unterstützer
+3 = Konflikt
+4 = Geschäftliches Verhältnis
+5 = Familie
+
+weight: Die Stärke der Beziehung wird durch einen bestimmten Wert definiert: Stark (1) - Schwach (5)
+
+timeperiod: Das Edge-Attribut "timeperiod" ordnet jeder Beziehung einem Zeitabschnitt in Ida B. Wells’ Leben zu, welche uns plausibel erscheint, Entscheidend dafür ist das Attribut “year” und die Chronologie in Ida Wells’ Autobiographie.
+
+year: Das ist das Jahr, in dem die jeweilige Beziehung entstand bzw. bestand
+
+country: Das Attribut “country” fügt jeder Beziehung den Standort der Beziehung, also entweder USA (1) oder Großbritannien (2)
+
+city: Zusätzlich bekommt jede Beziehung noch den genauen “Startpunkt” in Form der Gemeinde bzw. Stadt, z.B. Memphis, New York, London
+
+
+###NODE-Attribute
+
+id: (eindeutige Codierung des Knoten) gibt jedem Knoten eine ID, bei Personen sind es meist nur die Nachnamen und bei Organisationen (Zeitungen, Magazine, politische Organisationen) meist die gängige Abkürzung
+
+name: gibt den Namen oder die Bezeichnung des Knotens an. Bei Personen wurde hier der Vor- und Nachname angegeben, bei Organisationen die Bezeichnung
+
+type: definiert den Typ der Knoten des two mode-Netzwerks, also entweder natürliche Person (1) oder Organisation (2)
+
+Ursprünglich hatten wir das Attribut profession mit den Werten Journalismus, Kirche, Jura, Wirtschaft,... Um aber mit R und den Befehlen gut arbeiten zu können, haben wir uns dazu entschieden jedes dieser Werte zu einem eigenen Attribut zu machen. Für den Fall, dass eine Person eine dieser Tätigeit hatte, bekommt sie dann einfach den Wert 1 bei der betreffenden Tätigkeit oder dem betreffenden Berufsfeld zugewiesen.  Ida Wells hat derweil aufgrund von R bei jedem Attribut, das nicht auf sie zutrifft , den Wert 2.
+
+Journalismus
+Kirche
+Jura
+Wirtschaft
+Aktivismus
+Politik
+Andere
+
+Außerdem haben auch weitere Erkennungsmerkmale von Personen ein Attribut in den Nodes: Geschlecht (sex) und Hautfarbe (skincolor). Um das Arbeiten in R zu vereinfachen haben wir unserer Protagonistin Ida B. Wells ihren eigenen Wert gegeben, obwohl diese weiblich und afro-amerikanischer Abstammung ist. 
+
+sex: definiert das Geschlecht der natürlichen Personen
+1 = männlich
+2 = weiblich
+3 = Ida B- Wells
+
+skincolor: definiert die Hautfarbe der Personen
+1 = schwarze Hautfarbe
+2 = weiße Hautfarbe
+3 = Ida B. Wells
+
+motivation: definiert die politische Motivation, die die Personen oder Organisationen haben
+0 = unbekannt
+1 = Einsatz für die Rechte von Schwarzen
+2 = Einsatz für Frauenrechte
+3 = Einsatz für Schwarzen- wie auch für Frauenrechte
+4 = mindestens in Teilen eine rassistische Ausprägung der politischen Motivation
+
+power: gibt den Einfluss der Person wieder.
+1 = kaum Einfluss
+2 = einflussreich
+3 = sehr einflussreich
+
+affiliation: Weist Personen die Zugehörigkeit von einer oder mehreren Organisationen zu
+
 # Analyse und Interpretation
 
 Die genauere Analyse werden unter den verschiedenen (Teil-)Netzwerken erfolgen.
