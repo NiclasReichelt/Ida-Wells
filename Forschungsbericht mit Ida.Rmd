@@ -783,9 +783,7 @@ plot(cluster_Ida_black_bus, Ida_black_bus, edge.arrow.size=0.1, main="Cluster Id
 plot(cluster_Ida_white_bus, Ida_white_bus, edge.arrow.size=0.1, main="Cluster Ida weiße Geschäftspartner:innen")
 
 ```
-ANALYSE
-ANALYSE
-ANALYSE
+
 ```{r Degree - Teilnetzwerke der Geschäftspartner , fig.height=9, fig.width=16 paged.print=FALSE}
 
 # Degree Geschäftspartner
@@ -817,10 +815,12 @@ which.max(degree(Ida_male, mode="all"))
 
 ```
 
-ANALYSE
-ANALYSE
-ANALYSE
-Theoretisch auch zusammenführbar
+Unserer Rechecherche nach hatte Ida insgesamt 25 Geschäftsbeziehungen, lässt man die Organisationen außen vor. Meistens standen diese im Zusammenhang mit ihrer Arbeit als Journalistin oder auch im gemeinsamen Gründen von Organisationen. Mit Virginia Brooks und Belle Squire gründete sie beispielsweise den Alpha Suffrage Club.  
+Insgesamt führte sie aber überwiegend mit Männern eine Geschäftsbeziehung. Überraschend ist das nicht, denkt man an die damalige Gesellschaft (ca. 1890-1920). Frauen gingen viel seltener einer beruflichen oder politischen Tätigkeit nach. 
+Ihr Netzwerk an Geschäftspartnern besteht aus mehr weißen Personen, als das der Geschäftspartnerinnen. Hier liegt eine ausgeglichenere Verteilung vor. Die weißen Geschäftspartner haben insgesamt einen geringeren Degreewert. Womöglich hatten sie weniger Verbindungen zu anderen Knoten, da sie sich seltner in Organisationen engagiert haben. Der Degreewert der Geschäftspartner:innen ist überhaupt geringer im Vergleich zu anderen Teilnetzwerken. 
+Die Geschäftspartner:innen unterteilen sich in 6 Cluster, 2 davon sind losgelöst von Ida. Hierbei handelt es sich um Frances W. Willard, Lady Henry Sommerset und die Woman Christian Temperance Union, sowie Catherine Impey, Isabella Fyvie Mayo und die Anti Caste. Ida ist zwar auch ein Mitglied der Woman Christian Temperance Union gewesen, aber wahrscheinlich da sie nicht in Grobritannien gelebt hat, werden sie hier als seperates Cluster angezeigt. Es ist anzunhemen, dass Impey und Mayo ein losgelöstes Cluster bilden, da sie sich in einer Konfliktsituation befanden, in die Ida nicht zwangsläufig involviert war. Bei den weißen Geschäftspartner:innen ist die Anzahl der Cluster genauso hoch, mit denselben seperaten Clustern.
+Die Geschäftspartner untergliedern sich auch in 6 Cluster, wobei hier nur eins seperat ist: Dr. Grey und Jim Wells. (fällt euche eine Erklärung ein?)
+Auffallend ist, dass sich die schwarzen Geschäftspartner:innen in 6 Cluster unterteilen, wobei keins davon losgelöst von Ida ist. 
 
 
 
