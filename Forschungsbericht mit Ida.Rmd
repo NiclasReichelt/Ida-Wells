@@ -651,40 +651,9 @@ which.max(degree(Ida_white_sup, mode="all"))
 
 #Interpretation
 
-##Männliche Unterstützer
-
-Im männlichen Unterstützernetzwerk sind schwarze und weiße Personen gleichermaßen vertreten.
-
-Weiße sind hierbei eher als einzelne einflussreiche Personen aufgetreten.
-Während die Schwarzen vor allem durch ihre einflussreichen Organisationen verbunden sind. 
-Das deutet darauf hin, dass sich die Schwarzen damals mehr zusammentun und organisieren mussten um ihre Ziele erreichen zu können.
-
-Bishop Alexander Walters und T. Thomas Fortune stechen hier als verbindende Elemente besonders hervor.
-Diese Punkte sind auch in der Clusteranalyse gut zu erkennen.
-
-##Weibliche Unterstützer
-
-Die männlichen Unterstützer von Ida sind zwar mehr, aber die Unterstützerinnen haben mehr kleinere Cluster. 
-Das liegt wahrscheinlich daran, dass die Unterstützerinnen sich eher in Organisationen engagieren.
-
-Im weiblichen Unterstützernetzwerk sind weiße Personen mehr vertreten, als Schwarze. 
-Allgemein gibt es mehr Organisationen, als im männlichen Unterstützernetzwerk.
-
-Im Gegensatz zu den Männern, sind die Frauen ähnlich einflussreich, unabhängig von der Hautfarbe.
-Insgesamt waren die Unterstützerinnen alle sehr einflussreich.
-Das lässt sich darin begründen, dass Frauen damals sehr einflussreich sein mussten, um überhaupt wahrgenommen werden zu können.
-
-##Schwarze Unterstützer:innen
-
-Das Teilnetzwerk der schwarzen Unterstützer:innen von Ida weist nur 4 Cluster auf.
-Schwarze Unterstützer:innen haben sich in sehr vielen Organisationen zusammengetan, die sehr einflussreich waren.
-Sie waren insgesamt untereinander enger verbunden, als es die Weißen waren.
-
-##Weisse Unterstützer:innen
-
-Es gibt mehr weiße Unterstützer:innen, als Schwarze. 
-Das erklären wir uns damit, dass weiße Personen damals mehr Einfluss hatten.
-Sie hatten außerdem eher die finanziellen Mittel, um sie unterstützen zu können.
+Entgegen unserer Erwartungen hatte Ida mehr weiße Unterstützer:innen, als Schwarze. Wahrscheinlich liegt das daran, dass Weiße damals mehr finanzielle Mittel hatten, um sie zu unterstützen zu können. Währrend die weißen Personen in ihrem Umfeld als Einzelperson einflussreicher waren, ist das Gegenteil bei den Organisationen der Fall. Das führen wir darauf zurück, dass marginalisierte Gruppen sich öfter organisieren (müssen), um Einfluss zu haben. Gerade schwarze Unterstützerinnen haben sich in einflussreichen Organisationen vereint und waren untereinander eng verbunden. Ihr Teilnetzwerk weist lediglich 4 Cluster auf.
+Im  Unterstützernetzwerk sind schwarze und weiße Personen gleichermaßen vertreten. Bishop Alexander Walters und T. Thomas Fortune stechen hier als verbindende Elemente besonders hervor, was auch in der Clusteranalyse zu erkennen ist. 
+Im  Unterstützerinnennetzwerk sind weiße Personen mehr vertreten, als Schwarze. Das liegt wahrscheinlich daran, dass Frauen dmals sowieso schon wenig finanzielle Mittel etc. hatten - schwarze Frauen noch weniger. Auch hier erkennt man mehr Organisationen, wahrscheinlich aus dem oben genannten Grund. Die vielen, kleinen Cluster lassen sich wahrscheinlich auch darauf zurückführen, dass sich die Unterstützerinnen verstärkt in Organisationen engagiert haben. Die Frauen sind alle ähnlich einflussreich, unabhängig von der Hautfarbe. Das steht im Kontrast mit den Männern. Das lässt sich vielleicht darin begründen, dass Frauen damals sehr einflussreich sein mussten, um überhaupt wahrgenommen werden zu können. 
 
 
 #*Teilnetzwerk Geschäftsbeziehung im Vergleich*
