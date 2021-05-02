@@ -1308,121 +1308,31 @@ which.max(degree(Ida_afterGB_orga2, mode="all"))
 
 
 
-### Betweeness und Broker im Netzwerk
+# Betweeness und Broker im Netzwerk
 Der Zentralitätswert "Betweenness" zeigt, wie relevant einzelne Knoten für die Vernetzung zu anderen Knoten sind. Es geht also um Brücken oder Broker, die zwischen den einzelnen Netzwerken verbinden können. 
 
 ```{r Zentralität: Betweenness als Broker, fig.height=10, fig.width=16, message=FALSE, warning=FALSE, paged.print=FALSE}
 
-# Betweeness = wie wichtig Knoten ist, damit andere Knoten erreicht werden können, kann aber muss nicht mit Degreewert übereinstimmen, Anzahl kürzester Verbindungen zwischen allen Akteurspaaren, die durch Ego gehen, hohe Zentralität = gute Kontrolle über die Kommunikation unter den Alteri
+# Betweenness 
+# Die Betweenness zeigt auf, wie wahrscheinlich es ist, dass ein Knoten die Verbindung zu anderen Knoten im Netzwerk herstellen kann.
 
-# Gesamtnetzwerk (vereinfacht)
-# zeigt die normalisierte Indegree-Verteilung im vereinfachten Gesamtnetzwerk
-betweenness(Ida, normalized = TRUE)
 # liefert den Knoten mit der höchsten Anzahl von starken Beziehungen
 which.max(betweenness(Ida))
-
-## Ida: 0.2087180986 ; Frederick Douglass 0.0039450614 ; Jim Wells 0.0031170855 ; Catherine Impey 0.0046756283 ; Lady Henry Somerset 0.0026300409 ; Frances E Willard 0.0032144944 ;  William Woodall 0.0002922268 ; Susan B. Anthony 0.0055523086 ; Mary Church Terrell 0.0034580168 ; Bishop Alexander Walters 0.0169978570 ; National Association for the Advancement of Colored People 0.0230692160 ; Booker T Washington 0.0355834794 ; W. E. B. DuBois 0.1004334697 ; William Monroe Trotter of Boston 0.0002922268 ; Madam C J Walker 0.0057714787
-
-## Wie erwartet hat Ida den höchsten Betweenness-Wert 0.209 = 20,9%. Durch sie erreichen andere Knoten in ihrem Umfeld mehr Verbindungen. Damit weist Ida eine hohe Zentralität auf, wodurch der Knoten eine gute Kontrolle über die Kommunikation unter den Alteri hat. Der Wert stimmt nicht mit unseren Degree-Werten überein, dennoch hat Ida auch den höchsten Degree-Wert.
+## Wie erwartet hat Ida den höchsten Betweenness-Wert (0.209). Durch sie erreichen andere Knoten in ihrem Umfeld mehr Verbindungen. Damit weist Ida eine hohe Zentralität auf, wodurch der Knoten eine gute Kontrolle über die Kommunikation unter den Alteri hat.Der Wert stimmt nicht mit unseren Degree-Werten überein, dennoch hat Ida auch den höchsten Degree-Wert. Den zweithöchsten Betweenness-Wert hat W.E.B. DuBois (0.1).
 
 
 # weist dem Broker im  Gesamtnetzwerk eine Farbe zu
-V(Ida)[V(Ida)$name == Ida]$vertex.color <- "red"
+V(Ida)[V(Ida)$name == Ida]$vertex.color <- "pink"
 
 plot(Ida, layout=layout_with_kk,
-     edge.arrow.size=.4,
-     edge.color="gold",
-     # vertex.color="gold",
+     edge.arrow.size=.5,
+     edge.color="black",
+     # vertex.color="NA",
      # vertex.frame.color=NA,
      vertex.label.color="black",
      edge.curved=.2,
      main="Broker im Netzwerk",
      sub="Hauptnetzwerk")
-
-```
-
-### Closeness
-
-```{r Zentralität: Closeness, fig.height=10, fig.width=16, message=FALSE, warning=FALSE, paged.print=FALSE}
-# Closeness 
-??closness
-# Closeness ist ein Zentralitätmaß, das berechnet, welche Knoten eng miteinander verbunden sind. Allerdings kann das Zentralitätsmaß nur bei Netzwerken eingesetzt werden, die nicht über mehrere Komponenten verfügen. Deshalb analysieren wir in diesem Beispiel nur die Hauptkomponente des vereinfachten Netzwerks und erstellen diese zunächst neu.
-
-# Closeness
-# Closeness berechnet die relative Nähe zu anderen Knoten. Damit lässt sich interpretieren, welche Knoten im Netzwerk eine zentrale Rolle haben.
-
-close <- closeness(Ida, mode="all", normalized=FALSE)
-# liefert den Knoten mit der höchsten Anzahl von starken Beziehungen
-close
-
-which.max(close)
-## Ida B Wells-Barnett 0.006250000
-### Wie erwartet hat Ida den höchsten Closeness-Wert, da es sich um ein Egonetzwerk handelt.
-
-which.min(close)
-## Leroy C Bundy 0.002222222
-
-
-# weist den größten und kleinsten Werten eine Randfarbe zu
-V(Ida)[V(Ida)$name == Ida]$vertex.color <- "green"
-V(Ida)[V(Ida)$name == Bundy]$vertex.color <- "blue"
-
-plot(Ida, layout=layout_with_kk,
-     edge.arrow.size=.4,
-     edge.color="light pink",
-     vertex.color="light blue",
-     # vertex.frame.color=NA,
-     vertex.label.color="black",
-     edge.curved=.2,
-     edge.curved=curve_multiple(Ida),
-     main="Hauptkomponente",
-     sub="Closeness-Werte illustriert")
-     
-
-```
-Im Gesamtnetzwerk hat Knoten Ida mit einem Wert von 35,63% die höchste Closness-Zentralität, die niedrigste hat Knoten Bundy mit 13,77%.
-
-### Spezialfall: Influencer (Bonus)
-Wenn es um einflussreiche Knoten in einem Netzwerk geht, gibt es ein Spezialpaket InfluenceR, das zusätzlich installiert werden kann. Damit wird es sehr einfach, einflussreiche Knoten auszulesen. Allerdings funktioniert das Paket nur bei ungerichteten Knoten, deshalb werden wir das Netzwerk neu erstellen. 
-
-```{r InfluencerR Paket: Analyse von einflussreichen Knoten, fig.height=8, fig.width=12, message=FALSE, warning=FALSE, paged.print=FALSE}
-
-# Installation InfluenceR Programmbibliothek (nur, falls nötig)
-install.packages("influenceR")
-
-library(igraph)
-library(influenceR)
-
-
-# Was macht die Programmbibliothek InfluenceR?
-??influenceR
-
-# Wir erhalten einige neue Funktionen hinzu:
-# 1. ens(g) berechnet den Zugang zu strukturellen Löchern in einem Netzwerk
-# 2. bridging(g) berechnet die Knoten, die es ermöglichen, schneller andere Knoten zu erreichen, sogenannte Brücken. (nach Valente)
-
-holes <- ens(Ida)
-which.max(holes)
-## Ida B. Wells 1
-
-bridges <- bridging(Ida)
-which.max(bridges)
-## Susan B. Anthony 30
-
-# weist den größten und kleinsten Werten eine Randfarbe zu
-V(Ida)[V(Ida)$name == Ida]$frame.color <- "green"
-V(Ida)[V(Ida)$name == Anthony]$frame.color <- "blue"
-
-plot(Ida, layout=layout_nicely,
-     edge.arrow.size=.4,
-     edge.color="gold",
-     vertex.color="gold",
-     # vertex.frame.color=NA,
-     vertex.label.color="black",
-     edge.curved=.2,
-     edge.curved=curve_multiple(Ida),
-     main="Einflussreiche Knoten",
-     sub="Strukturelle Löcher (grün) und Brücken (blau)")
 
 ```
 
