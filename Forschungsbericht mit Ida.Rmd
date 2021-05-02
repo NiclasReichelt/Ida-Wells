@@ -1,5 +1,5 @@
 ---
-title: "226305 Forschungsbericht (Beispiel)"
+title: "226305 Forschungsbericht: Analyse des Netzwerkes von Ida Barnett Wells"
 author: "Karla Denzer, Daniel Guib, Penelope Hoeth, Sarah Huß, Lisa Pham, Niclas Reichelt"
 date: "Sommersemester 2020"
 output:
@@ -14,7 +14,7 @@ output:
   pdf_document:
     toc: yes
     toc_depth: '3'
-subtitle: Analyse des Netzwerkes von Ida Barnett Wells - US-amerikanische Journalistin sowie Bürger- und Frauenrechtlerin.
+subtitle: US-amerikanische Journalistin sowie Bürger- und Frauenrechtlerin.
 ---
 
 __Abstract und Keywords__
@@ -78,7 +78,7 @@ Das [Codebuch]
 
 Grundsätzlich sollte in jeder Spalte idealerweise immer nur ein Wert enthalten sein. Bis auf die ID und den Namen in der Nodelist ist dieser idealerweise numerisch codiert (als Zahl).
 
-###EDGE-Attribute
+### EDGE-Attribute
 
 from: Die Werte in der Spalte "from" definieren Sender:innen in gerichteten Netzwerken, beziehungsweise generell einen Ausgangspunkt einer Beziehung. Da wir ein ungerichtetes Netzwerk erhoben haben, ist die Richtung der Beziehung nicht relevant. Der eingetragene Wert entspricht einer ID in der Nodelist und enthält keine Sonderzeichen, sondern nur ein Wort.
 
@@ -102,7 +102,7 @@ country: Das Attribut “country” fügt jeder Beziehung den Standort der Bezie
 city: Zusätzlich bekommt jede Beziehung noch den genauen “Startpunkt” in Form der Gemeinde bzw. Stadt, z.B. Memphis, New York, London
 
 
-###NODE-Attribute
+### NODE-Attribute
 
 id: (eindeutige Codierung des Knoten) gibt jedem Knoten eine ID, bei Personen sind es meist nur die Nachnamen und bei Organisationen (Zeitungen, Magazine, politische Organisationen) meist die gängige Abkürzung
 
@@ -402,17 +402,17 @@ Zusätzlich ist auch die Unterteilung zwischen Person und Organisation (type) in
 ```{r Unterteilung in Geschlecht und Hautfarbe bzw. Person/Organisation}
 #Unterteilung
 
-#Unterteilung Geschlecht
+# Unterteilung Geschlecht
 
 Ida_male <- delete.vertices(Ida, V(Ida) [sex==2])
 Ida_female <- delete.vertices(Ida, V(Ida) [sex==1])
 
-#Unterteilung Hautfarbe
+# Unterteilung Hautfarbe
 
 Ida_black <- delete.vertices(Ida, V(Ida) [skincolor==2])
 Ida_white <- delete.vertices(Ida, V(Ida) [skincolor==1])
 
-#Unterteilung von type (Person oder Organisation)
+# Unterteilung von type (Person oder Organisation)
 
 Ida_person <- delete.vertices(Ida, V(Ida) [type==2])
 
@@ -434,13 +434,13 @@ Das sind einerseits natürlich die USA und andererseits Großbritannien.
 
 # Vergleich der Netzwerke USA & GB
 
-#Teilnetzwerk USA
+# Teilnetzwerk USA
 
 Ida_USA <- subgraph.edges(Ida, E(Ida)[country==1])
 
 Ida_USA2 <- delete.vertices(Ida_USA, degree(Ida_USA)==0)
 
-#Teilnetzwerk GB
+# Teilnetzwerk GB
 
 Ida_GB <- subgraph.edges(Ida, E(Ida)[country==2])
 
@@ -460,31 +460,31 @@ plot(Ida_USA2, layout=layout_with_fr,
      edge.width=E(Ida)$weight,
      edge.color="black")
 
-#Cluster USA & GB
+# Cluster USA & GB
 
-#Analyse der Komponenten 
+# Analyse der Komponenten 
 
 is_connected(Ida_USA2)
 count_components(Ida_USA2)
 
-#Anzahl der Cluster
+# Anzahl der Cluster
 clusters(Ida_USA2)
-#Clusterung 
+# Clusterung 
 cluster_Ida_USA2 <- cluster_walktrap(Ida_USA2)
 cluster_Ida_USA2
-#Modularitätswert
+# Modularitätswert
 modularity(cluster_Ida_USA2) 
-#Mitgliedschaft 
+# Mitgliedschaft 
 membership(cluster_Ida_USA2) 
-#visualisiert die Communities
+# visualisiert die Communities
 plot(cluster_Ida_USA2, Ida_USA2, edge.arrow.size=0.1, main="Cluster Ida USA")
 
-#Analyse der Komponenten 
+# Analyse der Komponenten 
 
 is_connected(Ida_GB2)
 count_components(Ida_GB2)
 
-#Anzahl der Cluster
+# Anzahl der Cluster
 clusters(Ida_GB2)
 #Clusterung 
 cluster_Ida_GB2 <- cluster_walktrap(Ida_GB2)
@@ -496,20 +496,22 @@ membership(cluster_Ida_GB2)
 #visualisiert die Communities
 plot(cluster_Ida_GB2, Ida_GB2, edge.arrow.size=0.1, main="Cluster Ida GB") 
 
-#Nebeneinander
+# Nebeneinander
 
 par(mfrow=c(1,2), mar=c(0,0,1,2))
 plot(Ida_GB, edge.arrow.size=.3, main="GB")
 plot(Ida_USA, edge.arrow.size=.3,  main="USA")
 
 ```
-#Die erste Visuelle Darstellung zeigt: 
+
+# Erste visuelle Darstellung
 In Großbritannien hatte Ida ausschließlich mit Weißen Personen Kontakt. Diese sind, wenn überhaupt eher einzeln in Organisationen tätig. Der "Anticaste" (politisches Magazin für Bürgerrechte)und das durch Idas Besuch neu gegründete "AntiLynching Committee" stechen hier noch einmal hervor.
 Zusätzlich wird ersichtlich, dass viele Beziehungen eine starke Ausprägung (weight) vorweisen.
 
 In den USA hingegen ist das Netzwerk viel ausgeprägter. Hier nehmen Organisationen und schwarze Personen einen größeren Teil des Netzwerkes ein. Zusätzlich ist der hohe Einfluss einiger Personen durch die Größe der Formen erkennbar.
 
-#Cluster
+
+# Cluster
 
 Aus den Clustern der beiden Teilnetzwerke ist hier nicht viel abzulesen.
 
@@ -521,7 +523,9 @@ Man erkennt generell die größerer Vielfalt und die verschiedenen "Stationen" I
 Lady Henry Somerset, Frances E. Willard und die Womans Christian Temperance Union stehen abseits.
 Diese waren auch in den USA aktiv, kommen aber aus Großbritannien.
 
-#Degree
+
+# Degree
+
 ```{r Degree USA & GB}
 # USA
 degree(Ida_USA2, mode="all")
@@ -531,12 +535,12 @@ which.max(degree(Ida_USA2, mode="all"))
 degree(Ida_GB, mode="all")
 which.max(degree(Ida_GB, mode="all"))
 ```
-#GB:
+# GB:
 Mit 23 Verbindungen hat Ida den höchsten Degreewert. Lady Henry Somerset und Frances E Willard haben mit 6 Verbindungen den zweithöchsten Degreewert.
 Insgesamt haben die meisten Personen, denen sie in Großbritannien begegnet ist, viele Verbindungen zu anderen Knoten. 
 Wie sie auch in ihrer Autobiographie beschreibt, war das sogenannte Clublife hier sehr ausgeprägt und somit die Ergebnisse erwartbar.
 
-#USA:
+# USA:
 Nach Ida (52 Verbindungen) haben Mary Church Terrell, Booker T Washington und W.E.B. DuBois den nächstgrößten Degreewert mit jeweils 11 Verbindungen zu weiteren Knoten. 
 Thomas Moss, William Penn Nixon, James Keeley, Samuel Fallows und Leroy C Bundy haben alle lediglich eine Verbindung. 
 Insgesamt haben die Knoten einen geringeren Degreewert, als in Großbritannien.
@@ -547,6 +551,8 @@ Das ist wiederrum auf das noch nicht so ausgereifte "Clublife" in der USA zurüc
 
 Als nächstes untersuchen wir die Unterstützer:innen Idas.
 Diese unterteilen wir wiederum in Hautfarbe und Geschlecht.
+
+
 ```{r Teilnetzwerke der Unterstützer vergleichen, fig.height=9, fig.width=16}
 
 #Teilnetzwerke Unterstützer
@@ -596,7 +602,7 @@ plot(Ida_white_sup, layout=layout_with_kk,
      edge.width=E(Ida)$weight,
      edge.color="black")
 
-#Analyse der Komponenten der Unterstützer:innen - Teilnetzwerke
+# Analyse der Komponenten der Unterstützer:innen - Teilnetzwerke
 
 is_connected(Ida_male_sup)
 count_components(Ida_male_sup)
@@ -611,18 +617,18 @@ is_connected(Ida_white_sup)
 count_components(Ida_white_sup)
 
 
-#Alle Cluster der Unterstützer:innen
+# Alle Cluster der Unterstützer:innen
 
-#Community Analyse
+# Community Analyse
 
-#Anzahl der Cluster
+# Anzahl der Cluster
 clusters(Ida_sup)
 clusters(Ida_male_sup)
 clusters(Ida_female_sup)
 clusters(Ida_black_sup)
 clusters(Ida_white_sup)
 
-#Clusterung
+# Clusterung
 
 cluster_Ida_sup <- cluster_walktrap(Ida_sup)
 cluster_Ida_sup
@@ -635,7 +641,7 @@ cluster_Ida_black_sup
 cluster_Ida_white_sup <- cluster_walktrap(Ida_white_sup)
 cluster_Ida_white_sup
 
-#Modularitätswert
+# Modularitätswert
 
 modularity(cluster_Ida_sup)
 modularity(cluster_Ida_male_sup)
@@ -643,7 +649,7 @@ modularity(cluster_Ida_female_sup)
 modularity(cluster_Ida_black_sup)
 modularity(cluster_Ida_white_sup) 
 
-#Mitgliedschaft 
+# Mitgliedschaft 
 
 membership(cluster_Ida_sup)
 membership(cluster_Ida_male_sup)
@@ -651,7 +657,7 @@ membership(cluster_Ida_black_sup)
 membership(cluster_Ida_female_sup)
 membership(cluster_Ida_white_sup)
 
-#visualisiert die Communities
+# visualisiert die Communities
 
 plot(cluster_Ida_sup, Ida_sup, edge.arrow.size=0.1, main="Cluster Ida alle Unterstützer:innen") 
 plot(cluster_Ida_male_sup, Ida_male_sup, edge.arrow.size=0.1, main="Cluster Ida männliche Unterstützer") 
@@ -659,7 +665,7 @@ plot(cluster_Ida_female_sup, Ida_female_sup, edge.arrow.size=0.1, main="Cluster 
 plot(cluster_Ida_black_sup, Ida_black_sup, edge.arrow.size=0.1, main="Cluster Ida schwarze Unterstützer:innen") 
 plot(cluster_Ida_white_sup, Ida_white_sup, edge.arrow.size=0.1, main="Cluster Ida weisse Unterstützer:innen") 
 
-#Teilnetzwerke Nebeneinander
+# Teilnetzwerke Nebeneinander
 
 par(mfrow=c(1,4), mar=c(0,0,1,2))
 plot(Ida_white_sup, edge.arrow.size=.3, main="weiße Unterstützer:innen")
@@ -668,7 +674,7 @@ plot(Ida_male_sup, edge.arrow.size=.3,  main="männliche Unterstützer")
 plot(Ida_female_sup, edge.arrow.size=.3,  main="weibliche Unterstützer")
 ```
 
-#Interpretation
+# Interpretation
 Entgegen unserer Erwartungen hatte Ida mehr weiße Unterstützer:innen als Schwarze. Wahrscheinlich liegt das daran, dass Weiße damals mehr finanzielle Mittel hatten, um sie unterstützen zu können. Während die weißen Personen in ihrem Umfeld als Einzelperson einflussreicher waren, ist das Gegenteil bei den Organisationen der Fall. Das führen wir darauf zurück, dass marginalisierte Gruppen sich öfter organisieren (müssen), um Einfluss zu haben. Gerade schwarze Unterstützerinnen haben sich in einflussreichen Organisationen vereint und waren untereinander eng verbunden. Ihr Teilnetzwerk weist lediglich 4 Cluster auf.
 
 Im  Unterstützernetzwerk sind schwarze und weiße Männer gleichermaßen vertreten. Bishop Alexander Walters und T. Thomas Fortune stechen hier als verbindende Elemente besonders hervor, was auch in der Clusteranalyse zu erkennen ist. 
@@ -682,7 +688,6 @@ Im  Unterstützerinnennetzwerk sind weiße Frauen mehr vertreten als Schwarze. D
 
 degree(Ida_sup, mode="all")
 which.max(degree(Ida_sup, mode="all"))
-
 # Mary Church Terrell hat mit 7 Verbindungen den nächsthöchsten Degreewert nach Ida (28 Verbindungen). Bishop Alexander Walters, Susan B Anthony, Frances E Willard und Lady Henry Somerset folgen danach mit 5 Verbindungen.
 
 
@@ -690,38 +695,34 @@ which.max(degree(Ida_sup, mode="all"))
 
 degree(Ida_female_sup, mode="all")
 which.max(degree(Ida_female_sup, mode="all"))
-
 ## Ida hat mit 13 Verbindungen den höchsten Degreewert. Susan B Anthony und Frances E Willard haben mit 4 Verbindungen den zweithöchsten Degreewert. Die meisten anderen Unterstützerinnen haben entweder 2 Verbindungen oder sogar nur eine Verbindung.
 
 # Schwarze Unterstützer
 degree(Ida_black_sup, mode="all")
 which.max(degree(Ida_black_sup, mode="all"))
-
 ## Mit 11 Verbindungen hat Ida den höchsten Degreewert, mit 6 Verbindungen hat Mary Church Terrell den zweithöchsten Degreewert und Bishop Alexander Walters und T. Thomas Fortune mit 4 Verbindungen den dritthöchsten Wert. Im schwarzen Unterstützernetzwerk haben einige Personen einen hohen Degreewert, vor allem im Vergleich zum weißen Unterstützernetzwerk.
 
-#Männliche Unterstützer
+# Männliche Unterstützer
 degree(Ida_male_sup, mode="all")
 which.max(degree(Ida_male_sup, mode="all"))
-
 ## Bishop Alexander Walters und T. Thomas Fortune haben mit 4 Verbindungen (nach Ida) den höchsten Degreewert. Insgesamt haben acht Knoten lediglich eine Verbindung.
 
 # Weiße Unterstützer*innen
 degree(Ida_white_sup, mode="all")
 which.max(degree(Ida_white_sup, mode="all"))
-
 ## Nach Ida haben Lady Henry Somerset und Frances E Willard den nächsthöchsten Degreewert mit 5 Verbindungen. Auffallend ist, dass viele Personen zu wenig anderen Knoten eine Verbindung haben. Wir haben allgemein beobachtet, dass schwarze Personen in Idas Netzwerk einen höheren Degreewert haben und besser vernetzt sind.
 
 
 ```
 
-#*Teilnetzwerk Geschäftsbeziehung im Vergleich*
+# *Teilnetzwerk Geschäftsbeziehung im Vergleich*
 
 Als nächstes untersuchen wir die Geschäftspartner Idas.
 Auch diese unterteilen wir wiederum in Hautfarbe und Geschlecht.
 
 ```{r Teilnetzwerk Business, fig.height=9, fig.width=16}
 
-#Teilnetzwerke Geschäftliche Beziehung
+# Teilnetzwerke Geschäftliche Beziehung
 
 Ida_bus <- subgraph.edges(Ida, E(Ida)[relation==4])
 
@@ -758,8 +759,9 @@ plot(Ida_white_bus, layout=layout_with_kk,
      edge.arrow.size=.7,
      edge.width=E(Ida)$weight,
      edge.color="black")
+     
 
-#Analyse der Komponenten - Geschäftliche Beziehung
+# Analyse der Komponenten - Geschäftliche Beziehung
 
 is_connected(Ida_male_bus)
 count_components(Ida_male_bus)
@@ -773,15 +775,16 @@ count_components(Ida_black_bus)
 is_connected(Ida_white_bus)
 count_components(Ida_white_bus)
 
-#Community Analyse - Geschäftliche Beziehung
 
-#Anzahl der Cluster
+# Community Analyse - Geschäftliche Beziehung
+
+# Anzahl der Cluster
 clusters(Ida_male_bus)
 clusters(Ida_female_bus)
 clusters(Ida_black_bus)
 clusters(Ida_white_bus)
 
-#Clusterung 
+# Clusterung 
 cluster_Ida_male_bus <- cluster_walktrap(Ida_male_bus)
 cluster_Ida_male_bus
 cluster_Ida_female_bus <- cluster_walktrap(Ida_female_bus)
@@ -803,7 +806,7 @@ membership(cluster_Ida_female_bus)
 membership(cluster_Ida_black_bus)
 membership(cluster_Ida_white_bus)
 
-#visualisiert die Communities
+# visualisiert die Communities
 plot(cluster_Ida_male_bus, Ida_male_bus, edge.arrow.size=0.1, main="Cluster Ida Geschäftspartner")
 plot(cluster_Ida_female_bus, Ida_female_bus, edge.arrow.size=0.1, main="Cluster Ida Geschäftsparterinnen")
 plot(cluster_Ida_black_bus, Ida_black_bus, edge.arrow.size=0.1, main="Cluster Ida schwarze Geschäftspartner:innen")
@@ -828,7 +831,7 @@ which.max(degree(Ida_black_bus, mode="all"))
 # Weisse Geschäftspartner
 degree(Ida_black_bus, mode="all")
 which.max(degree(Ida_black_bus, mode="all"))
-##ERGÄNZEN
+!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!##ERGÄNZEN
 
 # Weibliche Geschäftspartnerinnen 
 degree(Ida_female_bus, mode="all")
@@ -853,11 +856,9 @@ Auffallend ist, dass sich die schwarzen Geschäftspartner:innen in 6 Cluster unt
 
 *Teilnetzwerk Aufgabenbereich im Vergleich*
 
-Als nächstes untersuchen wir.....
-
 ```{r fig.height=9, fig.width=16, Teilnetzwerke Aufgabenbereich fig.height=12}
 
-#Teilnetzwerk nach Aufgabenbereich
+# Teilnetzwerk nach Aufgabenbereich
 
 Ida_jour <- delete.vertices(Ida_person, V(Ida_person) [Journalismus==0])
 
@@ -867,7 +868,7 @@ Ida_pol <- delete.vertices(Ida_person, V(Ida_person) [Politik==0])
 
 Ida_jour_act <- delete.vertices(Ida_jour, V(Ida_jour)[Aktivismus==0])
 
-#plotting
+# plotting
 
 plot(Ida_jour, layout=layout_with_kk,
      asp=0,
@@ -897,22 +898,22 @@ plot(Ida_jour_act, layout=layout_with_kk,
      edge.width=E(Ida)$weight,
      edge.color="black")
      
-##Analyse der Visualisierung:
+## Analyse der Visualisierung:
 
-#Journalist:innen
+# Journalist:innen
 Im Netzwerk der Journalist:innen sind mehr als doppelt so viele Männer als Frauen. Das kann daran liegen, dass Männer in dieser Zeit mehr Möglichkeit hatten, ihre Meinung zu vertreten. Alle Journalist:innen (bis auf Barnett) haben eine einflussreiche Position. Das könnte daran liegen, dass Journalist:innen damals durch ihre Reichweite viele Menschen erreichen konnten und somit auch einen großen Einfluss auf die Abläufe und Meinungen in der Bevölkerung hatten. Da damals noch viele Menschen dachten, dass der Mann der Frau überlegen sei, sind die Männer hier mehr vertreten. Schaffte eine Frau es jedoch, sich Verhör zu schaffen, vertrat sie gleich auch eine einflussreiche Position. Außerdem ist es auffällig, dass vor allem weiße Personen hohen Einfluss hatten. Das liegt daran, dass sich dunkelhäutige Menschen zu dieser Zeit noch kein Gehör verschaffen konnten und sich härter für Aufmerksamkeit und Einfluss einsetzen mussten als Weiße. 
 
-#Aktivist:innen
+# Aktivist:innen
 Im Netzwerk der Aktivist:innen sind ungefähr gleich viele Männer und Frauen vertreten. Die Frauen waren vorwiegend weiß. Bei den Männern waren 6 von 9 dunkelhäutig. Das zeigt, dass sich vor allem die Menschen, die sich beanchtteiligt fühlten (Frauen und Schwarze) aktivistisch engagierten. Auffällig ist auch, dass die schwarzen Aktivist:innen untereinander viel besser vernetzt waren als die Weißen. Für Weiße war es einfacher, sich als Einzelperson zu engagieren, da man angesehener war. Die Schwarzen haben sich eher in Gruppen zusammengeschlossen, um etwas erreichen zu können.
 
-#Politiker:innen
+# Politiker:innen
 Im Netzwerk der Politiker:innen sind vor allem weiße Personen und Männer vertreten. Das ist wahrscheinlich aus den oben ausgeführten Gründen erklären (Ansehen und EInfluss).
 
-#aktivistische Journalist:innen
+# aktivistische Journalist:innen
 Ungefähr die Hälfte der Journalist:innen sind auch aktivistisch engagiert. Darunter sind vor allem weiße Frauen. Außer F. L. Barnett hat jeder der aktivistischen Journalist:innen einen großen Einfluss. Das kommt wahrscheinlich daher, dass sie sowohl in ihren Redaktionen als auch in den aktivistischen Kreisen ihre Netzwerke haben. Abgesehen von zwei Ausnahmen (Mayo und Impey) ist der einzige Knotenpunkt im Teilnetzwerk Ida. Ansonsten sind die aktivistischen Journalist:innen nicht besonders miteinander vernetzt.
 
 
-#Analyse der Komponenten 
+# Analyse der Komponenten 
 
 is_connected(Ida_jour)
 count_components(Ida_jour)
@@ -926,15 +927,15 @@ count_components(Ida_pol)
 is_connected(Ida_jour_act)
 count_components(Ida_jour_act)
 
-#Community Analyse
+# Community Analyse
 
-#Anzahl der Cluster
+# Anzahl der Cluster
 clusters(Ida_jour)
 clusters(Ida_act)
 clusters(Ida_pol)
 clusters(Ida_jour_act)
 
-#Clusterung 
+# Clusterung 
 cluster_Ida_jour <- cluster_walktrap(Ida_jour)
 cluster_Ida_jour
 cluster_Ida_act <- cluster_walktrap(Ida_act)
@@ -944,25 +945,25 @@ cluster_Ida_pol
 cluster_Ida_jour_act <- cluster_walktrap(Ida_jour_act)
 cluster_Ida_jour_act
 
-#ModularitÃ¤tswert
+# ModularitÃ¤tswert
 modularity(cluster_Ida_jour)
 modularity(cluster_Ida_act)
 modularity(cluster_Ida_pol)
 modularity(cluster_Ida_jour_act)
 
-#Mitgliedschaft 
+# Mitgliedschaft 
 membership(cluster_Ida_jour)
 membership(cluster_Ida_act)
 membership(cluster_Ida_pol)
 membership(cluster_Ida_jour_act)
 
-#visualisiert die Communities
+# visualisiert die Communities
 plot(cluster_Ida_jour, Ida_jour, edge.arrow.size=0.1, main="Cluster Ida Journalist:innen")
 plot(cluster_Ida_act, Ida_act, edge.arrow.size=0.1, main="Cluster Ida Aktivist:innen")
 plot(cluster_Ida_pol, Ida_pol, edge.arrow.size=0.1, main="Cluster Ida Politiker:innen")
 plot(cluster_Ida_jour_act, Ida_jour_act, edge.arrow.size=0.1, main="Cluster Ida Journalist:innen & Aktivist:innen") 
 
-#Teilnetzwerke Nebeneinander
+# Teilnetzwerke Nebeneinander
 
 par(mfrow=c(1,4), mar=c(0,0,1,2))
 plot(Ida_jour, edge.arrow.size=.3, main="Journalist:innen")
@@ -973,18 +974,18 @@ plot(Ida_jour_act, edge.arrow.size=.3, main="aktivistische Journalist:innen")
 
 ```{r Degree - Teilnetzwerke nach Tätigkeit , fig.height=9, fig.width=16 paged.print=FALSE}
 
-##Analyse der Cluster
+## Analyse der Cluster
 
-#Journalist:innen
+# Journalist:innen
 Im Netzwerk der Journalist:innen ergeben sich fünf verschiedene Cluster. Eins davon ist ein großes, das auch Ida mit einschließt. In diesem Cluster sind sowohl Männer als auch Frauen mit mittlerem Einfluss vertreten. Die drei anderen Cluster sind jeweils mit zwei Journalist:innen, die in direkter Verbindung zueinander stehen. Dabei fällt auf, dass diese weitere Verbindung immer zum gleichen Geschlecht mit dem gleichen Einfluss besteht. Fleming und Nightingale sind beide für die gleiche Organisation bzw. den gleichen Verlag (Free Speech and Headlight) tätig und haben mit Ida im gleichen Zeitraum zu tun gehabt. F.L. Barnett ist alleine im fünften Cluster. Das könnte sich dadurch erklären, dass er nur einen sehr geringen Einfluss hat und auch keine andere Verbindung hat als die zu Ida. Somit passt er in kein vorhandenes Cluster hinein und bildet sein eigenes.
 
-#Aktivist:innen
+# Aktivist:innen
 Im Netzwerk der Aktivist:innen bilden sich vier verschiedene Cluster. Im Größten sind sowohl Männer als auch Frauen mit dem ungefähr gleichen Einfluss drin. Diese sind nur minimal untereinander vernetzt. In einem weiteren Cluster sind ausschließlich Männer drin, die (bis auf Barnett) alle den gleichen Einfluss haben. Außerdem sind sie untereinander eng miteinander verbunden, weshalb es logisch ist, warum sie zusammen ein eigenens Cluster bilden. In einem weiteren Cluster sind drei einflussreiche Aktivist:innen, Jedoch steht auch einer von denen in Verbindung mit einer weniger einflussreichen Frau. Durch diese direkte Verbindung wird Helen Douglass auch in dieses Cluster mit aufgenommen. Im letzten Cluster sind zwei Frauen (Belle Squire und Virginia Brooks), die eine direkte Verbindung miteinander haben. Beide haben den gleichen Einfluss und sind in der gleichen Organisation (Alpha Suffrage Club). 
 
-#Politiker:innen
+# Politiker:innen
 Im Netzwerk der Politiker:innen bilden sich zwei Cluster. Das Cluster, das sich von dem großen Cluster abspaltet, wird durch die einzigen direkten Verbindungen der Knoten untereinander gebildet. Das Cluster verdeutlicht nochmal die schon in der Visualisierung auffälligen Beziehungen der Schwarzen untereinander. Ansonsten gibt es in diesem Netzwerk keine weiteren Verbindungen der Knoten als die zu Ida.
 
-#aktivistische Journalist:innen
+# aktivistische Journalist:innen
 Im Netzwerk der aktivistischen Journalist:innen bilden sich zwei Cluster. Im Hauptcluster sind sowohl Männer als auch Frauen mit unterschiedlichem Einfluss enthalten. Das zweite Cluster bildet sich nur aus zwei Frauen (Anthony und Terrel), die auch zueinander eine direkte Beziehung haben und den gleichen Einfluss haben. Beide gleichen sich in ihren Tätigkeiten und ihrer Motivation, da sie sich beide für Frauen und für Schwarze einsetzen. Die beiden haben auch schon im Netzwerk der Journalist:innen ein eigenes Cluster gebildet. Überraschend ist, dass Isabella Mayo und Catherine Impey kein Cluster bilden. Die beiden haben eine direkte Verbindung zueinander und haben die gleiche Motivation, Hautfarbe und Einfluss. Auch sind beide der gleichen Organisation angehörig, was Susan B. Anthony und Mary Terrel nicht sind.
 
 # Degree nach Tätigkeiten
@@ -1005,30 +1006,27 @@ which.max(degree(Ida_pol, mode="all"))
 degree(Ida_act, mode="all")
 which.max(degree(Ida_act, mode="all"))
 
-
 ```
-##Degree-Werte
+## Degree-Werte
 
-#Journalist:innen
+# Journalist:innen
 Mit 30 Verbindungen hat Ida den höchsten Degreewert. Susan B Anthony hat mit 6 Verbindungen den zweithöchsten Degreewert. Danach folgen einige Journalist*innen mit 5 Verbindungen. Insgesamt haben die Journalisten und Journalistinnen viele Verbindungen zu anderen Knoten. Das weist darauf hin, dass sie untereinander eng verbunden sind.
 
-#Aktivist:innen
+# Aktivist:innen
 Ida hat mit 47 Verbindungen den höchsten Wert, Booker T Washington mit 10 Verbindungen den zweithöchsten Wert und John Clifford mit einer Verbindung den niedrigsten Wert.
 
-#Politiker:innen
+# Politiker:innen
 Ida hat die stärksten Beziehungen im Gesamtnetzwerk und somit höchsten Degreewert (16). Den zweitgrößten Degreewert haben Frederick Douglass und Mary Church Terrell mit 4 direkten Verbindungen. Die National American Woman Suffrage Association hat hingegen 0 direkte Verbindungen.
 
-#aktivistische Journalist:innen
+# aktivistische Journalist:innen
 Ida hat mit 19 Verbindungen den höchsten Degreewert, Susan B. Anthony mit 6 Verbindungen den zweithöchsten Degreewert und Catherine Impey und Isabella Fyvie Mayo mit 5 Verbindungen den dritthöchsten Degreewert. Insgesamt haben die meisten Knoten mehrere Verbindungen zu anderen Knoten. Das kann daran liegen, dass sowohl Journalist*innen, als auch Aktivist*innen besonders gut verbunden zu sein. 
 
 
 *Teilnetzwerk Motivation im Vergleich*
 
-Als nächstes untersuchen wir....
-
 ```{r fig.height=9, fig.width=16, Teilnetzwerke Motivation fig.height=12}
 
-#Teilnetzwerk nach Motivation
+# Teilnetzwerk nach Motivation
 
 Ida_mot <- delete.vertices(Ida, V(Ida) [type==2])
 
@@ -1041,7 +1039,7 @@ Ida_mot_black <- delete.vertices(Ida_mot_both1, V(Ida_mot_both1) [motivation==2]
 
 Ida_mot_woman <- delete.vertices(Ida_mot_both1, V(Ida_mot_both1) [motivation==1])
 
-#plotting
+# plotting
 
 plot(Ida_mot_black, layout=layout_with_kk,
      asp=0,
@@ -1065,7 +1063,7 @@ plot(Ida_mot_both3, layout=layout_with_kk,
      edge.color="black")
 
 
-#Analyse der Komponenten 
+# Analyse der Komponenten 
 
 is_connected(Ida_mot_black)
 count_components(Ida_mot_black)
@@ -1077,14 +1075,14 @@ is_connected(Ida_mot_both3)
 count_components(Ida_mot_both3)
 
 
-#Community Analyse
+# Community Analyse
 
-#Anzahl der Cluster
+# Anzahl der Cluster
 clusters(Ida_mot_black)
 clusters(Ida_mot_woman)
 clusters(Ida_mot_both3)
 
-#Clusterung 
+# Clusterung 
 cluster_Ida_mot_black <- cluster_walktrap(Ida_mot_black)
 cluster_Ida_mot_black
 cluster_Ida_mot_woman <- cluster_walktrap(Ida_mot_woman)
@@ -1092,22 +1090,22 @@ cluster_Ida_mot_woman
 cluster_Ida_mot_both3 <- cluster_walktrap(Ida_mot_both3)
 cluster_Ida_mot_both3
 
-#Modularitätswert
+# Modularitätswert
 modularity(cluster_Ida_mot_black)
 modularity(cluster_Ida_mot_woman)
 modularity(cluster_Ida_mot_both3) 
 
-#Mitgliedschaft 
+# Mitgliedschaft 
 membership(cluster_Ida_mot_black)
 membership(cluster_Ida_mot_woman)
 membership(cluster_Ida_mot_both3)
 
-#visualisiert die Communities
+# visualisiert die Communities
 plot(cluster_Ida_mot_black, Ida_mot_black, edge.arrow.size=0.1, main="Cluster Motivation Schwarzenrechte")
 plot(cluster_Ida_mot_woman, Ida_mot_woman, edge.arrow.size=0.1, main="Cluster Motivation Frauenrechte")
 plot(cluster_Ida_mot_both3, Ida_mot_both3, edge.arrow.size=0.1, main="Cluster Motivation Schwarzen- und Frauenrechte") 
 
-#Teilnetzwerke Nebeneinander
+# Teilnetzwerke Nebeneinander
 
 par(mfrow=c(1,3), mar=c(0,0,1,2))
 plot(Ida_mot_black, edge.arrow.size=.3, main="Schwarzenrechtler:innen")
@@ -1115,32 +1113,32 @@ plot(Ida_mot_woman, edge.arrow.size=.3,  main="Frauenrechtler:innen")
 plot(Ida_mot_both2, edge.arrow.size=.3,  main="Beides")
 
 ```
-##Schwarzenrechtler:innen
+## Schwarzenrechtler:innen
 Anhand des Teilnetzwerks kann man erkennen, dass erheblich mehr Männer involviert waren als Frauen. Außerdem ist die vergleichsweise hohe Anzahl an weißen, einflussreicheren Personen zu beachten, die sich für Schwarzenrechte eingesetzt haben wie z.B. William Penn Nixon. Zu diesen hat Ida im Durchschnitt schwache Beziehungen, während die Beziehungen zu Schwarzen stärker waren. Das lässt sich mit der damaligen Hierarchie erklären. Aufgrund der ungleichen Machtverhältnisse war Ida insbesondere auf die Unterstützung von weißen Personen angewiesen (insbesondere finanziell), um ihre politischen Interessen durchzusetzen.
 
-##Frauenrechtler:innen
+## Frauenrechtler:innen
 Hier sind mehr Frauen als Männer erkennbar, die sich für Frauenrechte eingesetzt haben. Besonders auffällig ist die hohe Anzahl an weißen Knoten. Bei vier Schwarzen hat sich allerdings nur ein Mann für Frauenrechte eingesetzt, nämlich Frederick Douglass. Deutlich wird hier die Stärke der Beziehungen: Fast zu allen Knoten hat Ida eine starke Beziehung.
 
-##Beides
+## Beides
 Wie schon in den beiden vorherigen Teilnetzwerken zu sehen war, haben sich vergleichsweise weniger Leute für Frauenrechte eingesetzt als für Schwarzenrechte. Auch die Anzahl an Personen, deren Engagement beiden Fraktionen galt, ist eher klein und ist sehr ähnlich zu dem Netzwerk der Frauenrechtler:innen. Ein interessanter Aspekt: Frauen, die sich für Frauenrechte ausgesprochen haben, haben sich auch für Schwarzenrechte engagiert. Im Gegensatz dazu haben sich Schwarzenrechtler:innen oft nur für diese eingesetzt. Das sieht man auch in den Clustern. Besonders deutlich wird die unterschiedliche Knotenanzahl zwischen den beiden Netzwerken. Die Gruppe der Schwarzenrechtler:innen ist erheblich größer als die der Frauenrechtler:innen; so besteht der Alpha Suffrage Club in den Netzwerken nur aus Ida, Belle Squire und Virginia Brooks.
 
 ```{r Degree - Teilnetzwerke nach Motivation , fig.height=9, fig.width=16 paged.print=FALSE}
 
-#Degree nach Motivation
+# Degree nach Motivation
 
 #Motivation: Rechte für Schwarze 
 degree(Ida_mot_black, mode="all")
 which.max(degree(Ida_mot_black, mode="all"))
 
-##Nach Ida (47 Verbindungen) haben Booker T Washington und W. E. B. DuBois mit 8 Verbindungen den höchsten Degreewert. Washington und DuBois waren bekannte Schwarzenrechtler und Gründer des Niagara Movements, das später sogar Teil der NAACP wurde. Danach folgt Susan B Anthony mit 7 Verbindungen. Durch die Gründung des Alpha Suffrage Club, zusammen mit Ida, hat sie sich gegen die Standards der US-amerikanischen Suffragetten gestellt und auch schwarze Frauen unterstützt.
+## Nach Ida (47 Verbindungen) haben Booker T Washington und W. E. B. DuBois mit 8 Verbindungen den höchsten Degreewert. Washington und DuBois waren bekannte Schwarzenrechtler und Gründer des Niagara Movements, das später sogar Teil der NAACP wurde. Danach folgt Susan B Anthony mit 7 Verbindungen. Durch die Gründung des Alpha Suffrage Club, zusammen mit Ida, hat sie sich gegen die Standards der US-amerikanischen Suffragetten gestellt und auch schwarze Frauen unterstützt.
 
-#Motivation: Frauenrechte
+# Motivation: Frauenrechte
 degree(Ida_mot_woman, mode="all")
 which.max(degree(Ida_mot_woman, mode="all"))
 
-##Booker T Washington und W. E. B. DuBois haben mit 8 Verbindungen den zweithöchsten Degreewert nach Ida (nach 47 Verbindungen). Darauf folgen Susan B. Anthony (7 Verbindungen) und Mary Church Terrell (6 Verbindungen). Verhätnismäßig wenige Personen haben Verbindungen zu anderen Knoten. Überraschend ist, dass hier zwei schwarze Männer nach Ida den höchsten Degree-Wert innehaben. Diese Personen engagieren sich zugleich stark für Schwarzenrechte. Schaut man sich allerdings das Teilnetzwerk an, haben sich insgesamt mehr Frauen als Männer für Frauenrechte eingesetzt.
+## Booker T Washington und W. E. B. DuBois haben mit 8 Verbindungen den zweithöchsten Degreewert nach Ida (nach 47 Verbindungen). Darauf folgen Susan B. Anthony (7 Verbindungen) und Mary Church Terrell (6 Verbindungen). Verhätnismäßig wenige Personen haben Verbindungen zu anderen Knoten. Überraschend ist, dass hier zwei schwarze Männer nach Ida den höchsten Degree-Wert innehaben. Diese Personen engagieren sich zugleich stark für Schwarzenrechte. Schaut man sich allerdings das Teilnetzwerk an, haben sich insgesamt mehr Frauen als Männer für Frauenrechte eingesetzt.
 
-#Motivation: Frauenrechte & Schwarzenrechte
+# Motivation: Frauenrechte & Schwarzenrechte
 degree(Ida_mot_both, mode="all")
 which.max(degree(Ida_mot_both, mode="all"))
 
@@ -1203,7 +1201,6 @@ plot(Ida_afterGB_orga2, layout=layout_with_kk,
      edge.width=E(Ida)$weight,
      edge.color="black")
 
-
 #Analyse der Komponenten 
 
 is_connected(Ida_beforeGB3)
@@ -1219,15 +1216,15 @@ is_connected(Ida_afterGB_orga2)
 count_components(Ida_afterGB_orga2)
 
 
-#Community Analyse
+# Community Analyse
 
-#Anzahl der Cluster
+# Anzahl der Cluster
 clusters(Ida_beforeGB3)
 clusters(Ida_afterGB)
 clusters(Ida_beforeGB_orga2)
 clusters(Ida_afterGB_orga2)
 
-#Clusterung 
+# Clusterung 
 cluster_Ida_beforeGB3 <- cluster_walktrap(Ida_beforeGB3)
 cluster_Ida_beforeGB3
 cluster_Ida_afterGB <- cluster_walktrap(Ida_afterGB)
@@ -1237,7 +1234,7 @@ cluster_Ida_beforeGB_orga2
 cluster_Ida_afterGB_orga2 <- cluster_walktrap(Ida_afterGB_orga2)
 cluster_Ida_afterGB_orga2
 
-#Modularitätswert
+# Modularitätswert
 modularity(cluster_Ida_beforeGB3)
 modularity(cluster_Ida_afterGB)
 modularity(cluster_Ida_beforeGB_orga2)
@@ -1253,15 +1250,16 @@ plot(cluster_Ida_afterGB, Ida_afterGB, edge.arrow.size=0.1, main="Cluster Ida na
 plot(cluster_Ida_beforeGB_orga2, Ida_beforeGB_orga2, edge.arrow.size=0.1, main="Cluster Organisationen vor den Großbritannien-Reisen")
 plot(cluster_Ida_afterGB_orga2, Ida_afterGB_orga2, edge.arrow.size=0.1, main="Cluster Organisationen nach den Großbritannien Reisen")
 
-
-
-
 ```
-##Organisationen
+
+## Organisationen
 Man erkennt eindeutig, dass die Verbindungen von Ida B. Wells zu Organisationen nach den Großbritannien-Reisen deutlich zugenommen haben: von davor 2 zu danach 9 Organisationen. Der Großteil von den 9 Organisationen sind zudem welche, die sich für Schwarzen- oder Frauenrechte einsetzen. Daraus lässt sich vermuten, dass die Großbritannien-Reisen ihr wie vermutet das "Club-Life" näher gebracht haben. 
-##Personen
+
+## Personen
 Außerdem sieht man, dass die Verbindungen zu weißen Männern oder Frauen sich nach den Reisen mehr als verdreifacht haben, vor allem zu einflussreichen Weißen. Naheliegend wäre die Annahme, dass ihr auf der Großbritannien-Reise klar geworden ist, dass sie auch auf einflußreiche Weiße setzen muss um was zu erreichen oder, dass sie in Großbritannien bereits Aufmerksamkeit bei den Weißen erregen konnte oder Kontakt zu Ihnen herstellen konnte.
-## Cluster: Durch die Clusterung bilden sich nach den Reisen zwei größere Cluster, das limettengrüne und das orangene. Das Orangene besticht vor allem durch seine Verbindungen unter sich. In dem orangenen Cluster sind die männlichen, schwarzen Bürgerrechtler:innen rund um Booker T. Washington, die unter sich sehr vernetzt waren. Im Gegensatz dazu, handelt es sich im limettengrünen vor allem um Einzelpersonen, die sich für die Rechte der Schwarzen eingesetzt haben.
+
+## Cluster
+Durch die Clusterung bilden sich nach den Reisen zwei größere Cluster, das limettengrüne und das orangene. Das Orangene besticht vor allem durch seine Verbindungen unter sich. In dem orangenen Cluster sind die männlichen, schwarzen Bürgerrechtler:innen rund um Booker T. Washington, die unter sich sehr vernetzt waren. Im Gegensatz dazu, handelt es sich im limettengrünen vor allem um Einzelpersonen, die sich für die Rechte der Schwarzen eingesetzt haben.
 
 ```{r Degree - Teilnetzwerke vor und nach GB , fig.height=9, fig.width=16 paged.print=FALSE}
 
@@ -1328,10 +1326,30 @@ Hier findet die Diskussion der Ergebnisse statt:
 - Wo liegen die Limitationen in der Studie?
 - Was könnten nächste Schritte in der Forschung sein?
 
+## Fazit
+Unsere Arbeitshypothesen rund um Ida und ihr Unterstützernetzwerk lassen sich wie folgt beantworten: 
+Durch die Unterteilung in Zeitperioden konnten wir erkennen, dass sich Wells nach ihrem Aufenthalt in Großbritannien vermehrt politisch engagiert hat. Das Club Life dort hat sie stark beeinflusst, so schreibt sie es auch in ihrer Biographie. Entgegen unserer Hypothese, dass ihre Unterstützer vor allem schwarze Frauen waren, konnten wir bei der Analyse feststellen, dass viele weiße Männer in ihrem Unterstützernetzwerk waren. Idas Umfeld setzte sich stark für Frauenrechte ein. Das war zu dieser Zeit häufiger als Aktivismus für Schwarze Rechte. Vielen war auch unwohl bei dem Gedanken für Schwarze einzutreten. Deshalb erhielt Ida unter anderem Spenden, die anonym gehalten wurden. Der Alpha Suffrage Club wird in ihrer Biographie nur einmal erwähnt. Vielmehr geht es darum, wie sie versucht hat ihre schwarzen Freund:innen zu motivieren an der Suffragetten Bewegung der Weißen teilzunehmen. Unsere Hypothese, dass Journalist:innen in ihrem Umfeld häufig politisch aktiv waren, können wir mit unserer Quellenlage nicht bestätigen. Obwohl sie bei Zeitungen mit einer politischen Ausrichtung aktiv waren, wird nicht erwähnt inwiefern sie sich privat für politische Themen eingesetzt haben. 
+
+## Limitationen
+- Buch nie zu Ende geschrieben, Forschung könnte sonst tiefergehender sein
+
+
+## Ausblick
+- generelles Thema Rassismus/Frauenrechte Vergleich zu heute?
+- gab es vergleichbare Charaktere wie Ida?
+- Integration von anderen Ethnien wie Asiat:innen etc. --> akuellen Bezug asian hate
+- 
+
+
+
 # Anlage
 ## Literatur
 
 Dunkake I. (2012). Soziale Netzwerke von Schülern: Beispiele angewandter Netzwerkanalysen. In: Hennig M. & Stegbauer C. (Hg.): Die Integration von Theorie und Methode in der Netzwerkforschung. Wiesbaden: VS Verlag für Sozialwissenschaften, S. 133-155.
+
+Edwards, G., & Crossley, N. (2009). Measures and meanings: Exploring the ego-net of Helen Kirkpatrick Watts, militant suffragette. Methodological Innovations Online, 4(2009), 37-61.
+
+Edwards, G. (2014). Infectious innovations? The diffusion of tactical innovation in social movement networks, the case of suffragette militancy. Social Movement Studies, 13(1), 48–69.
 
 Hummel & Sodeur (2010). Dyaden und Triaden. In: Stegbauer, C. & Häußling, R. (Hg.): Handbuch Netzwerkforschung. Wiesbaden: VS Verlag, S.  
 
@@ -1341,39 +1359,40 @@ Luke, D. A. (2015). A user's guide to network analysis in R. Cham, Switzerland: 
 
 Ognyanova, K.(2019). Network Visualization with R. Sunbelt 2019 Workshop, Montreal, Canada. www.kateto.net/sunbelt2019   
 
+Wells, I. B. (2020). Crusade for Justice: The Autobiography of Ida B. Wells (2. Aufl.). University of Chicago Press.
+
+
+
 ## Codebuch
-[Codebuch](https://github.com/hdm-crpr/226305/blob/master/data/crpr2/codebuch.md)
+[Codebuch](https://github.com/NiclasReichelt/Ida-Wells/blob/main/Ida%20Wells%20-%20Ego%20-%20Finale%20-%20Codebuch.csv)
 
 ```{r Übersicht Netzwerkattribute}
-list.vertex.attributes(s)
-# vertex.attributes(s)
-list.edge.attributes(s)
-# edge.attributes(s)
+list.vertex.attributes(Ida)
+# vertex.attributes(Ida)
+list.edge.attributes(Ida)
+# edge.attributes(Ida)
 ```
-## Fazit
-Unsere Arbeitshypothesen rund um Ida und ihr Unterstützernetzwerk lassen sich wie folgt beantworten: 
-Durch die Unterteilung in Zeitperioden konnten wir erkennen, dass sich Wells nach ihrem Aufenthalt in Großbritannien vermehrt politisch engagiert hat. Das Club Life dort hat sie stark beeinflusst, so schreibt sie es auch in ihrer Biographie. Entgegen unserer Hypothese, dass ihre Unterstützer vor allem schwarze Frauen waren, konnten wir bei der Analyse feststellen, dass viele weiße Männer in ihrem Unterstützernetzwerk waren. Idas Umfeld setzte sich stark für Frauenrechte ein. Das war zu dieser Zeit häufiger als Aktivismus für Schwarze Rechte. Vielen war auch unwohl bei dem Gedanken für Schwarze einzutreten. Deshalb erhielt Ida unter anderem Spenden, die anonym gehalten wurden. Der Alpha Suffrage Club wird in ihrer Biographie nur einmal erwähnt. Vielmehr geht es darum, wie sie versucht hat ihre schwarzen Freund:innen zu motivieren an der Suffragetten Bewegung der Weißen teilzunehmen. Unsere Hypothese, dass Journalist:innen in ihrem Umfeld häufig politisch aktiv waren, können wir mit unserer Quellenlage nicht bestätigen. Obwohl sie bei Zeitungen mit einer politischen Ausrichtung aktiv waren, wird nicht erwähnt inwiefern sie sich privat für politische Themen eingesetzt haben. 
-
 
 ## Datenmaterial und Skript
 [Datensatz](https://github.com/NiclasReichelt/Ida-Wells)
 
 ## Team, Arbeitsaufwand und Lessons Learned
 
-### Teammitglieder
-Karla Denzer
-Daniel Guib
-Penelope Hoeth
-Sarah Huß
-Lisa Pham
-Niclas Reichelt
-
-
-### Arbeitsaufwand und Rollen im Team
-NN: Projektleitung und Coding, ca. 80 Stunden
-NN: Literaturrecherche und Auswertung, ca. 80 Stunden
-NN: Endbericht und Visualiserung, ca. 80 Stunden
-
+### Teammitglieder, Arbeitsaufwand und Rollen im Team
+Karla Denzer: Projektleitung, Literaturrecherche & Auswertung, Coding, Endbericht, mind. 150 Stunden
+Daniel Guib: Literaturrecherche & Auswertung, Coding, Endbericht, mind. 150 Stunden
+Penelope Hoeth: Literaturrecherche & Auswertung, Coding, Endbericht, mind. 150 Stunden
+Sarah Huß: Literaturrecherche & Auswertung, Coding, Endbericht, mind. 150 Stunden
+Lisa Pham: Literaturrecherche & Auswertung, Coding, Endbericht, mind. 150 Stunden
+Niclas Reichelt: Literaturrecherche & Auswertung, Coding, Endbericht & Visualisierung, mind. 150 Stunden
 
 ### Lessons learned
 Bitte beschreiben Sie kurz als Team, was ihre größte Herausforderung war und was der größte Lernerfolg in dem Projekt.
+
+Wie wollen wir zusammenarbeiten und Konflikte lösen?
+Wir treffen uns regelmäßig und stehen auch neben den geplanten Meetings im Austausch. Wir sprechen Konflikte klar an und lösen sie gemeinsam. Wir gehen dabei Kompromisse ein, die für uns alle zufriedenstellend sind.
+Wie übernehmen wir Verantwortung im Team und halten Termine gegenseitig ein?
+Nachdem wir gemeinsam Entscheidungen über die weitere Vorgehensweise getroffen haben, teilen wir die Aufgaben gerecht auf. Jeder weiß, was sein Aufgabengebiet ist. Dann kommen wir wieder zusammen und geben uns ein Update über die (Forschungs-)ergebnisse. Sollte ein Gruppenmitglied Probleme haben, kann er sich an die Anderen wenden, ohne schlechtes Gewissen. Gemeinsam arbeiten wir einen Zeitplan aus, damit wir die Termine stets einhalten.
+Wie verteilen und dokumentieren wir die Arbeitslast fair und ausgeglichen, so dass alle gemeinsam die Lernziele erreichen?
+Gewisse Aufgaben bearbeiten wir im Team, gegebenfalls teilen wir die Arbeitslast aber auch auf. Wir schätzen das Arbeitspensum gemeinsam ein, damit die Aufgaben fair und ausgeglichen verteilt werden können. Dabei achten wir auch auf die jeweilige Expertise und das Interesse der Gruppenmitglieder. Eine strenge Dokumentation halten wir nicht für relevant, da durch die Kommunikation eine faire Verteilung der Arbeitlast gewährleistet werden kann.
+
