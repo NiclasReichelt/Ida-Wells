@@ -1387,6 +1387,27 @@ Die Vertex-Attribute treffen auf alle Knoten zu.
 
 Die Edge-Attribute sind unterschiedlich verteilt. Durch die Erhebung haben die Studierenden ein Ratsuchenetzwerk (Wen fragst Du um Rat?) und ein Zusammenarbeitsnetzwerk (Mit wem arbeitest Du am liebsten zusammen?) angeben müssen. Für beide Fragen gab es eine erste und ein zweite Nennung. Die erste Nennung wird entsprechend höher gewichtet. Die Fragen waren verpflichtend. Das bedeutet, dass die Edges sich wie folgt verteilen: 38*2 = 76 Beziehungenangaben für jeweils help und work.
 
+## Bereinigung des Datensatzes (Penelope)
+Um Fehler im Datensatz zu vermeiden haben wir die Edge- und Nodelist mehrfach überprüft und aktualisiert. Um Fehler schnell zu erkennen haben wir die Überprüfungsfunktion in Google Tabellen verwendet. So konnten wir Komma oder Rechtschreibfehler gleich zu Anfang bereinigen. Beim einlesen des Datensatzes haben wir schnell erkannt, dass nicht alle IDs aus der Edgelist passend in der Nodelist eingetragen waren. Manchmal waren auch ID und name vertauscht. Auch das Weglassen von na hat bei uns zu einer Fehlermeldung geführt. Wir haben also na wieder in unsere Liste aufgenommen. Bei Profession und Relation hatten wir zwei Werte, getrennt mit einem Komma, in einer Zelle stehen. Hier trat eine Fehlermeldung auf. Um dieses Problem zu lösen, haben wir für Profession eine zweite Spalte angelegt. Dabei ergaben sich Probleme bei der Selektion. Deshalb haben wir für jede Profession eine eigene Spalte angelegt und verschiedene Beziehungen durch zwei Kanten definiert. Um Wells Leben besser visualisieren und analysieren zu können, haben wir verschiedene Lebensabschnitte in Zeitperioden eingeteilt. 
+Bei dem Datensatz kann allerdings keine Vollständigkeit garantiert werden. Unsere Hauptquelle, Idas Biographie, bricht ab, als sie stirbt. Viele Beziehungen können deshalb nicht mehr bis zum Schluss analysiert werden. Durch weitere Literatur- und Internetrecherche konnte ergänzend einige Beziehungen und Personen vertieft analysiert werden. Leider gibt es aber viele Beziehungen und Personen die kaum gefunden werden konnten. 
+Fehlermeldungen:
+
+- Nicht alle aus der Edge.Liste sind in der Node-Liste eingetragen -> vertauschen non ID und Name
+- Profession (&Relation) hatten wir zwei Werte mit Komma getrennt in der Zelle stehen  -> Fehlermeldung und wir haben für Profession eine zweite Spalte angelegt  -> Problem bei der Selektion: für jede Profession muss eine eigene Spalte angelegt werden  -> unterschiedliche Beziehungen werden durch zwei verschiedene Kanten definiert (1,5..)
+- Kommas und Rechtschreibfehler ganz genau untersuchen
+- Weglassen von n/a hat zu Fehlermeldungen geführt -> wieder in die Liste eingeführt
+- Bei dem Datensatz kann keine Vollständigkeit garantiert werden da die Autobiographie von Ida abbricht als sie stirbt und viele Beziehungen nicht mehr fertig definiert oder analysiert werden können -> auch aufgrund der
+- Grobe Einteilung von Zeitperioden von ihrem Leben zur besseren Visualisierung und Analyse der Lebensabschnitte
+
+
+
+## Fazit (Penelope)
+
+Unsere Arbeitshypothesen rund um Ida und ihr Unterstützernetzwerk lassen sich wie folgt beantworten: 
+
+Durch die Unterteilung in Zeitperioden konnten wir erkennen, dass sich Wells nach ihrem Aufenthalt in Großbritannien vermehrt politisch engagiert hat. Das Club Life dort hat sie stark beeinflusst, so schreibt sie es auch in ihrer Biographie. Entgegen unserer Hypothese, dass ihre Unterstützer vor allem schwarze Frauen waren, konnten wir bei der Analyse feststellen, dass viele weiße Männer in ihrem Unterstützernetzwerk waren. Idas Umfeld setzte sich stark für Frauenrechte ein. Das war zu dieser Zeit häufiger als Aktivismus für Schwarze Rechte. Vielen war auch unwohl bei dem Gedanken für Schwarze einzutreten. Deshalb erhielt Ida unter anderem Spenden, die anonym gehalten wurden. Der Alpha Suffrage Club wird in ihrer Biographie nur einmal erwähnt. Vielmehr geht es darum, wie sie versucht hat ihre schwarzen Freund:innen zu motivieren an der Suffragetten Bewegung der Weißen teilzunehmen. Unsere Hypothese, dass Journalist:innen in ihrem Umfeld häufig politisch aktiv waren, können wir mit unserer Quellenlage nicht bestätigen. Obwohl sie bei Zeitungen mit einer politischen Ausrichtung aktiv waren, wird nicht erwähnt inwiefern sie sich privat für politische Themen eingesetzt haben. 
+
+
 
 ## Datenmaterial und Skript
 [Datensatz](https://github.com/NiclasReichelt/Ida-Wells)
