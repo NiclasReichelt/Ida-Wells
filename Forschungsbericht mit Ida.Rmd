@@ -1378,16 +1378,25 @@ Edwards, G., & Crossley, N. (2009). Measures and meanings: Exploring the ego-net
 
 Edwards, G. (2014). Infectious innovations? The diffusion of tactical innovation in social movement networks, the case of suffragette militancy. Social Movement Studies, 13(1), 48–69.
 
-Hummel & Sodeur (2010). Dyaden und Triaden. In: Stegbauer, C. & Häußling, R. (Hg.): Handbuch Netzwerkforschung. Wiesbaden: VS Verlag, S.  
+Günther, J. (2018). Die Suffragetten. Mit Militanz zum Frauenstimmrecht. Abgerufen von https://www.bpb.de/apuz/277333/die-suffragetten-mit-militanz-zum-frauenstimmrecht
+Encyclopedia of Chicago. (2020). Abgerufen von http://www.encyclopedia.chicagohistory.org/pages/39.html
+
+Hille, P. (2018. Suffragetten: der lange Kampf für das Frauenwahlrecht. Abgerufen von https://www.dw.com/de/suffragetten-der-lange-kampf-f%C3%BCr-das-frauen-wahlrecht/a-42318640
+
+Hummel & Sodeur (2010). Dyaden und Triaden. In: Stegbauer, C. & Häußling, R. (Hg.): Handbuch Netzwerkforschung. Wiesbaden: VS Verlag.
+
+Kippenberger, S. (2016). Frauen an der Front für ihre Rechte. Abgerufen von https://www.tagesspiegel.de/gesellschaft/die-suffragetten-bewegung-in-grossbritannien-frauen-an-der-front-fuer-ihre-rechte/12897752.html
 
 Krackhardt D. (1987). Cognitive social structures. Social Networks, 9, 104-134.  
 
 Luke, D. A. (2015). A user's guide to network analysis in R. Cham, Switzerland: Springer.  
 
-Ognyanova, K.(2019). Network Visualization with R. Sunbelt 2019 Workshop, Montreal, Canada. www.kateto.net/sunbelt2019   
+Ognyanova, K.(2019). Network Visualization with R. Sunbelt 2019 Workshop, Montreal, Canada.  
+
+
+Serbent, H. (2018). Freiheit für die weiße Frau: der Rassismus der Suffragetten. Abgerufen von https://www.t-online.de/nachrichten/wissen/geschichte/id_84758146/frauenwahlrecht-freiheit-fuer-die-weisse-frau-der-suffragetten-rassismus.html
 
 Wells, I. B. (2020). Crusade for Justice: The Autobiography of Ida B. Wells (2. Aufl.). University of Chicago Press.
-
 
 
 ## Codebuch
