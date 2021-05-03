@@ -1284,12 +1284,13 @@ which.max(degree(Ida_afterGB_orga2, mode="all"))
 
 ```
 
-## Vor den Großbritannien-Reisen hatte Frederick Douglass mit 6 einen hohen Degree, nicht allzu verwunderlich bedenkt man, dass er eine sehr einflußreiche Person war. Nach den Reisen bestechen vor allen Dingen Booker T. Washington und W. E. B. DuBois mit jeweils einem Degree-Wert von 10. Mary Church Terell hat mit 9 auch einen hohen Degree.
+Vor den Großbritannien-Reisen hatte Frederick Douglass mit 6 einen hohen Degree, nicht allzu verwunderlich bedenkt man, dass er eine sehr einflußreiche Person war. Nach den Reisen bestechen vor allen Dingen Booker T. Washington und W. E. B. DuBois mit jeweils einem Degree-Wert von 10. Mary Church Terell hat mit 9 auch einen hohen Degree.
 
 
 
 # Betweeness und Broker im Netzwerk
-Der Zentralitätswert "Betweenness" zeigt, wie relevant einzelne Knoten für die Vernetzung zu anderen Knoten sind. Es geht also um Brücken oder Broker, die zwischen den einzelnen Netzwerken verbinden können. 
+Der Zentralitätswert "Betweenness" zeigt, wie relevant einzelne Knoten für die Vernetzung zu anderen Knoten sind.
+Es geht also um Brücken oder Broker, die zwischen den einzelnen Netzwerken verbinden können. 
 
 ```{r Zentralität: Betweenness als Broker, fig.height=10, fig.width=16, message=FALSE, warning=FALSE, paged.print=FALSE}
 
@@ -1298,23 +1299,52 @@ Der Zentralitätswert "Betweenness" zeigt, wie relevant einzelne Knoten für die
 
 # liefert den Knoten mit der höchsten Anzahl von starken Beziehungen
 which.max(betweenness(Ida))
-## Wie erwartet hat Ida den höchsten Betweenness-Wert (0.209). Durch sie erreichen andere Knoten in ihrem Umfeld mehr Verbindungen. Damit weist Ida eine hohe Zentralität auf, wodurch der Knoten eine gute Kontrolle über die Kommunikation unter den Alteri hat. Der Wert stimmt nicht mit unseren Degree-Werten überein, dennoch hat Ida auch den höchsten Degree-Wert. Den zweithöchsten Betweenness-Wert hat W.E.B. DuBois (0.1).
-
-
-# weist dem Broker im  Gesamtnetzwerk eine Farbe zu
-V(Ida)[V(Ida)$name == Ida]$vertex.color <- "pink"
-
-plot(Ida, layout=layout_with_kk,
-     edge.arrow.size=.5,
-     edge.color="black",
-     # vertex.color="NA",
-     # vertex.frame.color=NA,
-     vertex.label.color="black",
-     edge.curved=.2,
-     main="Broker im Netzwerk",
-     sub="Hauptnetzwerk")
 
 ```
+
+
+Wie erwartet hat Ida den höchsten Betweenness-Wert (0.209). Durch sie erreichen andere Knoten in ihrem Umfeld mehr Verbindungen. Damit weist Ida eine hohe Zentralität auf, wodurch der Knoten eine gute Kontrolle über die Kommunikation unter den Alteri hat.Der Wert stimmt nicht mit unseren Degree-Werten überein, dennoch hat Ida auch den höchsten Degree-Wert. Den zweithöchsten Betweenness-Wert hat W.E.B. DuBois (0.1).
+
+DuBois zeigt also auch hier seinen großen Einfluss auf und sticht als wichtiges Bindemitglied hervor.
+
+
+### Closeness
+
+#Als nächstes wird die Closeness analysiert
+```{r Zentralität: Closeness, fig.height=10, fig.width=16, message=FALSE, warning=FALSE, paged.print=FALSE}
+# Closeness 
+
+# Vereinfachtes Hauptnetzwerk
+Ida_simpl <- delete_edge_attr(Ida, "relation")
+# Komponenten auftrennen
+Ida_comp <- decompose.graph(Ida_simpl)
+Ida_comp
+# Komponenten neu benennen
+Ida_comp1 <- Ida_comp[[1]]
+# neue Teilkomponenten analysieren
+Ida_comp1
+
+ 
+ 
+# Closeness
+# Closeness berechnet die relative Nähe zu anderen Knoten. Damit lässt sich interpretieren, welche Knoten im Netzwerk eine zentrale Rolle haben.
+
+close <- closeness(Ida, mode="all", normalized=FALSE)
+# liefert den Knoten mit der höchsten Anzahl von starken Beziehungen
+close
+## Ida B Wells-Barnett  0.006250000 ---> Eins
+## Susan B. Anthony     0.004672897 ---> Zwei
+## Leroy C Bundy        0.002222222 --> Letzter
+
+which.max(close)
+which.min(close)
+
+```
+
+In der Hauptkomponente hat Knoten Ida mit einem Wert von 35,63% die höchste Closness-Zentralität, die niedrigste hat Knoten Bundy mit 13,77%.
+
+Nach Ida sticht vor allem Susan B. Anthony hervor. Sie hatte zahlreiche Verbindungen und als Vorsitzende des "NAWSA" und "the Revolution" eine ungemein hohe Stellung. Im Allgemeinen Netzwerk aller Clubs und Aktivisten, die es damals gab hatte sie vermutlich auch eine bedeutendere Stellung als Ida.
+
 
 # Diskussion: Fazit, Limitationen und Ausblick
 Hier werden die Ergebnisse diskutiert:
