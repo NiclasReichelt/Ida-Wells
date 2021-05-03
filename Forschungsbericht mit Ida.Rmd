@@ -820,15 +820,16 @@ degree(Ida_bus, mode="all")
 which.max(degree(Ida_bus, mode="all"))
 ## Mit 18 Verbindungen hat Ida den höchsten Degreewert, mit 4 Verbindungen hat W.E.B. DuBois den zweithöchsten Degreewert. Samuel Fallows, William Woodall, Frances E Willard, Lady Henry Somerset, T. Thomas Fortune, Jim Wells mit einer Verbindung den dritthöchsten Wert. Allgemein lässt sich beobachten, dass ihre Geschäftspartner weniger Verbindungen untereinander hatten, da sie sich nicht vermehrt in Clubs organsiert haben.
 
-# Schwarze Geschäftspartner
+# Weisse Geschäftspartner
 degree(Ida_white_bus, mode="all")
 which.max(degree(Ida_black_bus, mode="all"))
 ## Ida hat mit 12 Verbindungen den höchsten Degreewert und H.H. Kohlsaat mit 3 Verbindungen den zweithöchsten. Ihre Geschäftspartner waren seltener Teil von Clubs und hatten deshalb nicht so viele Verbindungen zu anderen Knoten außer Ida.
 
-# Weisse Geschäftspartner
+# Schwarze Geschäftspartner
 degree(Ida_black_bus, mode="all")
 which.max(degree(Ida_black_bus, mode="all"))
-!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!##ERGÄNZEN
+##Hier stechen neben Ida (12) vor allem wieder duBois (4) Walters & Nightingale (3) und der NAACP hervor. 
+
 
 # Weibliche Geschäftspartnerinnen 
 degree(Ida_female_bus, mode="all")
@@ -894,21 +895,6 @@ plot(Ida_jour_act, layout=layout_with_kk,
      edge.arrow.size=.7,
      edge.width=E(Ida)$weight,
      edge.color="black")
-     
-## Analyse der Visualisierung:
-
-# Journalist:innen
-Im Netzwerk der Journalist:innen sind mehr als doppelt so viele Männer als Frauen. Das kann daran liegen, dass Männer in dieser Zeit mehr Möglichkeit hatten, ihre Meinung zu vertreten. Alle Journalist:innen (bis auf Barnett) haben eine einflussreiche Position. Das könnte daran liegen, dass Journalist:innen damals durch ihre Reichweite viele Menschen erreichen konnten und somit auch einen großen Einfluss auf die Abläufe und Meinungen in der Bevölkerung hatten. Da damals noch viele Menschen dachten, dass der Mann der Frau überlegen sei, sind die Männer hier mehr vertreten. Schaffte eine Frau es jedoch, sich Verhör zu schaffen, vertrat sie gleich auch eine einflussreiche Position. Außerdem ist es auffällig, dass vor allem weiße Personen hohen Einfluss hatten. Das liegt daran, dass sich dunkelhäutige Menschen zu dieser Zeit noch kein Gehör verschaffen konnten und sich härter für Aufmerksamkeit und Einfluss einsetzen mussten als Weiße. 
-
-# Aktivist:innen
-Im Netzwerk der Aktivist:innen sind ungefähr gleich viele Männer und Frauen vertreten. Die Frauen waren vorwiegend weiß. Bei den Männern waren 6 von 9 dunkelhäutig. Das zeigt, dass sich vor allem die Menschen, die sich beanchtteiligt fühlten (Frauen und Schwarze) aktivistisch engagierten. Auffällig ist auch, dass die schwarzen Aktivist:innen untereinander viel besser vernetzt waren als die Weißen. Für Weiße war es einfacher, sich als Einzelperson zu engagieren, da man angesehener war. Die Schwarzen haben sich eher in Gruppen zusammengeschlossen, um etwas erreichen zu können.
-
-# Politiker:innen
-Im Netzwerk der Politiker:innen sind vor allem weiße Personen und Männer vertreten. Das ist wahrscheinlich aus den oben ausgeführten Gründen erklären (Ansehen und EInfluss).
-
-# aktivistische Journalist:innen
-Ungefähr die Hälfte der Journalist:innen sind auch aktivistisch engagiert. Darunter sind vor allem weiße Frauen. Außer F. L. Barnett hat jeder der aktivistischen Journalist:innen einen großen Einfluss. Das kommt wahrscheinlich daher, dass sie sowohl in ihren Redaktionen als auch in den aktivistischen Kreisen ihre Netzwerke haben. Abgesehen von zwei Ausnahmen (Mayo und Impey) ist der einzige Knotenpunkt im Teilnetzwerk Ida. Ansonsten sind die aktivistischen Journalist:innen nicht besonders miteinander vernetzt.
-
 
 # Analyse der Komponenten 
 
@@ -968,8 +954,19 @@ plot(Ida_act, edge.arrow.size=.3,  main="Aktivist:innen")
 plot(Ida_pol, edge.arrow.size=.3,  main="Politiker:innen")
 plot(Ida_jour_act, edge.arrow.size=.3, main="aktivistische Journalist:innen")
 ```
+## Analyse der Visualisierung:
 
-```{r Degree - Teilnetzwerke nach Tätigkeit , fig.height=9, fig.width=16 paged.print=FALSE}
+# Journalist:innen
+Im Netzwerk der Journalist:innen sind mehr als doppelt so viele Männer als Frauen. Das kann daran liegen, dass Männer in dieser Zeit mehr Möglichkeit hatten, ihre Meinung zu vertreten. Alle Journalist:innen (bis auf Barnett) haben eine einflussreiche Position. Das könnte daran liegen, dass Journalist:innen damals durch ihre Reichweite viele Menschen erreichen konnten und somit auch einen großen Einfluss auf die Abläufe und Meinungen in der Bevölkerung hatten. Da damals noch viele Menschen dachten, dass der Mann der Frau überlegen sei, sind die Männer hier mehr vertreten. Schaffte eine Frau es jedoch, sich Verhör zu schaffen, vertrat sie gleich auch eine einflussreiche Position. Außerdem ist es auffällig, dass vor allem weiße Personen hohen Einfluss hatten. Das liegt daran, dass sich dunkelhäutige Menschen zu dieser Zeit noch kein Gehör verschaffen konnten und sich härter für Aufmerksamkeit und Einfluss einsetzen mussten als Weiße. 
+
+# Aktivist:innen
+Im Netzwerk der Aktivist:innen sind ungefähr gleich viele Männer und Frauen vertreten. Die Frauen waren vorwiegend weiß. Bei den Männern waren 6 von 9 dunkelhäutig. Das zeigt, dass sich vor allem die Menschen, die sich beanchtteiligt fühlten (Frauen und Schwarze) aktivistisch engagierten. Auffällig ist auch, dass die schwarzen Aktivist:innen untereinander viel besser vernetzt waren als die Weißen. Für Weiße war es einfacher, sich als Einzelperson zu engagieren, da man angesehener war. Die Schwarzen haben sich eher in Gruppen zusammengeschlossen, um etwas erreichen zu können.
+
+# Politiker:innen
+Im Netzwerk der Politiker:innen sind vor allem weiße Personen und Männer vertreten. Das ist wahrscheinlich aus den oben ausgeführten Gründen erklären (Ansehen und EInfluss).
+
+# aktivistische Journalist:innen
+Ungefähr die Hälfte der Journalist:innen sind auch aktivistisch engagiert. Darunter sind vor allem weiße Frauen. Außer F. L. Barnett hat jeder der aktivistischen Journalist:innen einen großen Einfluss. Das kommt wahrscheinlich daher, dass sie sowohl in ihren Redaktionen als auch in den aktivistischen Kreisen ihre Netzwerke haben. Abgesehen von zwei Ausnahmen (Mayo und Impey) ist der einzige Knotenpunkt im Teilnetzwerk Ida. Ansonsten sind die aktivistischen Journalist:innen nicht besonders miteinander vernetzt.
 
 ## Analyse der Cluster
 
@@ -984,6 +981,8 @@ Im Netzwerk der Politiker:innen bilden sich zwei Cluster. Das Cluster, das sich 
 
 # aktivistische Journalist:innen
 Im Netzwerk der aktivistischen Journalist:innen bilden sich zwei Cluster. Im Hauptcluster sind sowohl Männer als auch Frauen mit unterschiedlichem Einfluss enthalten. Das zweite Cluster bildet sich nur aus zwei Frauen (Anthony und Terrel), die auch zueinander eine direkte Beziehung haben und den gleichen Einfluss haben. Beide gleichen sich in ihren Tätigkeiten und ihrer Motivation, da sie sich beide für Frauen und für Schwarze einsetzen. Die beiden haben auch schon im Netzwerk der Journalist:innen ein eigenes Cluster gebildet. Überraschend ist, dass Isabella Mayo und Catherine Impey kein Cluster bilden. Die beiden haben eine direkte Verbindung zueinander und haben die gleiche Motivation, Hautfarbe und Einfluss. Auch sind beide der gleichen Organisation angehörig, was Susan B. Anthony und Mary Terrel nicht sind.
+
+```{r Degree - Teilnetzwerke nach Tätigkeit , fig.height=9, fig.width=16 paged.print=FALSE}
 
 # Degree nach Tätigkeiten
 
@@ -1059,7 +1058,6 @@ plot(Ida_mot_both3, layout=layout_with_kk,
      edge.width=E(Ida)$weight,
      edge.color="black")
 
-
 # Analyse der Komponenten 
 
 is_connected(Ida_mot_black)
@@ -1110,6 +1108,9 @@ plot(Ida_mot_woman, edge.arrow.size=.3,  main="Frauenrechtler:innen")
 plot(Ida_mot_both2, edge.arrow.size=.3,  main="Beides")
 
 ```
+
+#Analyse von Visualisierung und Cluster (Motivation)
+
 ## Schwarzenrechtler:innen
 Anhand des Teilnetzwerks kann man erkennen, dass erheblich mehr Männer involviert waren als Frauen. Außerdem ist die vergleichsweise hohe Anzahl an weißen, einflussreicheren Personen zu beachten, die sich für Schwarzenrechte eingesetzt haben wie z.B. William Penn Nixon. Zu diesen hat Ida im Durchschnitt schwache Beziehungen, während die Beziehungen zu Schwarzen stärker waren. Das lässt sich mit der damaligen Hierarchie erklären. Aufgrund der ungleichen Machtverhältnisse war Ida insbesondere auf die Unterstützung von weißen Personen angewiesen (insbesondere finanziell), um ihre politischen Interessen durchzusetzen.
 
@@ -1248,6 +1249,7 @@ plot(cluster_Ida_beforeGB_orga2, Ida_beforeGB_orga2, edge.arrow.size=0.1, main="
 plot(cluster_Ida_afterGB_orga2, Ida_afterGB_orga2, edge.arrow.size=0.1, main="Cluster Organisationen nach den Großbritannien Reisen")
 
 ```
+#Analyse von Visualisierung und Cluster (Vor und nach GB)
 
 ## Organisationen
 Man erkennt eindeutig, dass die Verbindungen von Ida B. Wells zu Organisationen nach den Großbritannien-Reisen deutlich zugenommen haben: von davor 2 zu danach 9 Organisationen. Der Großteil von den 9 Organisationen sind zudem welche, die sich für Schwarzen- oder Frauenrechte einsetzen. Daraus lässt sich vermuten, dass die Großbritannien-Reisen ihr wie vermutet das "Club-Life" näher gebracht haben. 
@@ -1284,7 +1286,9 @@ which.max(degree(Ida_afterGB_orga2, mode="all"))
 
 ```
 
-## Vor den Großbritannien-Reisen hatte Frederick Douglass mit 6 einen hohen Degree, nicht allzu verwunderlich bedenkt man, dass er eine sehr einflußreiche Person war. Nach den Reisen bestechen vor allen Dingen Booker T. Washington und W. E. B. DuBois mit jeweils einem Degree-Wert von 10. Mary Church Terell hat mit 9 auch einen hohen Degree.
+#Analyse Degree (Vor und nach GB)
+
+Vor den Großbritannien-Reisen hatte Frederick Douglass mit 6 einen hohen Degree, nicht allzu verwunderlich bedenkt man, dass er eine sehr einflußreiche Person war. Nach den Reisen bestechen vor allen Dingen Booker T. Washington und W. E. B. DuBois mit jeweils einem Degree-Wert von 10. Mary Church Terell hat mit 9 auch einen hohen Degree.
 
 
 
