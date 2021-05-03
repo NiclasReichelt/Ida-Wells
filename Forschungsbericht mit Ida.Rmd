@@ -31,6 +31,7 @@ Vor etwa hundert Jahren wurde das Frauenwahlrecht eingeführt - dank den sogenan
 
 
 # Vorarbeiten und vergleichbare Studien
+
 ## Forschungsstand
 Die Suffragetten haben einen erheblichen Eindruck in unserer Historie hinterlassen. Selbst ein Jahrhundert nach der Einführung des Frauenwahlrechts, das große Ziel der früheren Frauenrechtsbewegung, sind ihre Taten noch von Relevanz. Feminismus – ein Thema, das heutzutage stärker wie nie zuvor zur Debatte steht, insbesondere die Position der Frau in der Arbeitswelt. Deshalb war und ist die Suffragetten-Bewegung Gegenstand beträchtlicher Forschungsarbeiten und eine Inspirationsquelle für literarische Werke und Filme. Dabei war nicht nur der Kampf um das Frauenwahlrecht der interessanteste Aspekt. Vielmehr fokussieren sich die bisherigen Forschungen auf die militante Herangehensweise der Bewegung und die Strukturen und Beziehungen zwischen den Mitgliedern und den Unterstützer:innen. Militanz, Gewalt und Proteste kennzeichneten die Bewegung stark. Dadurch differenzierten sie sich vom traditionellen Bild der Frau, die dem Mann unterlegen und charakterlich schwach sei. Die Suffragetten waren rebellisch und kämpferisch. Eigenschaften, die Frauen sonst nicht zugeschrieben werden. Keine Überraschung also, dass die Pankhurst-Frauen aus Großbritannien, die Anführerinnen der Bewegung, oftmals genauer analysiert wurden. Etliche Porträts, Biografien und Netzwerke wurden rund um Emmeline Pankhurst und ihre Töchter verfasst.
 Die Suffragetten-Bewegung in Großbritannien weitete sich auch aufs Ausland aus und nahm besonders großen Einfluss auf die Frauenrechtlerinnen in den USA. Im Vergleich zu der Organisation in Großbritannien wurde die US-amerikanische Bewegung weitaus weniger erforscht. Zum einen könnte das daran liegen, dass die Suffragetten in den USA vergleichsweise friedlich protestiert haben. Andererseits war der Ursprung der Suffragetten-Bewegung in England und andere Frauenrechtlerinnen haben sich die Pankhursts zu Vorbildern genommen. Dementsprechend hat die Forschung im Bereich der Netzwerkanalyse ihren Fokus auf die militanten Suffragetten in Großbritannien. Ein Beispiel von vielen dafür ist „Qualitative Social Network Analysis: Visualising and Analysing the Personal Networks of Suffragettes“ von SAGE Publications, worin anhand qualitativer Netzwerkanalyse die Beziehungen rund um Emmeline Pankhurst untersucht wird. Obwohl die Pankhursts unmittelbar im Zentrum der Bewegung standen, haben auch andere Suffragetten durch ihre auffallenden Protestaktionen ihre Aufmerksamkeit auf sich gezogen. So wurde in der Forschungsarbeit “Measures and Meanings: Exploring the Ego-Net of Helen Kirkpatrick Watts, Militant Suffragette” von G. Edwards und N. Crossley ein ganzes Egonetzwerk für Helen Kirkpatrick gestaltet.
@@ -50,13 +51,12 @@ Ida wurde 1862 in Mississippi geboren, als Sklavin. Ihre Eltern starben beide an
 Ida B. Wells war ihrer Zeit weit voraus und riskierte mehrmals ihr Leben für ihre Ideale. Obwohl sie sehr viele Erfolge verzeichnen konnte, war sie selbst nie mit sich und den Fortschritten zufrieden. Sie war 50 Jahre alt, als einige Frauen endlich das Wahlrecht bekamen, doch schwarze Frauen war davon ausgeschlossen. “The way to right wrong things is to turn the light of truth upon them.”, sagte Ida. Und genau dem hat sie ihr Leben verschrieben. 
 
 
-## Arbeitshypothesen
+# Arbeitshypothesen
 Wir gehen von folgenden Arbeitshypothesen aus:
 (1) Zu Beginn der Recherche rechneten wir damit, dass Idas Unterstützernetzwerk vor allem aus dunkelhäutigen Frauen bestand. Wir dachten, dass sie, als Betroffene, ein höheres Interesse daran haben würden, als weiße Männer beispielsweise. 
 (2) Außerdem gingen wir davon aus, dass sich die Personen in ihrem Umfeld vermehrt für Frauenrechte einsetzten, anstatt für die Rechte von Schwarzen. Das liegt auch daran, dass wir im Kontext der Suffragettenbewegung (Alpha Suffrage Club) das erste Mal von ihr gehört haben. 
 (3) Unsere Vermutung war, dass die Journalist*innen in ihrem Umfeld politisch aktiv waren. Gerade, da die meisten für Zeitungen schrieben, die eine gewisse politische Ausrichtungen hatten. 
 (4) Der Reise nach Großbritannien rechneten wir einen großen Einfluss zu und gingen davon aus, dass sie sich danach verstärkt für Frauenrechte eingesetzt hat, da die Suffragettenbewegung hier ihre Wurzeln hat.
-
 
 Die Analyse einen überwiegend explorativen Charakter, um Muster in den Beziehungen untersuchen.
 
@@ -71,7 +71,6 @@ Der Datensatz ist unter [Github](https://github.com/NiclasReichelt/Ida-Wells) ve
 Um Fehler im Datensatz zu vermeiden haben wir die Edge- und Nodelist mehrfach überprüft und aktualisiert. Um Fehler schnell zu erkennen haben wir die Überprüfungsfunktion in Google Tabellen verwendet. So konnten wir Komma oder Rechtschreibfehler gleich zu Anfang bereinigen. Beim einlesen des Datensatzes haben wir schnell erkannt, dass nicht alle IDs aus der Edgelist passend in der Nodelist eingetragen waren. Manchmal waren auch ID und name vertauscht. Auch das Weglassen von na hat bei uns zu einer Fehlermeldung geführt. Wir haben also na wieder in unsere Liste aufgenommen. Bei Profession und Relation hatten wir zwei Werte, getrennt mit einem Komma, in einer Zelle stehen. Hier trat eine Fehlermeldung auf. Um dieses Problem zu lösen, haben wir für Profession eine zweite Spalte angelegt. Dabei ergaben sich Probleme bei der Selektion. Deshalb haben wir für jede Profession eine eigene Spalte angelegt und verschiedene Beziehungen durch zwei Kanten definiert. Um Wells Leben besser visualisieren und analysieren zu können, haben wir verschiedene Lebensabschnitte in Zeitperioden eingeteilt. 
 Bei dem Datensatz kann allerdings keine Vollständigkeit garantiert werden. Unsere Hauptquelle, Idas Biographie, bricht ab, als sie stirbt. Viele Beziehungen können deshalb nicht mehr bis zum Schluss analysiert werden. Durch weitere Literatur- und Internetrecherche konnte ergänzend einige Beziehungen und Personen vertieft analysiert werden. Leider gibt es aber viele Beziehungen und Personen die kaum gefunden werden konnten. 
 
-
 ## Codebuch
 Das [Codebuch]
 (https://github.com/NiclasReichelt/Ida-Wells/blob/main/Ida%20Wells%20-%20Ego%20-%20Finale%20-%20Codebuch.csv) beschreibt die Variablen, Relationen und Gewichte des Netzwerks und ist ebenfalls auf Github hinterlegt.
@@ -79,7 +78,6 @@ Das [Codebuch]
 Grundsätzlich sollte in jeder Spalte idealerweise immer nur ein Wert enthalten sein. Bis auf die ID und den Namen in der Nodelist ist dieser idealerweise numerisch codiert (als Zahl).
 
 ### EDGE-Attribute
-
 from: Die Werte in der Spalte "from" definieren Sender:innen in gerichteten Netzwerken, beziehungsweise generell einen Ausgangspunkt einer Beziehung. Da wir ein ungerichtetes Netzwerk erhoben haben, ist die Richtung der Beziehung nicht relevant. Der eingetragene Wert entspricht einer ID in der Nodelist und enthält keine Sonderzeichen, sondern nur ein Wort.
 
 to: Die Werte in der Spalte "to" definieren Empfänger:innen in ungerichteten Netzwerken. Der eingetragene Wert entspricht einer ID in der Nodelist und enthält keine Sonderzeichen, sondern nur ein Wort.
@@ -103,7 +101,6 @@ city: Zusätzlich bekommt jede Beziehung noch den genauen “Startpunkt” in Fo
 
 
 ### NODE-Attribute
-
 id: (eindeutige Codierung des Knoten) gibt jedem Knoten eine ID, bei Personen sind es meist nur die Nachnamen und bei Organisationen (Zeitungen, Magazine, politische Organisationen) meist die gängige Abkürzung
 
 name: gibt den Namen oder die Bezeichnung des Knotens an. Bei Personen wurde hier der Vor- und Nachname angegeben, bei Organisationen die Bezeichnung
@@ -1335,10 +1332,11 @@ Durch die Unterteilung in Zeitperioden konnten wir erkennen, dass sich Wells nac
 
 
 ## Ausblick
+Aufgrund der Aktualität des Themas gibt es hier mehrere Möglichkeiten, inwieweit die Forschung weiter gehen könnte. Besonders interessant wäre es, herauszufinden, ob es in der damaligen Zeit vergleichbare Suffragetten wie Ida gab, die sich gegen Rassismus positioniert haben. Dazu könnte man die Thematik weiter auffassen, indem man einen Vergleich zur heutigen Situation zieht: Wie steht es um Frauenrechte und Rassismus in der heutigen Zeit? Hat sich vielleicht gar nicht so viel geändert? Des Weiteren haben wir uns in unserem Projekt lediglich auf Schwarz und Weiß fokussiert. Rassismus betrifft aber noch andere Ethnien; wo steht z.B. die asiatische Frau in unserer Gesellschaft? Die kürzlichen Vorfälle in den USA gegen Schwarze und Asiatinnen haben gezeigt, dass Randgruppen noch immer mit Diskriminierung zu kämpfen haben. Daher wäre eine erweiterte Ausarbeitung mit Bezug auf #asianhate sinnvoll, die man mit unserem Fokus (Rassismus gegen Schwarze) gegenüberstellen kann.
 - generelles Thema Rassismus/Frauenrechte Vergleich zu heute?
 - gab es vergleichbare Charaktere wie Ida?
 - Integration von anderen Ethnien wie Asiat:innen etc. --> akuellen Bezug asian hate
-- 
+- noch evtl ein Zitat zum Thema finden???
 
 
 
@@ -1365,7 +1363,6 @@ Wells, I. B. (2020). Crusade for Justice: The Autobiography of Ida B. Wells (2. 
 
 ## Codebuch
 [Codebuch](https://github.com/NiclasReichelt/Ida-Wells/blob/main/Ida%20Wells%20-%20Ego%20-%20Finale%20-%20Codebuch.csv)
-
 ```{r Übersicht Netzwerkattribute}
 list.vertex.attributes(Ida)
 # vertex.attributes(Ida)
