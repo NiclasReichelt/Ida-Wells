@@ -1399,7 +1399,7 @@ list.edge.attributes(Ida)
 # edge.attributes(Ida)
 ```
 
-## Datenmaterial und Skript
+# Datenmaterial und Skript
 [Datensatz](https://github.com/NiclasReichelt/Ida-Wells)
 
 ## Team, Arbeitsaufwand und Lessons Learned
@@ -1413,12 +1413,9 @@ Lisa Pham: Literaturrecherche & Auswertung, Coding, Endbericht, mind. 150 Stunde
 Niclas Reichelt: Literaturrecherche & Auswertung, Coding, Endbericht & Visualisierung, mind. 150 Stunden
 
 ### Lessons learned
-Bitte beschreiben Sie kurz als Team, was ihre größte Herausforderung war und was der größte Lernerfolg in dem Projekt.
 
-Wie wollen wir zusammenarbeiten und Konflikte lösen?
-Wir treffen uns regelmäßig und stehen auch neben den geplanten Meetings im Austausch. Wir sprechen Konflikte klar an und lösen sie gemeinsam. Wir gehen dabei Kompromisse ein, die für uns alle zufriedenstellend sind.
-Wie übernehmen wir Verantwortung im Team und halten Termine gegenseitig ein?
-Nachdem wir gemeinsam Entscheidungen über die weitere Vorgehensweise getroffen haben, teilen wir die Aufgaben gerecht auf. Jeder weiß, was sein Aufgabengebiet ist. Dann kommen wir wieder zusammen und geben uns ein Update über die (Forschungs-)ergebnisse. Sollte ein Gruppenmitglied Probleme haben, kann er sich an die Anderen wenden, ohne schlechtes Gewissen. Gemeinsam arbeiten wir einen Zeitplan aus, damit wir die Termine stets einhalten.
-Wie verteilen und dokumentieren wir die Arbeitslast fair und ausgeglichen, so dass alle gemeinsam die Lernziele erreichen?
-Gewisse Aufgaben bearbeiten wir im Team, gegebenfalls teilen wir die Arbeitslast aber auch auf. Wir schätzen das Arbeitspensum gemeinsam ein, damit die Aufgaben fair und ausgeglichen verteilt werden können. Dabei achten wir auch auf die jeweilige Expertise und das Interesse der Gruppenmitglieder. Eine strenge Dokumentation halten wir nicht für relevant, da durch die Kommunikation eine faire Verteilung der Arbeitlast gewährleistet werden kann.
+Zu Beginn unserer Netzwerkanalyse gestaltete sich die Gruppenarbeit als harmonisch und zielführend. Man konnte die Aufgaben gut verteilen, in Einzelarbeit erledigen und die Ergebnisse in wöchentlich stattfindenden Gruppenmeetings zusammenführen. Sobald es jedoch an die Codierung mit R ging, zeigte sich, dass es oft unterschiedliche Vorstellungen in Visualisierung, Codierung oder Interpretation gab. Um hier entstehende Konflikte zu lösen, bedurfte es gelungener Kommunikation, sowie stetiger Motivation zum Weiterarbeiten. Auch daraus konnten wir lernen unsere Moral nicht erschöpfen zu lassen. Der anfangs noch unausgereifte Plan entwickelte sich so mit der Zeit immer weiter, bis er zu unser aller Zufriedenheit vervollständigt werden konnte. Wir arbeiteten in kleineren Gruppen und besprachen die Ergebnisse zusammen. Am Ende konnten wir so mit dem Resultat alle zufrieden sein.
+Bei der finalen Planung bestand die größte Herausforderung darin, dass Vieles aus dem beispielhaften Forschungsbericht nicht direkt angewandt werden konnte. Dies lag vor allem daran, dass wir mit einem ungerichteten Ego-Netzwerk arbeiten. Die Möglichkeiten der Darstellung waren gegenüber anderer Netzwerksformen begrenzt. Um das auszugleichen, mussten wir uns eine andere Herangehensweise überlegen. Nach intensiver Absprache haben wir uns dazu entschieden mit unseren zuvor erstellten Teilnetzwerken zu arbeiten und diese einzeln nach Visualisierung, Clustern und Degree zu interpretieren. 
+Wir lernten also nicht zu verzagen, den richtigen Fokus zu setzen und uns zielführender abzusprechen. Das Programm R ist uns nun weitestgehend vertraut und die Bedeutung von Netzwerkanalysen ist deutlich geworden.
+
 
