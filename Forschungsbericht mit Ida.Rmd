@@ -1,5 +1,5 @@
 ---
-title: "226305 Forschungsbericht: Analyse des Netzwerkes von Ida Barnett Wells"
+title: "226305 Forschungsbericht: Netzwerkanalyse von Suffragette Ida Barnett-Wells"
 author: "Karla Denzer, Daniel Guib, Penelope Hoeth, Sarah Huß, Lisa Pham, Niclas Reichelt"
 date: "Sommersemester 2020"
 output:
