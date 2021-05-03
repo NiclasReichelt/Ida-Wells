@@ -1310,7 +1310,7 @@ DuBois zeigt also auch hier seinen großen Einfluss auf und sticht als wichtiges
 
 ### Closeness
 
-#Als nächstes wird die Closeness analysiert
+Als nächstes wird die Closeness analysiert
 ```{r Zentralität: Closeness, fig.height=10, fig.width=16, message=FALSE, warning=FALSE, paged.print=FALSE}
 # Closeness 
 
