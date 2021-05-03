@@ -1267,22 +1267,21 @@ Durch die Clusterung bilden sich nach den Reisen zwei größere Cluster, das lim
 # Vor GB 
 degree(Ida_beforeGB3, mode="all")
 which.max(degree(Ida_beforeGB3, mode="all"))
-## ...
+## Ida Wells hat mit 13 den höchsten Degree-Wert. Den zweithöchsten Wert hat dabei Frederick Douglass mit 6. Den geringsten Wert, nämlich 1, teilen sich Thomas Moss, Susan B. Anthony, die National Association of Coloured Womens Club, Booker T. Washington und W. E. B. DuBois.
 
 # Nach GB
 degree(Ida_afterGB, mode="all")
 which.max(degree(Ida_afterGB, mode="all"))
-## ...
+## Hier hat Ida Wells einen Degree-Wert von 38. Booker T. Washington und W. E. B. DuBois haben beide einen Wert von 10, welches den zweithöchsten Degree-Wert darstellt. Den geringsten Wert hat unter anderem die National Association of Coloured Womens Club, Frances Willard, Josephine St Pierre Ruffin oder Lady Henry Somerset.
 
 # Vor GB - Orga
 degree(Ida_beforeGB_orga2, mode="all")
 which.max(degree(Ida_beforeGB_orga2, mode="all"))
-## ...
 
 # Nach GB - Orga
 degree(Ida_afterGB_orga2, mode="all")
 which.max(degree(Ida_afterGB_orga2, mode="all"))
-## ... 
+## Sowohl vor als auch nach den Reisen von Ida Wells nach Großbritannien, haben die Organisationen in ihrem Umfeld entweder einen Degree-Wert von 1 oder von 2. 
 
 ```
 
