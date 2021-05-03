@@ -1345,6 +1345,13 @@ In der Hauptkomponente hat Knoten Ida mit einem Wert von 35,63% die höchste Clo
 
 Nach Ida sticht vor allem Susan B. Anthony hervor. Sie hatte zahlreiche Verbindungen und als Vorsitzende des "NAWSA" und "the Revolution" eine ungemein hohe Stellung. Im Allgemeinen Netzwerk aller Clubs und Aktivisten, die es damals gab hatte sie vermutlich auch eine bedeutendere Stellung als Ida.
 
+#InfluenceR
+
+Mit InfluenceR hatten wir uns auch zusätzlich beschäftigt, die Ergebnisse waren jedoch einigermaßen verwirrend.
+Mit denselben Einstellungen kamen hier nach mehrmaligem Plotten als Knoten mit den meisten "bridges" verschiedene hervor.
+Dies waren aber meist entweder Susan Anthony oder W. E. B. de Bois.
+Also die Beiden Personen, die auch in Betweennes und Closeness hervorstechen.
+
 
 # Diskussion: Fazit, Limitationen und Ausblick
 Hier werden die Ergebnisse diskutiert:
