@@ -1384,6 +1384,8 @@ Hille, P. (2018. Suffragetten: der lange Kampf für das Frauenwahlrecht. Abgeruf
 
 Hummel & Sodeur (2010). Dyaden und Triaden. In: Stegbauer, C. & Häußling, R. (Hg.): Handbuch Netzwerkforschung. Wiesbaden: VS Verlag.
 
+Jackson, A. (2020). The Alpha Suffrage Club and Black Women’s Fight for the Vote. Abgerufen von https://daily.jstor.org/the-alpha-suffrage-club-and-black-womens-fight-for-the-vote/
+
 Kippenberger, S. (2016). Frauen an der Front für ihre Rechte. Abgerufen von https://www.tagesspiegel.de/gesellschaft/die-suffragetten-bewegung-in-grossbritannien-frauen-an-der-front-fuer-ihre-rechte/12897752.html
 
 Krackhardt D. (1987). Cognitive social structures. Social Networks, 9, 104-134.  
@@ -1391,7 +1393,6 @@ Krackhardt D. (1987). Cognitive social structures. Social Networks, 9, 104-134.
 Luke, D. A. (2015). A user's guide to network analysis in R. Cham, Switzerland: Springer.  
 
 Ognyanova, K.(2019). Network Visualization with R. Sunbelt 2019 Workshop, Montreal, Canada.  
-
 
 Serbent, H. (2018). Freiheit für die weiße Frau: der Rassismus der Suffragetten. Abgerufen von https://www.t-online.de/nachrichten/wissen/geschichte/id_84758146/frauenwahlrecht-freiheit-fuer-die-weisse-frau-der-suffragetten-rassismus.html
 
