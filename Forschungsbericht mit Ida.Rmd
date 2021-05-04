@@ -1132,8 +1132,8 @@ which.max(degree(Ida_mot_both, mode="all"))
 
 
 # *Teilnetzwerk Vor und nach GB im Vergleich*
-Im Folgenden analysieren wir Idas Netzwerk vor und nach ihren Großbritannien-Reisen.
-Hierfür wird der Fokus teils nur auf Organisationen gelegt.
+Im Folgenden analysieren wir Idas Netzwerk vor und nach ihren Großbritannien-Reisen. Auf diesen Reisen vernetzte sich Ida mit einflussreichen Persönlichkeiten und bekam die Inspiration zur Gründung weiterer Clubs und Organisationen in den USA.
+Hierfür wird der Fokus teils ausschließlich auf Organisationen gelegt.
 
 ```{r fig.height=9, fig.width=16, Teilnetzwerk Vor und nach GB fig.height=12}
 
@@ -1270,14 +1270,13 @@ which.max(degree(Ida_afterGB_orga2, mode="all"))
 ## Sowohl vor als auch nach den Reisen von Ida Wells nach Großbritannien, haben die Organisationen in ihrem Umfeld entweder einen Degree-Wert von 1 oder von 2. 
 
 ```
+
 ## Analyse der Degree-Werte
 Vor den Großbritannien-Reisen hatte Frederick Douglass mit 6 einen hohen Degree, nicht allzu verwunderlich bedenkt man, dass er eine sehr einflußreiche Person war. Nach den Reisen bestechen vor allen Dingen Booker T. Washington und W. E. B. DuBois mit jeweils einem Degree-Wert von 10. Mary Church Terell hat mit 9 auch einen hohen Degree.
 
 
-
 # Betweeness und Broker im Netzwerk
-Der Zentralitätswert "Betweenness" zeigt, wie relevant einzelne Knoten für die Vernetzung zu anderen Knoten sind.
-Es geht also um Brücken oder Broker, die zwischen den einzelnen Netzwerken verbinden können. 
+Im nächsten Schritt betrachten wir die Relevanz einzelner Knoten im Netzwerk. 
 
 ```{r Zentralität: Betweenness als Broker, fig.height=10, fig.width=16, message=FALSE, warning=FALSE, paged.print=FALSE}
 
@@ -1289,15 +1288,15 @@ which.max(betweenness(Ida))
 
 ```
 
+Wie erwartet hat Ida den höchsten Betweenness-Wert (0.209). Durch sie erreichen andere Knoten in ihrem Umfeld mehr Verbindungen. Damit weist Ida eine hohe Zentralität auf, wodurch der Knoten eine gute Kontrolle über die Kommunikation unter den Alteri hat. Den zweithöchsten Betweenness-Wert hat W.E.B. DuBois (0.1).
 
-Wie erwartet hat Ida den höchsten Betweenness-Wert (0.209). Durch sie erreichen andere Knoten in ihrem Umfeld mehr Verbindungen. Damit weist Ida eine hohe Zentralität auf, wodurch der Knoten eine gute Kontrolle über die Kommunikation unter den Alteri hat.Der Wert stimmt nicht mit unseren Degree-Werten überein, dennoch hat Ida auch den höchsten Degree-Wert. Den zweithöchsten Betweenness-Wert hat W.E.B. DuBois (0.1).
-
-DuBois zeigt also auch hier seinen großen Einfluss auf und sticht als wichtiges Bindemitglied hervor.
+DuBois zeigt also auch hier seinen großen Einfluss auf und sticht als wichtiges Bindeglied innerhalb des Netzwerks hervor. Dies ist im besonderen auf sein hohes politisches Engagement zurückzuführen. 
 
 
-### Closeness
+# Closeness
 
-Als nächstes wird die Closeness analysiert
+Als nächstes analysieren wir wie schnell diese Akteure andere Aktuere im Netzwerk erreichen können. 
+
 ```{r Zentralität: Closeness, fig.height=10, fig.width=16, message=FALSE, warning=FALSE, paged.print=FALSE}
 # Closeness 
 
@@ -1311,17 +1310,15 @@ Ida_comp1 <- Ida_comp[[1]]
 # neue Teilkomponenten analysieren
 Ida_comp1
 
- 
- 
 # Closeness
 # Closeness berechnet die relative Nähe zu anderen Knoten. Damit lässt sich interpretieren, welche Knoten im Netzwerk eine zentrale Rolle haben.
 
 close <- closeness(Ida, mode="all", normalized=FALSE)
 # liefert den Knoten mit der höchsten Anzahl von starken Beziehungen
 close
-## Ida B Wells-Barnett  0.006250000 ---> Eins
-## Susan B. Anthony     0.004672897 ---> Zwei
-## Leroy C Bundy        0.002222222 --> Letzter
+## Ida B Wells-Barnett  0.006250000 ---> Höchster Wert
+## Susan B. Anthony     0.004672897 ---> Zweithöchster Wert
+## Leroy C Bundy        0.002222222 --> Niedrigster Wert
 
 which.max(close)
 which.min(close)
@@ -1336,12 +1333,12 @@ Nach Ida sticht vor allem Susan B. Anthony hervor. Sie hatte zahlreiche Verbindu
 
 Mit InfluenceR hatten wir uns auch zusätzlich beschäftigt, die Ergebnisse waren jedoch einigermaßen verwirrend.
 Mit denselben Einstellungen kamen hier nach mehrmaligem Plotten als Knoten mit den meisten "bridges" verschiedene hervor.
-Dies waren aber meist entweder Susan Anthony oder W. E. B. de Bois.
-Also die Beiden Personen, die auch in Betweennes und Closeness hervorstechen.
+Dies waren aber meist entweder Susan Anthony, W. E. B. de Bois oder C. F. Aked.
+Hierbei handelt es sich um Personen, die auch in Betweennes und Closeness hervorstechen.
 
 
 # Diskussion: Fazit, Limitationen und Ausblick
-Hier werden die Ergebnisse diskutiert:
+Im Folgenden diskuttieren wir die Ergebnisse unserer Sozialen Netzerkanalyse. Außerdem erörtern wir die Limitationen und geben einen Ausblick auf weitere Forschung in dem Themenfeld. 
 
 ## Fazit
 Unsere Arbeitshypothesen rund um Ida und ihr Unterstützernetzwerk lassen sich wie folgt beantworten: 
@@ -1399,15 +1396,15 @@ list.edge.attributes(Ida)
 
 ## Team, Arbeitsaufwand und Lessons Learned
 
-### Teammitglieder, Arbeitsaufwand und Rollen im Team
-Karla Denzer: Projektleitung, Literaturrecherche & Auswertung, Coding, Endbericht, mind. 150 Stunden
+## Teammitglieder, Arbeitsaufwand und Rollen im Team
+Karla Denzer: Projektleitung, Literaturrecherche & Auswertung, Coding, Endbericht, mind. 160 Stunden
 Daniel Guib: Literaturrecherche & Auswertung, Coding, Endbericht, mind. 150 Stunden
 Penelope Hoeth: Literaturrecherche & Auswertung, Coding, Endbericht, mind. 150 Stunden
 Sarah Huß: Literaturrecherche & Auswertung, Coding, Endbericht, mind. 150 Stunden
 Lisa Pham: Literaturrecherche & Auswertung, Coding, Endbericht, mind. 150 Stunden
-Niclas Reichelt: Literaturrecherche & Auswertung, Coding, Endbericht & Visualisierung, mind. 150 Stunden
+Niclas Reichelt: Literaturrecherche & Auswertung, Coding, Endbericht & Visualisierung, mind. 155 Stunden
 
-### Lessons learned
+## Lessons learned
 
 Zu Beginn unserer Netzwerkanalyse gestaltete sich die Gruppenarbeit als harmonisch und zielführend. Man konnte die Aufgaben gut verteilen, in Einzelarbeit erledigen und die Ergebnisse in wöchentlich stattfindenden Gruppenmeetings zusammenführen. Sobald es jedoch an die Codierung mit R ging, zeigte sich, dass es oft unterschiedliche Vorstellungen in Visualisierung, Codierung oder Interpretation gab. Um hier entstehende Konflikte zu lösen, bedurfte es gelungener Kommunikation, sowie stetiger Motivation zum Weiterarbeiten. Auch daraus konnten wir lernen unsere Moral nicht erschöpfen zu lassen. Der anfangs noch unausgereifte Plan entwickelte sich so mit der Zeit immer weiter, bis er zu unser aller Zufriedenheit vervollständigt werden konnte. Wir arbeiteten in kleineren Gruppen und besprachen die Ergebnisse zusammen. Am Ende konnten wir so mit dem Resultat alle zufrieden sein.
 Bei der finalen Planung bestand die größte Herausforderung darin, dass Vieles aus dem beispielhaften Forschungsbericht nicht direkt angewandt werden konnte. Dies lag vor allem daran, dass wir mit einem ungerichteten Ego-Netzwerk arbeiten. Die Möglichkeiten der Darstellung waren gegenüber anderer Netzwerksformen begrenzt. Um das auszugleichen, mussten wir uns eine andere Herangehensweise überlegen. Nach intensiver Absprache haben wir uns dazu entschieden mit unseren zuvor erstellten Teilnetzwerken zu arbeiten und diese einzeln nach Visualisierung, Clustern und Degree zu interpretieren. 
