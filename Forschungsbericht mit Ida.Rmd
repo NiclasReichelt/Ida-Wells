@@ -669,30 +669,38 @@ Im  Unterstützerinnennetzwerk sind weiße Frauen mehr vertreten als Schwarze. D
 # Degree Unterstützer:innen
 degree(Ida_sup, mode="all")
 which.max(degree(Ida_sup, mode="all"))
-# Mary Church Terrell hat mit 7 Verbindungen den nächsthöchsten Degreewert nach Ida (28 Verbindungen). Bishop Alexander Walters, Susan B Anthony, Frances E Willard und Lady Henry Somerset folgen danach mit 5 Verbindungen.
-
 
 # Weibliche Unterstützerinnen
 degree(Ida_female_sup, mode="all")
 which.max(degree(Ida_female_sup, mode="all"))
-## Ida hat mit 13 Verbindungen den höchsten Degreewert. Susan B Anthony und Frances E Willard haben mit 4 Verbindungen den zweithöchsten Degreewert. Die meisten anderen Unterstützerinnen haben entweder 2 Verbindungen oder sogar nur eine Verbindung.
 
 # Schwarze Unterstützer
 degree(Ida_black_sup, mode="all")
 which.max(degree(Ida_black_sup, mode="all"))
-## Mit 11 Verbindungen hat Ida den höchsten Degreewert, mit 6 Verbindungen hat Mary Church Terrell den zweithöchsten Degreewert und Bishop Alexander Walters und T. Thomas Fortune mit 4 Verbindungen den dritthöchsten Wert. Im schwarzen Unterstützernetzwerk haben einige Personen einen hohen Degreewert, vor allem im Vergleich zum weißen Unterstützernetzwerk.
 
 # Männliche Unterstützer
 degree(Ida_male_sup, mode="all")
 which.max(degree(Ida_male_sup, mode="all"))
-## Bishop Alexander Walters und T. Thomas Fortune haben mit 4 Verbindungen (nach Ida) den höchsten Degreewert. Insgesamt haben acht Knoten lediglich eine Verbindung.
 
 # Weiße Unterstützer*innen
 degree(Ida_white_sup, mode="all")
 which.max(degree(Ida_white_sup, mode="all"))
-## Nach Ida haben Lady Henry Somerset und Frances E Willard den nächsthöchsten Degreewert mit 5 Verbindungen. Auffallend ist, dass viele Personen zu wenig anderen Knoten eine Verbindung haben. Wir haben allgemein beobachtet, dass schwarze Personen in Idas Netzwerk einen höheren Degreewert haben und besser vernetzt sind.
 
 ```
+# Degree Unterstützer:innen
+Mary Church Terrell hat mit 7 Verbindungen den nächsthöchsten Degreewert nach Ida (28 Verbindungen). Bishop Alexander Walters, Susan B Anthony, Frances E Willard und Lady Henry Somerset folgen danach mit 5 Verbindungen.
+
+## Weibliche Unterstützerinnen
+Ida hat mit 13 Verbindungen den höchsten Degreewert. Susan B Anthony und Frances E Willard haben mit 4 Verbindungen den zweithöchsten Degreewert. Die meisten anderen Unterstützerinnen haben entweder 2 Verbindungen oder sogar nur eine Verbindung.
+
+## Schwarze Unterstützer
+Mit 11 Verbindungen hat Ida den höchsten Degreewert, mit 6 Verbindungen hat Mary Church Terrell den zweithöchsten Degreewert und Bishop Alexander Walters und T. Thomas Fortune mit 4 Verbindungen den dritthöchsten Wert. Im schwarzen Unterstützernetzwerk haben einige Personen einen hohen Degreewert, vor allem im Vergleich zum weißen Unterstützernetzwerk.
+
+## Männliche Unterstützer
+Bishop Alexander Walters und T. Thomas Fortune haben mit 4 Verbindungen (nach Ida) den höchsten Degreewert. Insgesamt haben acht Knoten lediglich eine Verbindung.
+
+## Weiße Unterstützer*innen
+Nach Ida haben Lady Henry Somerset und Frances E Willard den nächsthöchsten Degreewert mit 5 Verbindungen. Auffallend ist, dass viele Personen zu wenig anderen Knoten eine Verbindung haben. Wir haben allgemein beobachtet, dass schwarze Personen in Idas Netzwerk einen höheren Degreewert haben und besser vernetzt sind.
 
 # *Teilnetzwerk Geschäftsbeziehung im Vergleich*
 
@@ -791,6 +799,13 @@ plot(cluster_Ida_black_bus, Ida_black_bus, edge.arrow.size=0.1, main="Cluster Id
 plot(cluster_Ida_white_bus, Ida_white_bus, edge.arrow.size=0.1, main="Cluster Ida weiße Geschäftspartner:innen")
 
 ```
+## Analyse von Visualiserung und Cluster - Geschäftpartner
+Unserer Rechecherche nach hatte Ida insgesamt 25 Geschäftsbeziehungen, lässt man die Organisationen außen vor. Meistens standen diese im Zusammenhang mit ihrer Arbeit als Journalistin oder auch im gemeinsamen Gründen von Organisationen. Mit Virginia Brooks und Belle Squire gründete sie beispielsweise den Alpha Suffrage Club.  
+Insgesamt führte sie aber überwiegend mit Männern eine Geschäftsbeziehung. Überraschend ist das nicht, denkt man an die damalige Gesellschaft (ca. 1890-1920). Frauen gingen viel seltener einer beruflichen oder politischen Tätigkeit nach. 
+Ihr Netzwerk an Geschäftspartnern besteht aus mehr weißen Personen, als das der Geschäftspartnerinnen. Hier liegt eine ausgeglichenere Verteilung vor. Die weißen Geschäftspartner haben insgesamt einen geringeren Degreewert. Womöglich hatten sie weniger Verbindungen zu anderen Knoten, da sie sich seltener in Organisationen engagiert haben. Der Degreewert der Geschäftspartner:innen ist überhaupt geringer im Vergleich zu anderen Teilnetzwerken. 
+Die Geschäftspartner:innen unterteilen sich in 6 Cluster, 2 davon sind losgelöst von Ida. Hierbei handelt es sich um Frances W. Willard, Lady Henry Sommerset und die Woman Christian Temperance Union, sowie Catherine Impey, Isabella Fyvie Mayo und die Anti Caste. Ida ist zwar auch ein Mitglied der Woman Christian Temperance Union gewesen, aber wahrscheinlich da sie nicht in Grobritannien gelebt hat, werden sie hier als seperates Cluster angezeigt. Impey und Mayo befanden sich in einer Konfliktsituation, in die Ida nicht zwangsläufig involviert war. Bei den weißen Geschäftspartner:innen ist die Anzahl der Cluster genauso hoch, mit denselben seperaten Clustern.
+Die Geschäftspartner untergliedern sich auch in 6 Cluster, wobei hier nur eins seperat ist: Dr. Grey und Jim Wells.
+Auffallend ist, dass sich die schwarzen Geschäftspartner:innen in 6 Cluster unterteilen, wobei keins davon losgelöst von Ida ist. 
 
 ```{r Degree - Teilnetzwerke der Geschäftspartner , fig.height=9, fig.width=16 paged.print=FALSE}
 
@@ -823,12 +838,23 @@ which.max(degree(Ida_male, mode="all"))
 
 ```
 
-Unserer Rechecherche nach hatte Ida insgesamt 25 Geschäftsbeziehungen, lässt man die Organisationen außen vor. Meistens standen diese im Zusammenhang mit ihrer Arbeit als Journalistin oder auch im gemeinsamen Gründen von Organisationen. Mit Virginia Brooks und Belle Squire gründete sie beispielsweise den Alpha Suffrage Club.  
-Insgesamt führte sie aber überwiegend mit Männern eine Geschäftsbeziehung. Überraschend ist das nicht, denkt man an die damalige Gesellschaft (ca. 1890-1920). Frauen gingen viel seltener einer beruflichen oder politischen Tätigkeit nach. 
-Ihr Netzwerk an Geschäftspartnern besteht aus mehr weißen Personen, als das der Geschäftspartnerinnen. Hier liegt eine ausgeglichenere Verteilung vor. Die weißen Geschäftspartner haben insgesamt einen geringeren Degreewert. Womöglich hatten sie weniger Verbindungen zu anderen Knoten, da sie sich seltener in Organisationen engagiert haben. Der Degreewert der Geschäftspartner:innen ist überhaupt geringer im Vergleich zu anderen Teilnetzwerken. 
-Die Geschäftspartner:innen unterteilen sich in 6 Cluster, 2 davon sind losgelöst von Ida. Hierbei handelt es sich um Frances W. Willard, Lady Henry Sommerset und die Woman Christian Temperance Union, sowie Catherine Impey, Isabella Fyvie Mayo und die Anti Caste. Ida ist zwar auch ein Mitglied der Woman Christian Temperance Union gewesen, aber wahrscheinlich da sie nicht in Grobritannien gelebt hat, werden sie hier als seperates Cluster angezeigt. Impey und Mayo befanden sich in einer Konfliktsituation, in die Ida nicht zwangsläufig involviert war. Bei den weißen Geschäftspartner:innen ist die Anzahl der Cluster genauso hoch, mit denselben seperaten Clustern.
-Die Geschäftspartner untergliedern sich auch in 6 Cluster, wobei hier nur eins seperat ist: Dr. Grey und Jim Wells.
-Auffallend ist, dass sich die schwarzen Geschäftspartner:innen in 6 Cluster unterteilen, wobei keins davon losgelöst von Ida ist. 
+# Degree Geschäftspartner
+
+## Geschäftspartner von Ida
+Mit 18 Verbindungen hat Ida den höchsten Degreewert, mit 4 Verbindungen hat W.E.B. DuBois den zweithöchsten Degreewert. Samuel Fallows, William Woodall, Frances E Willard, Lady Henry Somerset, T. Thomas Fortune, Jim Wells mit einer Verbindung den dritthöchsten Wert. Allgemein lässt sich beobachten, dass ihre Geschäftspartner weniger Verbindungen untereinander hatten, da sie sich nicht vermehrt in Clubs organsiert haben.
+
+## Weiße Geschäftspartner
+Ida hat mit 12 Verbindungen den höchsten Degreewert und H.H. Kohlsaat mit 3 Verbindungen den zweithöchsten. Ihre Geschäftspartner waren seltener Teil von Clubs und hatten deshalb nicht so viele Verbindungen zu anderen Knoten außer Ida.
+
+## Schwarze Geschäftspartner
+Nach Ida (12 Verbindungen) hat W.E.B. DuBois den höchsten Degreewert mit 4 Verbindungen. Darauf folgen J.L.Flemming, F. Nightingale, Bishop Alexander Walters mit jeweils 3 Verbindungen.
+
+## Weibliche Geschäftspartnerinnen 
+Mit 9 Verbindungen hat Ida den höchsten Degreewert. Die anderen Frauen haben entweder 2 oder 3 Verbindungen. Also haben sie zwar alle noch weitere Verbindungen, aber nicht annäherend so viele, wie Ida. Auffallend ist, dass die weiblichen Geschäftspartnerinnen mehr Verbindungen haben, als die männlichen Geschäftspartner.
+
+## Männliche Geschäftspartner 
+#Den größten Degreewert haben hier Personen, die drei Verbindungen haben. Insgesamt haben wenige männliche Geschäftspartner eine weitere Verbindung zu einem anderen Knoten. (Siehe Erklärung oben)
+
 
 
 # *Teilnetzwerk Berufsfelder im Vergleich*
@@ -836,7 +862,7 @@ Auffallend ist, dass sich die schwarzen Geschäftspartner:innen in 6 Cluster unt
 Im nächsten Schritt unterteilen wir die Teilnetzwerke in Berufsfeldern.
 Diese werden für die Analyse einander gegenübergestellt und teilweise zusammengefügt.
 
-```{r fig.height=9, fig.width=16, Teilnetzwerke Aufgabenbereich fig.height=12}
+```{r Teilnetzwerke nach Berufsfeldern fig.height=9, fig.width=16, Teilnetzwerke Aufgabenbereich fig.height=12}
 
 # Teilnetzwerk nach Berufsfeldern
 
@@ -878,7 +904,15 @@ plot(Ida_jour_act, layout=layout_with_kk,
      edge.width=E(Ida)$weight,
      edge.color="black")
      
-     
+# Teilnetzwerke Nebeneinander
+par(mfrow=c(1,4), mar=c(0,0,1,2))
+plot(Ida_jour, edge.arrow.size=.3, main="Journalist:innen")
+plot(Ida_act, edge.arrow.size=.3,  main="Aktivist:innen")
+plot(Ida_pol, edge.arrow.size=.3,  main="Politiker:innen")
+plot(Ida_jour_act, edge.arrow.size=.3, main="aktivistische Journalist:innen")
+
+```
+
 ## Analyse der Visualisierung:
 
 ### Journalist:innen
@@ -893,6 +927,7 @@ Im Netzwerk der Politiker:innen sind vor allem weiße Personen und Männer vertr
 ### aktivistische Journalist:innen
 Ungefähr die Hälfte der Journalist:innen sind auch aktivistisch engagiert. Darunter sind vor allem weiße Frauen. Außer F. L. Barnett hat jeder der aktivistischen Journalist:innen einen großen Einfluss. Das kommt wahrscheinlich daher, dass sie sowohl in ihren Redaktionen als auch in den aktivistischen Kreisen ihre Netzwerke haben. Abgesehen von zwei Ausnahmen (Mayo und Impey) ist der einzige Knotenpunkt im Teilnetzwerk Ida. Ansonsten sind die aktivistischen Journalist:innen nicht besonders miteinander vernetzt.
 
+```{r Teilnetzwerke nach Berufsfeldern - Cluster fig.height=9, fig.width=16, Teilnetzwerke Aufgabenbereich fig.height=12}
 
 # Analyse der Komponenten 
 
@@ -944,15 +979,7 @@ plot(cluster_Ida_act, Ida_act, edge.arrow.size=0.1, main="Cluster Ida Aktivist:i
 plot(cluster_Ida_pol, Ida_pol, edge.arrow.size=0.1, main="Cluster Ida Politiker:innen")
 plot(cluster_Ida_jour_act, Ida_jour_act, edge.arrow.size=0.1, main="Cluster Ida Journalist:innen & Aktivist:innen") 
 
-# Teilnetzwerke Nebeneinander
-par(mfrow=c(1,4), mar=c(0,0,1,2))
-plot(Ida_jour, edge.arrow.size=.3, main="Journalist:innen")
-plot(Ida_act, edge.arrow.size=.3,  main="Aktivist:innen")
-plot(Ida_pol, edge.arrow.size=.3,  main="Politiker:innen")
-plot(Ida_jour_act, edge.arrow.size=.3, main="aktivistische Journalist:innen")
 ```
-
-```{r Degree - Teilnetzwerke nach Tätigkeit , fig.height=9, fig.width=16 paged.print=FALSE}
 
 ## Analyse der Cluster
 
@@ -968,7 +995,7 @@ Im Netzwerk der Politiker:innen bilden sich zwei Cluster. Das Cluster, das sich 
 ### aktivistische Journalist:innen
 Im Netzwerk der aktivistischen Journalist:innen bilden sich zwei Cluster. Im Hauptcluster sind sowohl Männer als auch Frauen mit unterschiedlichem Einfluss enthalten. Das zweite Cluster bildet sich nur aus zwei Frauen (Anthony und Terrel), die auch zueinander eine direkte Beziehung haben und den gleichen Einfluss haben. Beide gleichen sich in ihren Tätigkeiten und ihrer Motivation, da sie sich beide für Frauen und für Schwarze einsetzen. Die beiden haben auch schon im Netzwerk der Journalist:innen ein eigenes Cluster gebildet. Überraschend ist, dass Isabella Mayo und Catherine Impey kein Cluster bilden. Die beiden haben eine direkte Verbindung zueinander und haben die gleiche Motivation, Hautfarbe und Einfluss. Auch sind beide der gleichen Organisation angehörig, was Susan B. Anthony und Mary Terrel nicht sind.
 
-
+```{r Degree - Teilnetzwerke nach Tätigkeit , fig.height=9, fig.width=16 paged.print=FALSE}
 # Degree nach Tätigkeiten
 
 ## Journalist:innen
@@ -989,7 +1016,7 @@ which.max(degree(Ida_act, mode="all"))
 
 ```
 
-## Degree-Werte
+## Degree-Werte - Tätigkeit
 
 ### Journalist:innen
 Mit 30 Verbindungen hat Ida den höchsten Degreewert. Susan B Anthony hat mit 6 Verbindungen den zweithöchsten Degreewert. Danach folgen einige Journalist*innen mit 5 Verbindungen. Insgesamt haben die Journalisten und Journalistinnen viele Verbindungen zu anderen Knoten. Das weist darauf hin, dass sie untereinander eng verbunden sind.
@@ -1007,7 +1034,7 @@ Ida hat mit 19 Verbindungen den höchsten Degreewert, Susan B. Anthony mit 6 Ver
 # *Teilnetzwerk Motivation im Vergleich*
 Als Nächstes untersuchen wir die politische Motivation der Akteure und vergleichen diese miteinander.
 
-```{r fig.height=9, fig.width=16, Teilnetzwerke Motivation fig.height=12}
+```{r Teilnetzwerke nach Motvation fig.height=9, fig.width=16, Teilnetzwerke Motivation fig.height=12}
 
 # Teilnetzwerk nach Motivation
 
@@ -1094,6 +1121,7 @@ plot(Ida_mot_woman, edge.arrow.size=.3,  main="Frauenrechtler:innen")
 plot(Ida_mot_both2, edge.arrow.size=.3,  main="Beides")
 
 ```
+# Analyse von Visualisierung und Clustern - Motivation
 
 ## Schwarzenrechtler:innen
 Anhand des Teilnetzwerks kann man erkennen, dass erheblich mehr Männer involviert waren als Frauen. Außerdem ist die vergleichsweise hohe Anzahl an weißen, einflussreicheren Personen zu beachten, die sich für Schwarzenrechte eingesetzt haben wie z.B. William Penn Nixon. Zu diesen hat Ida im Durchschnitt schwache Beziehungen, während die Beziehungen zu Schwarzen stärker waren. Das lässt sich mit der damaligen Hierarchie erklären. Aufgrund der ungleichen Machtverhältnisse war Ida insbesondere auf die Unterstützung von weißen Personen angewiesen (insbesondere finanziell), um ihre politischen Interessen durchzusetzen.
@@ -1120,7 +1148,7 @@ which.max(degree(Ida_mot_black, mode="all"))
 degree(Ida_mot_woman, mode="all")
 which.max(degree(Ida_mot_woman, mode="all"))
 
-## Booker T Washington und W. E. B. DuBois haben mit 8 Verbindungen den zweithöchsten Degreewert nach Ida (nach 47 Verbindungen). Darauf folgen Susan B. Anthony (7 Verbindungen) und Mary Church Terrell (6 Verbindungen). Verhätnismäßig wenige Personen haben Verbindungen zu anderen Knoten. Überraschend ist, dass hier zwei schwarze Männer nach Ida den höchsten Degree-Wert innehaben. Diese Personen engagieren sich zugleich stark für Schwarzenrechte. Schaut man sich allerdings das Teilnetzwerk an, haben sich insgesamt mehr Frauen als Männer für Frauenrechte eingesetzt.
+## Booker T Washington und W. E. B. DuBois haben mit 8 Verbindungen den zweithöchsten Degreewert nach Ida (nach 47 Verbindungen). Darauf folgen Susan B. Anthony (7 Verbindungen) und Mary Church Terrell (6 Verbindungen). Verhätnismäßig wenige Personen haben Verbindungen zu anderen Knoten. Überraschend ist, dass hier zwei schwarze Männer nach Ida den höchsten Degree-Wert innehaben. Diese Personen engagieren sich zugleich stark für Schwarzenrechte. Schaut man sich allerdings das Teilnetzwerk an, haben sich insgesamt mehr Frauen als Männer für Frauenrechte eingesetzt. 
 
 
 # Motivation: Frauenrechte & Schwarzenrechte
@@ -1130,12 +1158,23 @@ which.max(degree(Ida_mot_both, mode="all"))
 ## Wie erwartet haben Booker T Washington, W. E. B. DuBois, Susan B. Anthony und Mary Church Terrell den höchsten Degreewert nach Ida. Das hat sich auch in den einzelnen Teilnetzwerken erkenntlich gezeigt.
 ```
 
+# Degree nach Motivation
+
+## Motivation: Rechte für Schwarze
+Nach Ida (47 Verbindungen) haben Booker T Washington und W. E. B. DuBois mit 8 Verbindungen den höchsten Degreewert. Washington und DuBois waren bekannte Schwarzenrechtler und Gründer des Niagara Movements, das später sogar Teil der NAACP wurde. Danach folgt Susan B Anthony mit 7 Verbindungen. Durch die Gründung des Alpha Suffrage Club, zusammen mit Ida, hat sie sich gegen die Standards der US-amerikanischen Suffragetten gestellt und auch schwarze Frauen unterstützt.
+
+## Motivation: Frauenrechte
+Booker T Washington und W. E. B. DuBois haben mit 8 Verbindungen den zweithöchsten Degreewert nach Ida (nach 47 Verbindungen). Darauf folgen Susan B. Anthony (7 Verbindungen) und Mary Church Terrell (6 Verbindungen). Verhätnismäßig wenige Personen haben Verbindungen zu anderen Knoten. Überraschend ist, dass hier zwei schwarze Männer nach Ida den höchsten Degree-Wert innehaben. Diese Personen engagieren sich zugleich stark für Schwarzenrechte. Schaut man sich allerdings das Teilnetzwerk an, haben sich insgesamt mehr Frauen als Männer für Frauenrechte eingesetzt. 
+
+## Motivation: Frauenrechte & Schwarzenrechte
+Wie erwartet haben Booker T Washington, W. E. B. DuBois, Susan B. Anthony und Mary Church Terrell den höchsten Degreewert nach Ida. Das hat sich auch in den einzelnen Teilnetzwerken erkenntlich gezeigt.
+
 
 # *Teilnetzwerk Vor und nach GB im Vergleich*
 Im Folgenden analysieren wir Idas Netzwerk vor und nach ihren Großbritannien-Reisen. Auf diesen Reisen vernetzte sich Ida mit einflussreichen Persönlichkeiten und bekam die Inspiration zur Gründung weiterer Clubs und Organisationen in den USA.
 Hierfür wird der Fokus teils ausschließlich auf Organisationen gelegt.
 
-```{r fig.height=9, fig.width=16, Teilnetzwerk Vor und nach GB fig.height=12}
+```{r Teilnetzwerk nach Zeit (vor und nach GB) fig.height=9, fig.width=16, Teilnetzwerk Vor und nach GB fig.height=12}
 
 # Teilnetzwerk nach Zeit (vor und nach GB)
 
@@ -1235,6 +1274,7 @@ plot(cluster_Ida_beforeGB_orga2, Ida_beforeGB_orga2, edge.arrow.size=0.1, main="
 plot(cluster_Ida_afterGB_orga2, Ida_afterGB_orga2, edge.arrow.size=0.1, main="Cluster Organisationen nach den Großbritannien Reisen")
 
 ```
+# Analyse der Netzwerke vor und nch GB
 
 ## Organisationen
 Man erkennt eindeutig, dass die Verbindungen von Ida B. Wells zu Organisationen nach den Großbritannien-Reisen deutlich zugenommen haben: von davor 2 zu danach 9 Organisationen. Der Großteil von den 9 Organisationen sind zudem welche, die sich für Schwarzen- oder Frauenrechte einsetzen. Daraus lässt sich vermuten, dass die Großbritannien-Reisen ihr wie vermutet das "Club-Life" näher gebracht haben. 
