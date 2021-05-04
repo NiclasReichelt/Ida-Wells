@@ -144,7 +144,7 @@ affiliation: Weist Personen die Zugehörigkeit von einer oder mehreren Organisat
 
 
 # Analyse und Interpretation
-Die genauere Analyse werden unter den verschiedenen (Teil-)Netzwerken erfolgen.
+Die genauere Analyse und Interpretation erfolgen unter den jeweiligen (Teil-)Netzwerken. 
 
 
 ## Das Gesamtnetzwerk
@@ -1326,31 +1326,19 @@ Im nächsten Schritt betrachten wir die Relevanz einzelner Knoten im Netzwerk.
 # liefert den Knoten mit der höchsten Anzahl von starken Beziehungen
 which.max(betweenness(Ida))
 
+# weist dem Broker im  Gesamtnetzwerk eine Farbe zu
+V(Ida)[V(Ida)$name == Ida]$vertex.color <- "pink"
+
 ```
-
 Wie erwartet hat Ida den höchsten Betweenness-Wert (0.209). Durch sie erreichen andere Knoten in ihrem Umfeld mehr Verbindungen. Damit weist Ida eine hohe Zentralität auf, wodurch der Knoten eine gute Kontrolle über die Kommunikation unter den Alteri hat. Den zweithöchsten Betweenness-Wert hat W.E.B. DuBois (0.1).
-
 DuBois zeigt also auch hier seinen großen Einfluss auf und sticht als wichtiges Bindeglied innerhalb des Netzwerks hervor. Dies ist im besonderen auf sein hohes politisches Engagement zurückzuführen. 
 
 
 # Closeness
-
-Als nächstes analysieren wir wie schnell diese Akteure andere Aktuere im Netzwerk erreichen können. 
+Als Nächstes analysieren wir wie schnell diese Akteure andere Aktuere im Netzwerk erreichen können. 
 
 ```{r Zentralität: Closeness, fig.height=10, fig.width=16, message=FALSE, warning=FALSE, paged.print=FALSE}
-# Closeness 
 
-# Vereinfachtes Hauptnetzwerk
-Ida_simpl <- delete_edge_attr(Ida, "relation")
-# Komponenten auftrennen
-Ida_comp <- decompose.graph(Ida_simpl)
-Ida_comp
-# Komponenten neu benennen
-Ida_comp1 <- Ida_comp[[1]]
-# neue Teilkomponenten analysieren
-Ida_comp1
-
-# Closeness
 # Closeness berechnet die relative Nähe zu anderen Knoten. Damit lässt sich interpretieren, welche Knoten im Netzwerk eine zentrale Rolle haben.
 
 close <- closeness(Ida, mode="all", normalized=FALSE)
@@ -1364,17 +1352,30 @@ which.max(close)
 which.min(close)
 
 ```
-
 In der Hauptkomponente hat Knoten Ida mit einem Wert von 35,63% die höchste Closness-Zentralität, die niedrigste hat Knoten Bundy mit 13,77%.
-
 Nach Ida sticht vor allem Susan B. Anthony hervor. Sie hatte zahlreiche Verbindungen und als Vorsitzende des "NAWSA" und "the Revolution" eine ungemein hohe Stellung. Im Allgemeinen Netzwerk aller Clubs und Aktivisten, die es damals gab hatte sie vermutlich auch eine bedeutendere Stellung als Ida.
 
-#InfluenceR
 
+# InfluenceR
 Mit InfluenceR hatten wir uns auch zusätzlich beschäftigt, die Ergebnisse waren jedoch einigermaßen verwirrend.
 Mit denselben Einstellungen kamen hier nach mehrmaligem Plotten als Knoten mit den meisten "bridges" verschiedene hervor.
 Dies waren aber meist entweder Susan Anthony, W. E. B. de Bois oder C. F. Aked.
 Hierbei handelt es sich um Personen, die auch in Betweennes und Closeness hervorstechen.
+
+```{r InfluencerR Paket: Analyse von einflussreichen Knoten, fig.height=8, fig.width=12, message=FALSE, warning=FALSE, paged.print=FALSE}
+
+library(igraph)
+library(influenceR)
+
+holes <- ens(Ida)
+which.max(holes)
+## Ida B. Wells 1
+
+bridges <- bridging(Ida)
+which.max(bridges)
+## Susan B. Anthony 30
+
+```
 
 
 # Diskussion: Fazit, Limitationen und Ausblick
@@ -1390,6 +1391,7 @@ Unsere Forschung limitiert sich durch den subjektiven Informationszugang durch I
 
 ## Ausblick
 Auch aufgrund der Aktualität der Themen (Black Lives Matter und Feminismusbewegungen) gibt es mehrere Möglichkeiten, wie weiter geforscht werden könnte. Besonders interessant wäre es, herauszufinden, ob es in der damaligen Zeit vergleichbare Suffragetten wie Ida gab, die sich zusätzlich gegen Rassismus eingesetzt haben. Dazu kann ein Vergleich zur heutigen Situation gezogen werden: Wie steht es um Sexismus und Rassismus in der heutigen Zeit? Wie viel hat sich tatsächlich geändert? Da wir uns mit Idas Leben beschäftigt haben, lag unser Fokus bei den Problemen der Schwarzen in einer weißen Mehrheitsgesellschaft. Rassismus betrifft aber noch andere Ethnien. Wo stehen zum Beispiel Personen asiatischer Herkunft in der Gesellschaft? Auch sie mussten erstmal für ihre Rechte in den USA kämpfen. Die aktuellen Angriffe gegen Schwarze und Asiatinnen haben gezeigt, dass Randgruppen noch immer mit Diskriminierung zu kämpfen haben. Daher wäre eine erweiterte Ausarbeitung mit Bezug auf #asianhate sinnvoll, die man mit unserem Fokus (Rassismus gegen Schwarze) gegenüberstellen kann.
+
 
 # Anlage
 ## Literatur
@@ -1437,17 +1439,14 @@ list.edge.attributes(Ida)
 ## Team, Arbeitsaufwand und Lessons Learned
 
 ## Teammitglieder, Arbeitsaufwand und Rollen im Team
-Karla Denzer: Projektleitung, Literaturrecherche & Auswertung, Coding, Endbericht, mind. 160 Stunden
+Karla Denzer: Projektleitung, Literaturrecherche & Auswertung, Coding, Endbericht, mind. 150 Stunden
 Daniel Guib: Literaturrecherche & Auswertung, Coding, Endbericht, mind. 150 Stunden
 Penelope Hoeth: Literaturrecherche & Auswertung, Coding, Endbericht, mind. 150 Stunden
 Sarah Huß: Literaturrecherche & Auswertung, Coding, Endbericht, mind. 150 Stunden
 Lisa Pham: Literaturrecherche & Auswertung, Coding, Endbericht, mind. 150 Stunden
-Niclas Reichelt: Literaturrecherche & Auswertung, Coding, Endbericht & Visualisierung, mind. 155 Stunden
+Niclas Reichelt: Literaturrecherche & Auswertung, Coding, Endbericht & Visualisierung, mind. 150 Stunden
 
 ## Lessons learned
-
 Zu Beginn unserer Netzwerkanalyse gestaltete sich die Gruppenarbeit als harmonisch und zielführend. Man konnte die Aufgaben gut verteilen, in Einzelarbeit erledigen und die Ergebnisse in wöchentlich stattfindenden Gruppenmeetings zusammenführen. Sobald es jedoch an die Codierung mit R ging, zeigte sich, dass es oft unterschiedliche Vorstellungen in Visualisierung, Codierung oder Interpretation gab. Um hier entstehende Konflikte zu lösen, bedurfte es gelungener Kommunikation, sowie stetiger Motivation zum Weiterarbeiten. Auch daraus konnten wir lernen unsere Moral nicht erschöpfen zu lassen. Der anfangs noch unausgereifte Plan entwickelte sich so mit der Zeit immer weiter, bis er zu unser aller Zufriedenheit vervollständigt werden konnte. Wir arbeiteten in kleineren Gruppen und besprachen die Ergebnisse zusammen. Am Ende konnten wir so mit dem Resultat alle zufrieden sein.
 Bei der finalen Planung bestand die größte Herausforderung darin, dass Vieles aus dem beispielhaften Forschungsbericht nicht direkt angewandt werden konnte. Dies lag vor allem daran, dass wir mit einem ungerichteten Ego-Netzwerk arbeiten. Die Möglichkeiten der Darstellung waren gegenüber anderer Netzwerksformen begrenzt. Um das auszugleichen, mussten wir uns eine andere Herangehensweise überlegen. Nach intensiver Absprache haben wir uns dazu entschieden mit unseren zuvor erstellten Teilnetzwerken zu arbeiten und diese einzeln nach Visualisierung, Clustern und Degree zu interpretieren. 
 Wir lernten also nicht zu verzagen, den richtigen Fokus zu setzen und uns zielführender abzusprechen. Das Programm R ist uns nun weitestgehend vertraut und die Bedeutung von Netzwerkanalysen ist deutlich geworden.
-
-
